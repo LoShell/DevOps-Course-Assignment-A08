@@ -6,7 +6,7 @@
 |---|---|---|
 | `【账号1】` | 【姓名1】 | 【学号1】 |
 | `autumn123321` | 邱莉扉 | 241250097 |
-| `【账号3】` | 【姓名3】 | 【学号3】 |
+| `FanCongyu` | 范从钰 | 241250071 |
 | `【账号4】` | 【姓名4】 | 【学号4】 |
 
 ## 贡献记录
@@ -15,7 +15,7 @@
 |---|---|---|---|
 | 【姓名1】 | 配对沟通与最终评审汇总 | `review/coordination.md`、`A08_REVIEW.md` | `【填写】` |
 | 邱莉扉 | FULL_CHECK 请求和结果评审 | `review/full-check-review.md` | `5f5441c45e03ae45cd50be2fa1790e5a2134ce0f` |
-| 【姓名3】 | INCREMENTAL_CHECK 请求和结果评审 | `review/incremental-check-review.md` | `【填写】` |
+| 范从钰 | INCREMENTAL_CHECK 请求和结果评审 | `review/incremental-check-review.md` | `70bf0cf27adb414f45fcc59fe902040e0593c275` |
 | 【姓名4】 | Backlog、ADR、AI 使用和贡献追溯 | `BACKLOG.md`、`AI_USAGE.md`、`adr/`、`CONTRIBUTIONS.md` | `【填写】` |
 
 ## 配对评审追溯
