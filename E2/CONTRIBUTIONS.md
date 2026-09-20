@@ -16,7 +16,7 @@
 | 刘馨雅 | 配对沟通与最终评审汇总 | `review/coordination.md`、`A08_REVIEW.md` | `674e33873beb88c9fa333f5a4243f626b1aa2144`、`c7cdc9bad47793e078951ebf4750a4fdde89e288` |
 | 邱莉扉 | FULL_CHECK 请求和结果评审 | `review/full-check-review.md` | `5f5441c45e03ae45cd50be2fa1790e5a2134ce0f` |
 | 范从钰 | INCREMENTAL_CHECK 请求和结果评审 | `review/incremental-check-review.md` | `70bf0cf27adb414f45fcc59fe902040e0593c275` |
-| 叶原原 | Backlog、ADR、AI 使用和贡献追溯 | `BACKLOG.md`、`AI_USAGE.md`、`adr/`、`CONTRIBUTIONS.md` | `待本次提交后回填` |
+| 叶原原 | Backlog、ADR、AI 使用和贡献追溯 | `BACKLOG.md`、`AI_USAGE.md`、`adr/`、`CONTRIBUTIONS.md` | `046bcb3d2661505852156f1c44abf4c0dc707bff` |
 
 ## 配对评审追溯
 
