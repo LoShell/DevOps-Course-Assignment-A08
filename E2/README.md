@@ -13,7 +13,7 @@ B08 负责接口契约、OpenAPI、Schema 及请求和结果样例的编写；A0
 | 配对组能解释同一份请求和结果 | `review/` 和 `A08_REVIEW.md` |
 | 有接口样例 | `CONTRACT_REFERENCE.md` 指向 B08 固定版本样例 |
 | 有 Backlog 和设计记录 | `BACKLOG.md` 和 `adr/` |
-| 个人贡献与版本可追溯 | `CONTRIBUTIONS.md`、Commit 和 Issue/PR |
+| 个人贡献与版本可追溯 | `CONTRIBUTIONS.md` 和 Git Commit |
 
 ## 工作边界
 
@@ -22,4 +22,3 @@ B08 负责接口契约、OpenAPI、Schema 及请求和结果样例的编写；A0
 - 不选择真实项目或 C0/C1/C2。
 - 不生成真实 MD/RD 报告。
 - E3 待办只记录在 Backlog，不在 E2 执行。
-

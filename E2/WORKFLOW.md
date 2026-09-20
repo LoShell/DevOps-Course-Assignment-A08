@@ -42,7 +42,7 @@ git push origin a08/e2-review
 
 | 成员 | E2 负责内容 | 独立负责文件 |
 |---|---|---|
-| 刘馨雅 | 联系 B08、记录配对讨论、汇总最终评审、创建 Issue/PR | `review/coordination.md`，最后填写 `A08_REVIEW.md` |
+| 刘馨雅 | 联系 B08、记录配对讨论并汇总最终评审 | `review/coordination.md`，最后填写 `A08_REVIEW.md` |
 | 邱莉扉 | 解释并评审 `FULL_CHECK` 的请求与结果样例 | `review/full-check-review.md` |
 | 范从钰 | 解释并评审 `INCREMENTAL_CHECK` 的请求与结果样例 | `review/incremental-check-review.md` |
 | 叶原原 | 整理 Backlog、设计记录、AI 使用和贡献追溯 | `BACKLOG.md`、`AI_USAGE.md`、`adr/0001-contract-review.md`，最后填写 `CONTRIBUTIONS.md` |
@@ -62,5 +62,4 @@ git push origin a08/e2-review
 - [x] A08 已记录接受、修改或待讨论的接口内容。
 - [x] Backlog 和设计记录完整。
 - [x] 四名成员均有独立 Commit。
-- [x] 仓库地址、评审 Commit 和 Issue/PR 链接已记录。
-
+- [x] 仓库地址和评审记录已保留。

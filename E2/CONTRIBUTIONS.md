@@ -26,7 +26,6 @@
 | B08 仓库 | `https://github.com/Delario17/DevOps-Course-Assignment` |
 | A08 评审汇总 Commit | `c7cdc9bad47793e078951ebf4750a4fdde89e288` |
 | B08 本次评审 Commit | `2c1b15332456410b74679d479094406fb7e183aa` |
-| Issue/PR | 尚未创建，由刘馨雅负责 |
 
 本表只记录 A08 实际完成的评审与文档工作，不将 B08 编写的契约文件计入
 A08 成员贡献。
