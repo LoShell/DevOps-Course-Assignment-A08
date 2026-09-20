@@ -24,9 +24,6 @@
 |---|---|
 | A08 仓库 | `https://github.com/LoShell/DevOps-Course-Assignment-A08` |
 | B08 仓库 | `https://github.com/Delario17/DevOps-Course-Assignment` |
-| A08 最终评审 Commit | `【填写】` |
-| B08 最终评审 Commit | `【填写】` |
-| Issue/PR | `【填写】` |
 
 本表只记录 A08 实际完成的评审与文档工作，不将 B08 编写的契约文件计入
 A08 成员贡献。
