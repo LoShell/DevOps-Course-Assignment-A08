@@ -16,6 +16,18 @@
 每项基线必须保存真实 Commit SHA、环境信息、执行命令、输出、预期报告和失败
 记录。E3 期间 A08 与 B08 独立产出各自基线，后续阶段再接入对方真实数据。
 
+## 当前进展
+
+| 基线 | 状态 | 版本与证据 |
+|---|---|---|
+| 固定 MD/RD | 待构造 | `fixtures/md-rd/` |
+| C0 | 已验证 | 提交 `88ffce8aeaa9172fc724130d5796ad18ca1ab9e4`，注释标签 `e3-c0`；[`环境与构建验证`](evidence/environment/c0-ubuntu-24.04.md) |
+| C1/C2 | 待构造 | 从 `e3-c0` 固定的项目继续演进 |
+
+C0 在 Ubuntu 24.04 宿主机与容器中均完成干净构建；`./bin/demo --version`
+输出 `demo 1.0.0`，`./bin/demo` 输出 `10`。GCC 列出的项目内头文件与
+Makefile 声明一致。完整 Docker 构建原始日志仍待保存。
+
 ## 已确定约定
 
 - 项目类型：Linux 下的 C + GNU Make 小型项目。
@@ -28,8 +40,9 @@
 - 依赖声明使用 `HEADERS` 变量，便于构造并修复 MD/RD。
 - E3 工作分支：`a08/e3-baseline`。
 
-`configuration_id` 在服务器实际运行后，根据镜像、GCC 版本和架构填写，当前不
-预先假设具体 GCC 版本。
+C0 实测为 Ubuntu 24.04、GCC 13.3.0、GNU Make 4.3、x86_64。
+`configuration_id` 尚待确定；C2 将改变编译命令，需先确认如何满足 E2 契约中
+增量基线配置标识一致的要求。
 
 ## 目录
 
@@ -52,5 +65,5 @@ E3/
     └── 0001-baseline-project-design.md
 ```
 
-样本源码、Makefile、Dockerfile、运行脚本和真实输出由成员在工作分支上按
+后续样本、运行脚本和真实输出由成员在工作分支上按
 [`WORKFLOW.md`](WORKFLOW.md) 分步提交。

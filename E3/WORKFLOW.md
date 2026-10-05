@@ -5,16 +5,7 @@
 `main` 只保存共同确认的 E3 骨架。实际实验统一在
 `a08/e3-baseline` 分支完成，不再为每名成员建立额外工作分支或 worktree。
 
-首次进入工作分支：
-
-```bash
-git checkout main
-git pull --rebase origin main
-git checkout -b a08/e3-baseline
-git push -u origin a08/e3-baseline
-```
-
-若远端工作分支已经由组长建立，其他成员使用：
+远端工作分支已经由组长建立，其他成员使用：
 
 ```bash
 git fetch origin
@@ -37,8 +28,7 @@ git pull --rebase origin a08/e3-baseline
 | 范从钰 | 在 C0 后构造 C1 新增头文件场景；记录预期与证据 | C1 源码提交、`oracle/incremental.expected.json` 的 C1 部分、对应证据 |
 | 叶原原 | 在 C1 后构造 C2 编译命令变化；对比增量与干净构建 | C2 Makefile 提交、C2 证据、`BACKLOG.md`、`AI_USAGE.md`、`CONTRIBUTIONS.md` |
 
-分工中的“证据”包括本人执行的命令、原始输出、结果解释和关联 Commit SHA，
-不把成员工作缩减为只写文档。
+分工中的“证据”包括本人执行的命令、原始输出、结果解释和关联 Commit SHA。
 
 ## 三、提交顺序
 

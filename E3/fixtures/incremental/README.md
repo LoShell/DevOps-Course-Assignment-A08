@@ -1,7 +1,8 @@
 # C0/C1/C2 增量样本
 
-本目录是 C0/C1/C2 共用的 C + GNU Make 项目。当前源码为依赖声明正确的 C0；
-后续状态在同一目录逐次修改，并由真实 Commit SHA 和注释标签固定。
+本目录是 C0/C1/C2 共用的 C + GNU Make 项目。依赖声明正确的 C0 已由
+`e3-c0` 标签固定在提交 `88ffce8aeaa9172fc724130d5796ad18ca1ab9e4`；
+后续状态在同一目录逐次修改，并分别由真实 Commit SHA 和标签固定。
 
 从本目录构建和验证：
 
@@ -14,6 +15,8 @@ make clean && make -j2
 C0 的版本输出为 `demo 1.0.0`，行为输出为 `10`。`build/main.o` 实际读取的
 项目内头文件为 `include/common.h` 和 `include/config.h`，两者都通过
 Makefile 中的 `HEADERS` 声明。C0 不应出现项目内的 MD 或 RD。
+C0 的 Ubuntu 24.04 宿主机与容器验证结果见
+[`../../evidence/environment/c0-ubuntu-24.04.md`](../../evidence/environment/c0-ubuntu-24.04.md)。
 
 从仓库根目录构建容器：
 

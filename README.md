@@ -12,6 +12,11 @@ E2“需求与接口契约”已经完成并合并到 `main`。
 预期结果、执行命令、输出和失败记录。本阶段准备测试基线，不实现
 BuildChecker 或 EChecker。
 
+目前 C0 初始项目已在 Ubuntu 24.04 宿主机和容器中完成构建与行为验证，
+并由 `e3-c0` 标签固定。验证依据见
+[`E3/evidence/environment/c0-ubuntu-24.04.md`](E3/evidence/environment/c0-ubuntu-24.04.md)；
+固定 MD/RD 与 C1/C2 仍在准备中。
+
 ## 配对信息
 
 | 项目 | 内容 |
