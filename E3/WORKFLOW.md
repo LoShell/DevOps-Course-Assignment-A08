@@ -32,10 +32,10 @@ git pull --rebase origin a08/e3-baseline
 
 | 成员 | 主要任务 | 主要责任目录或文件 |
 |---|---|---|
-| 1 | 建立可运行基础项目和 C0；整合环境证据与最终检查 | `fixtures/incremental/`、`evidence/environment/`、公共汇总 |
-| 2 | 构造固定 MD/RD 样本；编写人工 oracle 与复现证据 | `fixtures/md-rd/`、`oracle/md-rd.expected.json`、对应证据 |
-| 3 | 在 C0 后构造 C1 新增头文件场景；记录预期与证据 | C1 源码提交、`oracle/incremental.expected.json` 的 C1 部分、对应证据 |
-| 4 | 在 C1 后构造 C2 编译命令变化；对比增量与干净构建 | C2 Makefile 提交、C2 证据、`BACKLOG.md`、`AI_USAGE.md`、`CONTRIBUTIONS.md` |
+| 刘馨雅 | 建立可运行基础项目和 C0；整合环境证据与最终检查 | `fixtures/incremental/`、`evidence/environment/`、公共汇总 |
+| 邱莉扉 | 构造固定 MD/RD 样本；编写人工 oracle 与复现证据 | `fixtures/md-rd/`、`oracle/md-rd.expected.json`、对应证据 |
+| 范从钰 | 在 C0 后构造 C1 新增头文件场景；记录预期与证据 | C1 源码提交、`oracle/incremental.expected.json` 的 C1 部分、对应证据 |
+| 叶原原 | 在 C1 后构造 C2 编译命令变化；对比增量与干净构建 | C2 Makefile 提交、C2 证据、`BACKLOG.md`、`AI_USAGE.md`、`CONTRIBUTIONS.md` |
 
 分工中的“证据”包括本人执行的命令、原始输出、结果解释和关联 Commit SHA，
 不把成员工作缩减为只写文档。
