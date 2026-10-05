@@ -5,11 +5,12 @@ BuildChecker 和 EChecker。
 
 ## 当前阶段
 
-当前任务为 E2“需求与接口契约”。B08 提供接口契约及请求、结果样例，
-A08 负责理解、评审和确认，并保留 Backlog、设计记录、个人贡献和版本证据。
+E2“需求与接口契约”已经完成并合并到 `main`。
 
-E2 不实现 BuildChecker、EChecker，也不生成真实 MD/RD 检测结果。
-真实项目、C0/C1/C2 和检测实现属于 E3。
+当前任务为 E3“并行测试基线”。A08 负责准备可复现的 GNU Make 小型项目、
+固定 MD/RD 样本以及 C0/C1/C2 增量构建样本，并保存真实 Commit SHA、
+预期结果、执行命令、输出和失败记录。本阶段准备测试基线，不实现
+BuildChecker 或 EChecker。
 
 ## 配对信息
 
@@ -18,25 +19,12 @@ E2 不实现 BuildChecker、EChecker，也不生成真实 MD/RD 检测结果。
 | 配对编号 | `A08-B08` |
 | A08 仓库 | `https://github.com/LoShell/DevOps-Course-Assignment-A08` |
 | B08 仓库 | `https://github.com/Delario17/DevOps-Course-Assignment` |
-| A08 工作分支 | `a08/e2-review` |
+| A08 E3 工作分支 | `a08/e3-baseline` |
 
 ## 目录
 
-```text
-E2/
-├── README.md
-├── WORKFLOW.md
-├── CONTRACT_REFERENCE.md
-├── A08_REVIEW.md
-├── BACKLOG.md
-├── CONTRIBUTIONS.md
-├── AI_USAGE.md
-├── review/
-│   ├── coordination.md
-│   ├── full-check-review.md
-│   └── incremental-check-review.md
-└── adr/
-    └── 0001-contract-review.md
-```
+- `E2/`：已完成的需求与接口契约评审材料。
+- `E3/`：当前并行测试基线、实验样本和复现证据。
 
-E2 的具体分工和操作流程见 [`E2/WORKFLOW.md`](E2/WORKFLOW.md)。
+E3 的范围、分工和操作流程见 [`E3/README.md`](E3/README.md) 和
+[`E3/WORKFLOW.md`](E3/WORKFLOW.md)。
