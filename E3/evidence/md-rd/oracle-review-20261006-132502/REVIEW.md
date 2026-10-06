@@ -24,5 +24,5 @@
 历史 observations.json 中的 pending review 描述和 source_sha256 是执行时快照，保持原样。
 当前 oracle 因增加人工确认元数据，其文件哈希与运行时草稿不同；不改写旧哈希，不冒充重新运行结果。
 
-人工确认已完成。Git 提交 SHA 和团队 configuration_id 仍待补齐，未把这些事项标为完成。
+人工确认已完成。样例提交 SHA：`8a9cfc46d854e697fd397c1f6c579014e219144b`；团队 configuration_id 仍待补齐。
 

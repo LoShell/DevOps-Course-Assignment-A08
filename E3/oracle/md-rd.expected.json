@@ -10,9 +10,9 @@
     "record": "E3/evidence/md-rd/oracle-review-20261006-132502/REVIEW.md"
   },
   "repository": "https://github.com/LoShell/DevOps-Course-Assignment-A08.git",
-  "sample_commit": null,
+  "sample_commit": "8a9cfc46d854e697fd397c1f6c579014e219144b",
   "base_commit": "60318cf03e7f988058160ccf422147cf2d424e04",
-  "source_state": "local uncommitted implementation; see evidence source_sha256",
+  "source_state": "Sample commit recorded after testing; original run snapshots and source_sha256 retained for traceability",
   "configuration_id": null,
   "configuration_note": "Team configuration identifier pending; local actual environment recorded per run.",
   "working_directory": "E3/fixtures/md-rd",

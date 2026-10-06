@@ -48,5 +48,5 @@ WSL 在默认沙箱下枚举发行版报 E_ACCESSDENIED，经执行权限审核�
 - 已完成：成员 2 根据真实复核输出确认 oracle 的两条判断和运行证据。
 - 已补齐 Ubuntu 24.04 容器验证及镜像 ID，见上方最新记录。
 - 与组长确认团队 configuration_id。
-- 记录样例的真实 SHA，补齐 oracle 和个人贡献记录。
+- 已填写样例提交 SHA：`8a9cfc46d854e697fd397c1f6c579014e219144b`，oracle 和个人贡献记录已同步。
 - 汇总负责人同步 BACKLOG、CONTRIBUTIONS 与公共进度。

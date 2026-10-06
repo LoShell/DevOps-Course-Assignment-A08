@@ -30,6 +30,7 @@
 - Ubuntu 基础镜像摘要（构建日志）：sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55。
 - 容器工作目录：/workspace/E3/fixtures/md-rd。
 - 基础仓库提交：60318cf03e7f988058160ccf422147cf2d424e04。
+- 测试后记录的样例提交 SHA：`8a9cfc46d854e697fd397c1f6c579014e219144b`；运行时原始记录保持不变。
 - run/observations.json 的 source_sha256 标识实际测试内容。
 - 本次局部配置 ID：local-md-rd-fe579904174d88c9，不替代尚未统一的团队 configuration_id。
 

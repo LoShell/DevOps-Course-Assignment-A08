@@ -55,8 +55,8 @@ Dockerfile 使用 Ubuntu 24.04。以上容器路径与本样例一致；容器�
 ## 标准答案与提交边界
 
 `../../oracle/md-rd.expected.json` 是 AI 辅助起草、成员 2 已于 2026-10-06 审阅确认通过的 oracle，
-不是 BuildChecker 输出。sample_commit 和团队 configuration_id 暂留 null，
-sample_commit 填写样例的实际提交 SHA，configuration_id 按团队统一配置约定补齐。
+不是 BuildChecker 输出。样例提交 SHA 为 `8a9cfc46d854e697fd397c1f6c579014e219144b`。
+团队 configuration_id 暂留 null，按团队统一配置约定补齐。
 测试阶段 CONFIG_VALUE=5 的变更仅发生在临时副本，交付样例始终为 4。
 原始日志用 .txt 保存，避免仓库 *.log 忽略规则漏交证据。
 
