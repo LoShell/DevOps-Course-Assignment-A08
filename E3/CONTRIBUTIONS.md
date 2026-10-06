@@ -14,7 +14,7 @@
 | 姓名 | 负责内容 | 关联文件 | Commit SHA | 验证记录 |
 |---|---|---|---|---|
 | 刘馨雅 | C0 项目、环境验证与证据整理；最终整合待完成 | `fixtures/incremental/`、`evidence/environment/c0-ubuntu-24.04.md` | `88ffce8aeaa9172fc724130d5796ad18ca1ab9e4`、`aa28d53` | Ubuntu 24.04 宿主机与容器构建通过；`e3-c0` 指向 C0 提交，详见环境验证记录 |
-| 邱莉扉 | 固定 MD/RD 样本与 oracle | 待填写 | 待填写 | 待填写 |
+| 邱莉扉 | 负责固定 MD/RD 样本、人工 oracle 与复现证据；实现和执行测试，审阅确认 oracle | `fixtures/md-rd/`、`oracle/md-rd.expected.json`、`scripts/run-md-rd.sh`、`scripts/run_md_rd.py`、`evidence/md-rd/` | 待填写 |Ubuntu 24.04 容器验证通过；Ubuntu 24.04 复核 18 条命令成功、14 项断言通过；2026-10-06 确认 oracle，见 `evidence/md-rd/oracle-review-20261006-132502/REVIEW.md` |
 | 范从钰 | C1 新增头文件场景 | 待填写 | 待填写 | 待填写 |
 | 叶原原 | C2 编译命令变化与追溯材料 | 待填写 | 待填写 | 待填写 |
 

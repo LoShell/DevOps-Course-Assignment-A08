@@ -1,0 +1,3 @@
+PASS
+EVIDENCE_DIR=/evidence/run
+exit_code=0

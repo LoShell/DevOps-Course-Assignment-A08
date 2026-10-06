@@ -1,0 +1,23 @@
+{
+  "executor": "Codex at user request; not personal manual review",
+  "image_id": "sha256:93a41bef5c15dfbcead963a13a5bae5ca37682504e98a020e7b25c08b349fef6",
+  "argv": [
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--mount",
+    "type=bind,source=E:\\大三上\\DevOps\\labs\\lab3\\review-a08\\E3\\evidence\\md-rd\\oracle-review-20261006-132502,target=/evidence",
+    "sha256:93a41bef5c15dfbcead963a13a5bae5ca37682504e98a020e7b25c08b349fef6",
+    "bash",
+    "/workspace/E3/scripts/run-md-rd.sh",
+    "--output",
+    "/evidence/run",
+    "--base-commit",
+    "60318cf03e7f988058160ccf422147cf2d424e04",
+    "--image-id",
+    "sha256:93a41bef5c15dfbcead963a13a5bae5ca37682504e98a020e7b25c08b349fef6"
+  ],
+  "exit_code": 0,
+  "output": "PASS\nEVIDENCE_DIR=/evidence/run"
+}

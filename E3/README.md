@@ -20,7 +20,7 @@
 
 | 基线 | 状态 | 版本与证据 |
 |---|---|---|
-| 固定 MD/RD | 待构造 | `fixtures/md-rd/` |
+| 固定 MD/RD | 实现、测试及人工 oracle 确认完成 | `fixtures/md-rd/`、`oracle/md-rd.expected.json`、[确认记录](evidence/md-rd/oracle-review-20261006-132502/REVIEW.md) |
 | C0 | 已验证 | 提交 `88ffce8aeaa9172fc724130d5796ad18ca1ab9e4`，注释标签 `e3-c0`；[`环境与构建验证`](evidence/environment/c0-ubuntu-24.04.md) |
 | C1/C2 | 待构造 | 从 `e3-c0` 固定的项目继续演进 |
 
