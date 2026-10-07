@@ -1,0 +1,37 @@
+{
+  "provenance": "HUMAN_ORACLE_AI_ASSISTED",
+  "review_status": "pending_member_3_confirmation",
+  "repository": "https://github.com/LoShell/DevOps-Course-Assignment-A08.git",
+  "scope": "C1 incremental fixture, target build/main.o, project headers only; system headers excluded",
+  "c1": {
+    "base_commit": "88ffce8aeaa9172fc724130d5796ad18ca1ab9e4",
+    "base_tag": "e3-c0",
+    "sample_commit": "4b70cabad1be8f6e98ee90ed9c5803b7aa793253",
+    "sample_tag": "e3-c1",
+    "working_directory": "E3/fixtures/incremental",
+    "configuration_id": "wsl-ubuntu-20.04.6-gcc-9.4.0-make-4.2.1-x86_64-default-mode",
+    "build_command": "make clean && make -j2",
+    "version_command": "./bin/demo --version",
+    "behavior_command": "./bin/demo",
+    "expected_behavior": {
+      "clean_build": 12,
+      "after_feature_2_to_3_incremental": 12,
+      "after_feature_2_to_3_clean": 13
+    },
+    "findings": [
+      {
+        "type": "MISSING",
+        "target": "build/main.o",
+        "dependency": "include/feature.h",
+        "reason": "src/main.c includes feature.h and uses FEATURE_VALUE, while the unchanged Makefile HEADERS declaration contains only include/common.h and include/config.h. gcc -MM lists include/feature.h as a project dependency."
+      }
+    ],
+    "expected_delta_from_c0": {
+      "added": 1,
+      "resolved": 0,
+      "unchanged": 0
+    },
+    "evidence": "E3/evidence/c1/20261007T143349+0800/README.md",
+    "review_note": "The expected finding and behavior were prepared by an authorized workspace agent. Member 3 must review and confirm this manual oracle before it is marked approved."
+  }
+}
