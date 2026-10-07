@@ -3,6 +3,7 @@
 
 #include "common.h"
 #include "config.h"
+#include "feature.h"
 
 #ifndef MODE
 #define MODE 0
@@ -19,6 +20,6 @@ int main(int argc, char *argv[])
         return 2;
     }
 
-    printf("%d\n", COMMON_VALUE + CONFIG_VALUE + MODE);
+    printf("%d\n", COMMON_VALUE + CONFIG_VALUE + FEATURE_VALUE + MODE);
     return 0;
 }
