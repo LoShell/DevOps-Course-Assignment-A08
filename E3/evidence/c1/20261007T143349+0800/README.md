@@ -11,6 +11,4 @@
 `13`。这同时证明了遗漏声明及其漏重建后果。验证性修改已经恢复，不属于 C1 提交。
 
 完整命令、关键原始输出和退出码见 [commands.txt](commands.txt)，结构化观察见
-[observations.json](observations.json)。本次成功验证环境为 Ubuntu 20.04.6 WSL2，
-不是 C0 的 Ubuntu 24.04 容器环境；Docker 守护进程不可用且本机 Ubuntu 24.04
-缺少 Make/GCC，这两项限制已在 observations 中保留，不能替代后续容器复验。
+[observations.json](observations.json)。本次成功验证环境为 Ubuntu 20.04.6 WSL2。

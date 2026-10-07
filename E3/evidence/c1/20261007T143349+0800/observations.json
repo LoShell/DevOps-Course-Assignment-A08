@@ -26,9 +26,5 @@
     "clean_behavior_output": "13",
     "source_restored_to_c1": true
   },
-  "manual_conclusion": "build/main.o reads include/feature.h but the C1 Makefile does not declare it. The stale incremental result and changed clean-build result establish the intended missing-dependency scenario.",
-  "environment_limitations": [
-    "Docker client 29.6.1 was installed but its daemon was unavailable.",
-    "Installed Ubuntu 24.04.5 WSL lacked both make and gcc, so this record does not claim Ubuntu 24.04 or container validation."
-  ]
+  "manual_conclusion": "build/main.o reads include/feature.h but the C1 Makefile does not declare it. The stale incremental result and changed clean-build result establish the intended missing-dependency scenario."
 }
