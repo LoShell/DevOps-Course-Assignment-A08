@@ -273,6 +273,11 @@ def main():
         passed = sum(item["passed"] for item in record["assertions"])
         configs = record.get("configurations", {})
         stages = record["stages"]
+        evidence_links = "、".join(
+            f"[{name}]({name})" for name in
+            ["commands.txt", "observations.json", "build.txt", "docker-version.txt", "image-inspect.json"]
+            if (output / name).exists()
+        )
         readme = f"""# C2 编译命令变化证据
 
 - 执行时间：{record['recorded_at']}。
@@ -290,23 +295,24 @@ def main():
 | 仅替换 C2 Makefile，普通增量构建 | `{stages.get('c2_incremental', {}).get('behavior_output', '未执行')}` |
 | 同一 C2 源码，干净构建 | `{stages.get('c2_clean', {}).get('behavior_output', '未执行')}` |
 
-实验先从 Git 导出固定版本，检查 C2 独立提交仅修改 Makefile，并逐字节验证
+复现流程设计为：先从 Git 导出固定版本，检查 C2 独立提交仅修改 Makefile，并逐字节验证
 `CPPFLAGS := -Iinclude` 只增加 `-DMODE=7`。在同一容器中先构建 C1，随后
 只复制 C2 Makefile，不替换或触碰源码、头文件和已有产物，再执行 `make -j2`。
-随后在同一工作目录执行 `make clean` 和 `make -j2`。
+随后在同一工作目录执行 `make clean` 和 `make -j2`。实际执行到的阶段以
+上方实测表格、status 和命令记录为准；失败时不会把未执行阶段当作成功结果。
 
-完整命令、原始合并输出和退出码见 [commands.txt](commands.txt)，完整 Docker
-构建记录见 [build.txt](build.txt)，镜像元数据见 [image-inspect.json](image-inspect.json)。
-工具版本、各阶段源码及产物哈希、纳秒精度修改时间和逐项断言见
-[observations.json](observations.json)。复现脚本使用宿主机 Python，不增加容器内依赖。
+本次实际生成的证据：{evidence_links}。
+已执行命令的原始合并输出和退出码见 commands.txt。已采集的工具版本、阶段快照
+和逐项断言见 observations.json；进入相应阶段后才会生成 Docker 构建日志、
+镜像元数据及源码/产物哈希和修改时间。复现脚本使用宿主机 Python，不增加容器内依赖。
 
 ## 配置编号与契约限制
 
 - 本次 C1 配置：`{configs.get('c1', {}).get('configuration_id', '未生成')}`。
 - 本次 C2 配置：`{configs.get('c2', {}).get('configuration_id', '未生成')}`。
 - 编号依据为实测 Ubuntu、GCC、Make、架构、镜像 ID 及编译选项；规范化 JSON
-  和哈希算法保存在 observations.json 的 configurations/configuration_policy。
-- 本次 C1 是在当前容器中重新验证，不覆盖成员 3 的 WSL 历史记录。
+  和哈希算法在成功采集环境后保存在 observations.json 的 configurations/configuration_policy。
+- C1 的重新验证仅使用本次容器，不覆盖成员 3 的 WSL 历史记录。
 - 因编译选项不同，两个配置编号不同。本记录用于 E3 行为对比，不能直接声称
   满足 E2 同配置增量请求；后续由组长统一对接策略。
 
@@ -314,7 +320,8 @@ def main():
 
 {('C2 增量构建保留 C1 产物，而干净构建应用 MODE=7 后输出 19，证明编译命令变化未触发普通 Make 重建。feature.h 仍被 GCC 列为读取依赖，Make 仍未声明它，因此 C1 的既有 MD 保持不变；命令变化不新增头文件 MD。本记录不是 BuildChecker/EChecker 自动检测报告。' if record['status'] == 'PASS' else '本次未通过，不作为成功验证证据。失败原因：' + record.get('error', record.get('cleanup_error', record.get('integrity_error', '见逐项断言'))))}
 
-容器已在脚本收尾阶段尝试删除；镜像保留供复核。重复实验必须使用新的证据目录。
+脚本仅在已创建临时实验容器时执行删除，结果以收尾命令和断言为准；已生成的
+镜像保留供复核。重复实验必须使用新的证据目录。
 """
         (output / "README.md").write_text(readme, encoding="utf-8")
     print(f"{record['status']}\nEVIDENCE_DIR={output}\nASSERTIONS={passed}/{len(record['assertions'])}")
