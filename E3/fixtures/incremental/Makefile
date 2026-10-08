@@ -1,5 +1,5 @@
 CC := gcc
-CPPFLAGS := -Iinclude
+CPPFLAGS := -Iinclude -DMODE=7
 CFLAGS := -Wall -Wextra -O2
 HEADERS := include/common.h include/config.h
 
