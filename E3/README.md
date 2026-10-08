@@ -22,11 +22,17 @@
 |---|---|---|
 | 固定 MD/RD | 实现、测试及人工 oracle 确认完成 | `fixtures/md-rd/`、`oracle/md-rd.expected.json`、[确认记录](evidence/md-rd/oracle-review-20261006-132502/REVIEW.md) |
 | C0 | 已验证 | 提交 `88ffce8aeaa9172fc724130d5796ad18ca1ab9e4`，注释标签 `e3-c0`；[`环境与构建验证`](evidence/environment/c0-ubuntu-24.04.md) |
-| C1/C2 | 待构造 | 从 `e3-c0` 固定的项目继续演进 |
+| C1 | 实现与实验完成，人工 oracle 待成员 3 确认 | 提交 `4b70cabad1be8f6e98ee90ed9c5803b7aa793253`、`e3-c1`；[历史证据](evidence/c1/20261007T143349+0800/README.md) |
+| C2 | 实现与容器实验完成，人工 oracle 待成员 4 确认 | 提交 `56deea9199679907893fa53add1d867ff62028e1`、本地注释标签 `e3-c2`；[最终脚本运行证据](evidence/c2/20261008T201035798727+0800/README.md)，未推送 |
 
 C0 在 Ubuntu 24.04 宿主机与容器中均完成干净构建；`./bin/demo --version`
 输出 `demo 1.0.0`，`./bin/demo` 输出 `10`。GCC 列出的项目内头文件与
 Makefile 声明一致。完整 Docker 构建原始日志仍待保存。
+
+C2 在 Ubuntu 24.04.5 容器中验证通过：先构建 C1 输出 `12`，仅替换 C2
+Makefile 后增量构建仍为 `12`，相同 C2 源码干净重建后为 `19`。增量阶段对象和
+可执行文件的哈希及时间戳均不变；37 项实验断言与 3 项脚本异常检查通过。
+命令由 Codex 代成员 4 执行，人工 oracle 审阅状态单独记录。
 
 ## 已确定约定
 
@@ -41,8 +47,20 @@ Makefile 声明一致。完整 Docker 构建原始日志仍待保存。
 - E3 工作分支：`a08/e3-baseline`。
 
 C0 实测为 Ubuntu 24.04、GCC 13.3.0、GNU Make 4.3、x86_64。
-`configuration_id` 尚待确定；C2 将改变编译命令，需先确认如何满足 E2 契约中
-增量基线配置标识一致的要求。
+C2 实测工具链为 Ubuntu 24.04.5、GCC 13.3.0、GNU Make 4.3、x86_64。
+本次同一容器中的 C1/C2 配置编号分别为 `e3-incremental-2d73359c5ff8dc5d`
+和 `e3-incremental-589dbd0022ee0df7`，计算依据和算法见原始证据。
+编译选项变化使配置编号不同，本次 E3 对比不能直接作为 E2 同配置增量请求；
+组长仍需统一接口对接策略、C0/固定 MD/RD 的团队配置及最终汇总。
+成员 3 的历史 WSL 配置记录保持原样。
+
+从仓库根目录复现 C2（宿主机 Python 3.12+、Git、运行中的 Docker）：
+
+```sh
+python E3/scripts/run_incremental.py --operator "填写实际执行人"
+```
+
+脚本导出 `e3-c1`、`e3-c2` 的固定版本，每次生成新的证据目录，拒绝覆盖旧记录。
 
 ## 目录
 

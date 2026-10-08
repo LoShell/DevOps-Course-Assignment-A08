@@ -1,0 +1,2192 @@
+# C1 -> C2 real command transcript
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "status", "--porcelain", "--untracked-files=no"]
+$ git status --porcelain --untracked-files=no
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "rev-parse", "--verify", "--end-of-options", "e3-c1^{commit}"]
+$ git rev-parse --verify --end-of-options 'e3-c1^{commit}'
+4b70cabad1be8f6e98ee90ed9c5803b7aa793253
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "rev-parse", "--verify", "--end-of-options", "e3-c2^{commit}"]
+$ git rev-parse --verify --end-of-options 'e3-c2^{commit}'
+56deea9199679907893fa53add1d867ff62028e1
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "merge-base", "--is-ancestor", "4b70cabad1be8f6e98ee90ed9c5803b7aa793253", "56deea9199679907893fa53add1d867ff62028e1"]
+$ git merge-base --is-ancestor 4b70cabad1be8f6e98ee90ed9c5803b7aa793253 56deea9199679907893fa53add1d867ff62028e1
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "diff-tree", "--no-commit-id", "--name-only", "-r", "56deea9199679907893fa53add1d867ff62028e1"]
+$ git diff-tree --no-commit-id --name-only -r 56deea9199679907893fa53add1d867ff62028e1
+E3/fixtures/incremental/Makefile
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "-c", "core.autocrlf=false", "-c", "core.eol=lf", "archive", "--format=tar", "--output=C:\\Users\\yevhen\\AppData\\Local\\Temp\\a08-e3-c2-63b2rb09\\c1.tar", "4b70cabad1be8f6e98ee90ed9c5803b7aa793253", "E3/fixtures/incremental"]
+$ git -c core.autocrlf=false -c core.eol=lf archive --format=tar '--output=C:\Users\yevhen\AppData\Local\Temp\a08-e3-c2-63b2rb09\c1.tar' 4b70cabad1be8f6e98ee90ed9c5803b7aa793253 E3/fixtures/incremental
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "-c", "core.autocrlf=false", "-c", "core.eol=lf", "archive", "--format=tar", "--output=C:\\Users\\yevhen\\AppData\\Local\\Temp\\a08-e3-c2-63b2rb09\\c2.tar", "56deea9199679907893fa53add1d867ff62028e1", "E3/fixtures/incremental"]
+$ git -c core.autocrlf=false -c core.eol=lf archive --format=tar '--output=C:\Users\yevhen\AppData\Local\Temp\a08-e3-c2-63b2rb09\c2.tar' 56deea9199679907893fa53add1d867ff62028e1 E3/fixtures/incremental
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "version"]
+$ docker version
+Client:
+ Version:           29.7.2
+ API version:       1.55
+ Go version:        go1.26.5
+ Git commit:        a7dcaa6
+ Built:             Wed Aug  5 18:31:33 2026
+ OS/Arch:           windows/amd64
+ Context:           desktop-linux
+
+Server: Docker Desktop 4.90.0 (238679)
+ Engine:
+  Version:          29.7.2
+  API version:      1.55 (minimum version 1.40)
+  Go version:       go1.26.5
+  Git commit:       6a43e3d
+  Built:            Wed Aug  5 18:28:36 2026
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          v2.3.3
+  GitCommit:        aad11006b869517fcd3009450b6f82da282e1a9b
+ runc:
+  Version:          1.4.3
+  GitCommit:        v1.4.3-0-gbb14dabe
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "build", "--progress=plain", "--file", "C:\\Users\\yevhen\\AppData\\Local\\Temp\\a08-e3-c2-63b2rb09\\c2\\E3\\fixtures\\incremental\\Dockerfile", "--tag", "a08-e3-c2:local-20261008-194444391847", "C:\\Users\\yevhen\\AppData\\Local\\Temp\\a08-e3-c2-63b2rb09\\c2"]
+$ docker build --progress=plain --file 'C:\Users\yevhen\AppData\Local\Temp\a08-e3-c2-63b2rb09\c2\E3\fixtures\incremental\Dockerfile' --tag a08-e3-c2:local-20261008-194444391847 'C:\Users\yevhen\AppData\Local\Temp\a08-e3-c2-63b2rb09\c2'
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 361B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:24.04
+#2 DONE 7.5s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.1s
+
+#4 [1/5] FROM docker.io/library/ubuntu:24.04@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55
+#4 resolve docker.io/library/ubuntu:24.04@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55 0.0s done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 3.71kB 0.0s done
+#5 DONE 0.1s
+
+#4 [1/5] FROM docker.io/library/ubuntu:24.04@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 0B / 29.76MB 0.2s
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 2.10MB / 29.76MB 3.6s
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 4.19MB / 29.76MB 7.7s
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 6.29MB / 29.76MB 10.0s
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 8.39MB / 29.76MB 11.7s
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 10.49MB / 29.76MB 14.1s
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 12.58MB / 29.76MB 16.5s
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 14.68MB / 29.76MB 17.9s
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 16.78MB / 29.76MB 19.6s
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 18.87MB / 29.76MB 21.8s
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 20.97MB / 29.76MB 23.2s
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 23.07MB / 29.76MB 25.2s
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 25.17MB / 29.76MB 26.2s
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 27.26MB / 29.76MB 28.0s
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 29.36MB / 29.76MB 29.8s
+#4 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 29.76MB / 29.76MB 30.0s done
+#4 extracting sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70
+#4 extracting sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 1.7s done
+#4 DONE 31.9s
+
+#6 [2/5] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends        build-essential ca-certificates     && rm -rf /var/lib/apt/lists/*
+#6 2.927 Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+#6 4.225 Get:2 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+#6 6.436 Get:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+#6 7.190 Get:4 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1943 kB]
+#6 8.402 Get:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+#6 10.63 Get:6 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1323 kB]
+#6 12.41 Get:7 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+#6 14.61 Get:8 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+#6 14.96 Get:9 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1545 kB]
+#6 17.35 Get:10 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [50.0 kB]
+#6 17.35 Get:11 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+#6 30.95 Get:12 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+#6 35.98 Get:13 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1701 kB]
+#6 39.52 Get:14 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [2166 kB]
+#6 41.54 Get:15 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [67.4 kB]
+#6 46.42 Get:16 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2177 kB]
+#6 48.01 Get:17 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [49.0 kB]
+#6 50.26 Get:18 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [36.0 kB]
+#6 51.72 Get:19 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Packages [671 B]
+#6 51.75 Fetched 33.3 MB in 51s (648 kB/s)
+#6 51.75 Reading package lists...
+#6 53.15 Reading package lists...
+#6 54.43 Building dependency tree...
+#6 54.71 Reading state information...
+#6 54.95 The following additional packages will be installed:
+#6 54.95   binutils binutils-common binutils-x86-64-linux-gnu bzip2 cpp cpp-13
+#6 54.95   cpp-13-x86-64-linux-gnu cpp-x86-64-linux-gnu dpkg-dev g++ g++-13
+#6 54.95   g++-13-x86-64-linux-gnu g++-x86-64-linux-gnu gcc gcc-13 gcc-13-base
+#6 54.95   gcc-13-x86-64-linux-gnu gcc-x86-64-linux-gnu libasan8 libatomic1 libbinutils
+#6 54.95   libc-dev-bin libc6-dev libcc1-0 libcrypt-dev libctf-nobfd0 libctf0
+#6 54.95   libdpkg-perl libgcc-13-dev libgdbm-compat4t64 libgdbm6t64 libgomp1
+#6 54.95   libgprofng0 libhwasan0 libisl23 libitm1 libjansson4 liblsan0 libmpc3
+#6 54.95   libmpfr6 libperl5.38t64 libquadmath0 libsframe1 libssl3t64 libstdc++-13-dev
+#6 54.95   libtsan2 libubsan1 linux-libc-dev lto-disabled-list make openssl patch perl
+#6 54.95   perl-modules-5.38 rpcsvc-proto xz-utils
+#6 54.95 Suggested packages:
+#6 54.95   binutils-doc gprofng-gui bzip2-doc cpp-doc gcc-13-locales cpp-13-doc
+#6 54.95   debian-keyring g++-multilib g++-13-multilib gcc-13-doc gcc-multilib
+#6 54.95   manpages-dev autoconf automake libtool flex bison gdb gcc-doc
+#6 54.95   gcc-13-multilib gdb-x86-64-linux-gnu glibc-doc gnupg | sq | sqop
+#6 54.95   | pgpainless-cli | sequoia-chameleon-gnupg git bzr gdbm-l10n
+#6 54.95   libstdc++-13-doc make-doc ed diffutils-doc perl-doc
+#6 54.95   libterm-readline-gnu-perl | libterm-readline-perl-perl
+#6 54.95   libtap-harness-archive-perl
+#6 54.95 Recommended packages:
+#6 54.95   fakeroot gnupg | sq | sqop | pgpainless-cli | sequoia-chameleon-gnupg
+#6 54.95   libalgorithm-merge-perl manpages manpages-dev libc-devtools
+#6 54.95   libfile-fcntllock-perl liblocale-gettext-perl netbase
+#6 55.08 The following NEW packages will be installed:
+#6 55.08   binutils binutils-common binutils-x86-64-linux-gnu build-essential bzip2
+#6 55.08   ca-certificates cpp cpp-13 cpp-13-x86-64-linux-gnu cpp-x86-64-linux-gnu
+#6 55.08   dpkg-dev g++ g++-13 g++-13-x86-64-linux-gnu g++-x86-64-linux-gnu gcc gcc-13
+#6 55.08   gcc-13-base gcc-13-x86-64-linux-gnu gcc-x86-64-linux-gnu libasan8 libatomic1
+#6 55.08   libbinutils libc-dev-bin libc6-dev libcc1-0 libcrypt-dev libctf-nobfd0
+#6 55.08   libctf0 libdpkg-perl libgcc-13-dev libgdbm-compat4t64 libgdbm6t64 libgomp1
+#6 55.08   libgprofng0 libhwasan0 libisl23 libitm1 libjansson4 liblsan0 libmpc3
+#6 55.08   libmpfr6 libperl5.38t64 libquadmath0 libsframe1 libstdc++-13-dev libtsan2
+#6 55.08   libubsan1 linux-libc-dev lto-disabled-list make openssl patch perl
+#6 55.08   perl-modules-5.38 rpcsvc-proto xz-utils
+#6 55.08 The following packages will be upgraded:
+#6 55.08   libssl3t64
+#6 59.07 1 upgraded, 57 newly installed, 0 to remove and 2 not upgraded.
+#6 59.07 Need to get 82.6 MB of archives.
+#6 59.07 After this operation, 305 MB of additional disk space will be used.
+#6 59.07 Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 perl-modules-5.38 all 5.38.2-3.2ubuntu0.6 [3110 kB]
+#6 60.65 Get:2 http://archive.ubuntu.com/ubuntu noble/main amd64 libgdbm6t64 amd64 1.23-5.1build1 [34.4 kB]
+#6 61.65 Get:3 http://archive.ubuntu.com/ubuntu noble/main amd64 libgdbm-compat4t64 amd64 1.23-5.1build1 [6710 B]
+#6 69.53 Get:4 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libperl5.38t64 amd64 5.38.2-3.2ubuntu0.6 [4864 kB]
+#6 72.41 Get:5 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 perl amd64 5.38.2-3.2ubuntu0.6 [231 kB]
+#6 76.28 Get:6 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libssl3t64 amd64 3.0.13-0ubuntu3.16 [1945 kB]
+#6 79.06 Get:7 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 openssl amd64 3.0.13-0ubuntu3.16 [1004 kB]
+#6 80.79 Get:8 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 ca-certificates all 20260601~24.04.1 [139 kB]
+#6 81.99 Get:9 http://archive.ubuntu.com/ubuntu noble/main amd64 libjansson4 amd64 2.14-2build2 [32.8 kB]
+#6 85.24 Get:10 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 xz-utils amd64 5.6.1+really5.4.5-1ubuntu0.3 [267 kB]
+#6 87.25 Get:11 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 binutils-common amd64 2.42-4ubuntu2.10 [240 kB]
+#6 88.35 Get:12 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsframe1 amd64 2.42-4ubuntu2.10 [15.7 kB]
+#6 90.67 Get:13 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libbinutils amd64 2.42-4ubuntu2.10 [577 kB]
+#6 92.21 Get:14 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libctf-nobfd0 amd64 2.42-4ubuntu2.10 [98.0 kB]
+#6 93.85 Get:15 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libctf0 amd64 2.42-4ubuntu2.10 [94.5 kB]
+#6 96.61 Get:16 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libgprofng0 amd64 2.42-4ubuntu2.10 [849 kB]
+#6 101.8 Get:17 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 binutils-x86-64-linux-gnu amd64 2.42-4ubuntu2.10 [2463 kB]
+#6 103.0 Get:18 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 binutils amd64 2.42-4ubuntu2.10 [18.2 kB]
+#6 104.1 Get:19 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libc-dev-bin amd64 2.39-0ubuntu8.9 [20.4 kB]
+#6 108.3 Get:20 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 linux-libc-dev amd64 6.8.0-146.146 [1540 kB]
+#6 110.0 Get:21 http://archive.ubuntu.com/ubuntu noble/main amd64 libcrypt-dev amd64 1:4.4.36-4build1 [112 kB]
+#6 111.4 Get:22 http://archive.ubuntu.com/ubuntu noble/main amd64 rpcsvc-proto amd64 1.4.2-0ubuntu7 [67.4 kB]
+#6 115.1 Get:23 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libc6-dev amd64 2.39-0ubuntu8.9 [2126 kB]
+#6 116.6 Get:24 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 gcc-13-base amd64 13.3.0-6ubuntu2~24.04.1 [51.6 kB]
+#6 119.5 Get:25 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libisl23 amd64 0.26-3build1.1 [680 kB]
+#6 121.9 Get:26 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libmpfr6 amd64 4.2.1-1build1.1 [353 kB]
+#6 123.4 Get:27 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libmpc3 amd64 1.3.1-1build1.1 [54.6 kB]
+#6 133.2 Get:28 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 cpp-13-x86-64-linux-gnu amd64 13.3.0-6ubuntu2~24.04.1 [10.7 MB]
+#6 134.5 Get:29 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 cpp-13 amd64 13.3.0-6ubuntu2~24.04.1 [1042 B]
+#6 135.4 Get:30 http://archive.ubuntu.com/ubuntu noble/main amd64 cpp-x86-64-linux-gnu amd64 4:13.2.0-7ubuntu1 [5326 B]
+#6 137.6 Get:31 http://archive.ubuntu.com/ubuntu noble/main amd64 cpp amd64 4:13.2.0-7ubuntu1 [22.4 kB]
+#6 139.0 Get:32 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcc1-0 amd64 14.2.0-4ubuntu2~24.04.1 [48.0 kB]
+#6 140.7 Get:33 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libgomp1 amd64 14.2.0-4ubuntu2~24.04.1 [148 kB]
+#6 141.7 Get:34 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libitm1 amd64 14.2.0-4ubuntu2~24.04.1 [29.7 kB]
+#6 142.5 Get:35 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libatomic1 amd64 14.2.0-4ubuntu2~24.04.1 [10.5 kB]
+#6 147.6 Get:36 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libasan8 amd64 14.2.0-4ubuntu2~24.04.1 [3027 kB]
+#6 150.5 Get:37 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 liblsan0 amd64 14.2.0-4ubuntu2~24.04.1 [1322 kB]
+#6 155.2 Get:38 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libtsan2 amd64 14.2.0-4ubuntu2~24.04.1 [2772 kB]
+#6 158.5 Get:39 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libubsan1 amd64 14.2.0-4ubuntu2~24.04.1 [1184 kB]
+#6 163.2 Get:40 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libhwasan0 amd64 14.2.0-4ubuntu2~24.04.1 [1641 kB]
+#6 165.4 Get:41 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libquadmath0 amd64 14.2.0-4ubuntu2~24.04.1 [153 kB]
+#6 173.1 Get:42 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libgcc-13-dev amd64 13.3.0-6ubuntu2~24.04.1 [2681 kB]
+#6 191.7 Get:43 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 gcc-13-x86-64-linux-gnu amd64 13.3.0-6ubuntu2~24.04.1 [21.1 MB]
+#6 195.2 Get:44 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 gcc-13 amd64 13.3.0-6ubuntu2~24.04.1 [494 kB]
+#6 196.1 Get:45 http://archive.ubuntu.com/ubuntu noble/main amd64 gcc-x86-64-linux-gnu amd64 4:13.2.0-7ubuntu1 [1212 B]
+#6 196.9 Get:46 http://archive.ubuntu.com/ubuntu noble/main amd64 gcc amd64 4:13.2.0-7ubuntu1 [5018 B]
+#6 201.0 Get:47 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libstdc++-13-dev amd64 13.3.0-6ubuntu2~24.04.1 [2420 kB]
+#6 207.6 Get:48 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 g++-13-x86-64-linux-gnu amd64 13.3.0-6ubuntu2~24.04.1 [12.2 MB]
+#6 209.4 Get:49 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 g++-13 amd64 13.3.0-6ubuntu2~24.04.1 [16.0 kB]
+#6 210.1 Get:50 http://archive.ubuntu.com/ubuntu noble/main amd64 g++-x86-64-linux-gnu amd64 4:13.2.0-7ubuntu1 [964 B]
+#6 210.8 Get:51 http://archive.ubuntu.com/ubuntu noble/main amd64 g++ amd64 4:13.2.0-7ubuntu1 [1100 B]
+#6 212.6 Get:52 http://archive.ubuntu.com/ubuntu noble/main amd64 make amd64 4.3-4.1build2 [180 kB]
+#6 214.7 Get:53 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libdpkg-perl all 1.22.6ubuntu6.6 [268 kB]
+#6 216.0 Get:54 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 bzip2 amd64 1.0.8-5.1ubuntu0.1 [34.6 kB]
+#6 217.5 Get:55 http://archive.ubuntu.com/ubuntu noble/main amd64 patch amd64 2.7.6-7build3 [104 kB]
+#6 218.4 Get:56 http://archive.ubuntu.com/ubuntu noble/main amd64 lto-disabled-list all 47 [12.4 kB]
+#6 221.6 Get:57 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dpkg-dev all 1.22.6ubuntu6.6 [1074 kB]
+#6 222.4 Get:58 http://archive.ubuntu.com/ubuntu noble/main amd64 build-essential amd64 12.10ubuntu1 [4928 B]
+#6 222.7 debconf: delaying package configuration, since apt-utils is not installed
+#6 222.8 Fetched 82.6 MB in 2min 47s (494 kB/s)
+#6 222.9 Selecting previously unselected package perl-modules-5.38.
+#6 222.9 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 4381 files and directories currently installed.)
+#6 222.9 Preparing to unpack .../0-perl-modules-5.38_5.38.2-3.2ubuntu0.6_all.deb ...
+#6 222.9 Unpacking perl-modules-5.38 (5.38.2-3.2ubuntu0.6) ...
+#6 223.5 Selecting previously unselected package libgdbm6t64:amd64.
+#6 223.5 Preparing to unpack .../1-libgdbm6t64_1.23-5.1build1_amd64.deb ...
+#6 223.5 Unpacking libgdbm6t64:amd64 (1.23-5.1build1) ...
+#6 223.5 Selecting previously unselected package libgdbm-compat4t64:amd64.
+#6 223.5 Preparing to unpack .../2-libgdbm-compat4t64_1.23-5.1build1_amd64.deb ...
+#6 223.6 Unpacking libgdbm-compat4t64:amd64 (1.23-5.1build1) ...
+#6 223.6 Selecting previously unselected package libperl5.38t64:amd64.
+#6 223.6 Preparing to unpack .../3-libperl5.38t64_5.38.2-3.2ubuntu0.6_amd64.deb ...
+#6 223.6 Unpacking libperl5.38t64:amd64 (5.38.2-3.2ubuntu0.6) ...
+#6 224.1 Selecting previously unselected package perl.
+#6 224.1 Preparing to unpack .../4-perl_5.38.2-3.2ubuntu0.6_amd64.deb ...
+#6 224.1 Unpacking perl (5.38.2-3.2ubuntu0.6) ...
+#6 224.1 Preparing to unpack .../5-libssl3t64_3.0.13-0ubuntu3.16_amd64.deb ...
+#6 224.2 Unpacking libssl3t64:amd64 (3.0.13-0ubuntu3.16) over (3.0.13-0ubuntu3.15) ...
+#6 224.4 Setting up libssl3t64:amd64 (3.0.13-0ubuntu3.16) ...
+#6 224.5 Selecting previously unselected package openssl.
+#6 224.5 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 6393 files and directories currently installed.)
+#6 224.5 Preparing to unpack .../00-openssl_3.0.13-0ubuntu3.16_amd64.deb ...
+#6 224.5 Unpacking openssl (3.0.13-0ubuntu3.16) ...
+#6 224.6 Selecting previously unselected package ca-certificates.
+#6 224.6 Preparing to unpack .../01-ca-certificates_20260601~24.04.1_all.deb ...
+#6 224.6 Unpacking ca-certificates (20260601~24.04.1) ...
+#6 224.7 Selecting previously unselected package libjansson4:amd64.
+#6 224.7 Preparing to unpack .../02-libjansson4_2.14-2build2_amd64.deb ...
+#6 224.7 Unpacking libjansson4:amd64 (2.14-2build2) ...
+#6 224.8 Selecting previously unselected package xz-utils.
+#6 224.8 Preparing to unpack .../03-xz-utils_5.6.1+really5.4.5-1ubuntu0.3_amd64.deb ...
+#6 224.8 Unpacking xz-utils (5.6.1+really5.4.5-1ubuntu0.3) ...
+#6 224.8 Selecting previously unselected package binutils-common:amd64.
+#6 224.8 Preparing to unpack .../04-binutils-common_2.42-4ubuntu2.10_amd64.deb ...
+#6 224.8 Unpacking binutils-common:amd64 (2.42-4ubuntu2.10) ...
+#6 224.9 Selecting previously unselected package libsframe1:amd64.
+#6 224.9 Preparing to unpack .../05-libsframe1_2.42-4ubuntu2.10_amd64.deb ...
+#6 224.9 Unpacking libsframe1:amd64 (2.42-4ubuntu2.10) ...
+#6 224.9 Selecting previously unselected package libbinutils:amd64.
+#6 224.9 Preparing to unpack .../06-libbinutils_2.42-4ubuntu2.10_amd64.deb ...
+#6 224.9 Unpacking libbinutils:amd64 (2.42-4ubuntu2.10) ...
+#6 225.0 Selecting previously unselected package libctf-nobfd0:amd64.
+#6 225.0 Preparing to unpack .../07-libctf-nobfd0_2.42-4ubuntu2.10_amd64.deb ...
+#6 225.0 Unpacking libctf-nobfd0:amd64 (2.42-4ubuntu2.10) ...
+#6 225.1 Selecting previously unselected package libctf0:amd64.
+#6 225.1 Preparing to unpack .../08-libctf0_2.42-4ubuntu2.10_amd64.deb ...
+#6 225.1 Unpacking libctf0:amd64 (2.42-4ubuntu2.10) ...
+#6 225.1 Selecting previously unselected package libgprofng0:amd64.
+#6 225.1 Preparing to unpack .../09-libgprofng0_2.42-4ubuntu2.10_amd64.deb ...
+#6 225.1 Unpacking libgprofng0:amd64 (2.42-4ubuntu2.10) ...
+#6 225.2 Selecting previously unselected package binutils-x86-64-linux-gnu.
+#6 225.2 Preparing to unpack .../10-binutils-x86-64-linux-gnu_2.42-4ubuntu2.10_amd64.deb ...
+#6 225.2 Unpacking binutils-x86-64-linux-gnu (2.42-4ubuntu2.10) ...
+#6 225.4 Selecting previously unselected package binutils.
+#6 225.4 Preparing to unpack .../11-binutils_2.42-4ubuntu2.10_amd64.deb ...
+#6 225.4 Unpacking binutils (2.42-4ubuntu2.10) ...
+#6 225.5 Selecting previously unselected package libc-dev-bin.
+#6 225.5 Preparing to unpack .../12-libc-dev-bin_2.39-0ubuntu8.9_amd64.deb ...
+#6 225.5 Unpacking libc-dev-bin (2.39-0ubuntu8.9) ...
+#6 225.6 Selecting previously unselected package linux-libc-dev:amd64.
+#6 225.6 Preparing to unpack .../13-linux-libc-dev_6.8.0-146.146_amd64.deb ...
+#6 225.6 Unpacking linux-libc-dev:amd64 (6.8.0-146.146) ...
+#6 226.0 Selecting previously unselected package libcrypt-dev:amd64.
+#6 226.0 Preparing to unpack .../14-libcrypt-dev_1%3a4.4.36-4build1_amd64.deb ...
+#6 226.0 Unpacking libcrypt-dev:amd64 (1:4.4.36-4build1) ...
+#6 226.1 Selecting previously unselected package rpcsvc-proto.
+#6 226.1 Preparing to unpack .../15-rpcsvc-proto_1.4.2-0ubuntu7_amd64.deb ...
+#6 226.1 Unpacking rpcsvc-proto (1.4.2-0ubuntu7) ...
+#6 226.2 Selecting previously unselected package libc6-dev:amd64.
+#6 226.2 Preparing to unpack .../16-libc6-dev_2.39-0ubuntu8.9_amd64.deb ...
+#6 226.2 Unpacking libc6-dev:amd64 (2.39-0ubuntu8.9) ...
+#6 226.4 Selecting previously unselected package gcc-13-base:amd64.
+#6 226.5 Preparing to unpack .../17-gcc-13-base_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+#6 226.5 Unpacking gcc-13-base:amd64 (13.3.0-6ubuntu2~24.04.1) ...
+#6 226.5 Selecting previously unselected package libisl23:amd64.
+#6 226.5 Preparing to unpack .../18-libisl23_0.26-3build1.1_amd64.deb ...
+#6 226.5 Unpacking libisl23:amd64 (0.26-3build1.1) ...
+#6 226.6 Selecting previously unselected package libmpfr6:amd64.
+#6 226.6 Preparing to unpack .../19-libmpfr6_4.2.1-1build1.1_amd64.deb ...
+#6 226.6 Unpacking libmpfr6:amd64 (4.2.1-1build1.1) ...
+#6 226.7 Selecting previously unselected package libmpc3:amd64.
+#6 226.7 Preparing to unpack .../20-libmpc3_1.3.1-1build1.1_amd64.deb ...
+#6 226.7 Unpacking libmpc3:amd64 (1.3.1-1build1.1) ...
+#6 226.7 Selecting previously unselected package cpp-13-x86-64-linux-gnu.
+#6 226.7 Preparing to unpack .../21-cpp-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+#6 226.7 Unpacking cpp-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1) ...
+#6 227.1 Selecting previously unselected package cpp-13.
+#6 227.1 Preparing to unpack .../22-cpp-13_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+#6 227.1 Unpacking cpp-13 (13.3.0-6ubuntu2~24.04.1) ...
+#6 227.1 Selecting previously unselected package cpp-x86-64-linux-gnu.
+#6 227.1 Preparing to unpack .../23-cpp-x86-64-linux-gnu_4%3a13.2.0-7ubuntu1_amd64.deb ...
+#6 227.1 Unpacking cpp-x86-64-linux-gnu (4:13.2.0-7ubuntu1) ...
+#6 227.2 Selecting previously unselected package cpp.
+#6 227.2 Preparing to unpack .../24-cpp_4%3a13.2.0-7ubuntu1_amd64.deb ...
+#6 227.2 Unpacking cpp (4:13.2.0-7ubuntu1) ...
+#6 227.3 Selecting previously unselected package libcc1-0:amd64.
+#6 227.3 Preparing to unpack .../25-libcc1-0_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+#6 227.3 Unpacking libcc1-0:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 227.3 Selecting previously unselected package libgomp1:amd64.
+#6 227.3 Preparing to unpack .../26-libgomp1_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+#6 227.4 Unpacking libgomp1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 227.4 Selecting previously unselected package libitm1:amd64.
+#6 227.4 Preparing to unpack .../27-libitm1_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+#6 227.4 Unpacking libitm1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 227.5 Selecting previously unselected package libatomic1:amd64.
+#6 227.5 Preparing to unpack .../28-libatomic1_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+#6 227.5 Unpacking libatomic1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 227.5 Selecting previously unselected package libasan8:amd64.
+#6 227.5 Preparing to unpack .../29-libasan8_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+#6 227.5 Unpacking libasan8:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 227.6 Selecting previously unselected package liblsan0:amd64.
+#6 227.6 Preparing to unpack .../30-liblsan0_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+#6 227.6 Unpacking liblsan0:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 227.7 Selecting previously unselected package libtsan2:amd64.
+#6 227.7 Preparing to unpack .../31-libtsan2_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+#6 227.7 Unpacking libtsan2:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 227.8 Selecting previously unselected package libubsan1:amd64.
+#6 227.8 Preparing to unpack .../32-libubsan1_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+#6 227.8 Unpacking libubsan1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 227.9 Selecting previously unselected package libhwasan0:amd64.
+#6 227.9 Preparing to unpack .../33-libhwasan0_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+#6 227.9 Unpacking libhwasan0:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 228.0 Selecting previously unselected package libquadmath0:amd64.
+#6 228.0 Preparing to unpack .../34-libquadmath0_14.2.0-4ubuntu2~24.04.1_amd64.deb ...
+#6 228.0 Unpacking libquadmath0:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 228.0 Selecting previously unselected package libgcc-13-dev:amd64.
+#6 228.0 Preparing to unpack .../35-libgcc-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+#6 228.0 Unpacking libgcc-13-dev:amd64 (13.3.0-6ubuntu2~24.04.1) ...
+#6 228.2 Selecting previously unselected package gcc-13-x86-64-linux-gnu.
+#6 228.2 Preparing to unpack .../36-gcc-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+#6 228.2 Unpacking gcc-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1) ...
+#6 228.7 Selecting previously unselected package gcc-13.
+#6 228.7 Preparing to unpack .../37-gcc-13_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+#6 228.7 Unpacking gcc-13 (13.3.0-6ubuntu2~24.04.1) ...
+#6 228.7 Selecting previously unselected package gcc-x86-64-linux-gnu.
+#6 228.7 Preparing to unpack .../38-gcc-x86-64-linux-gnu_4%3a13.2.0-7ubuntu1_amd64.deb ...
+#6 228.8 Unpacking gcc-x86-64-linux-gnu (4:13.2.0-7ubuntu1) ...
+#6 228.8 Selecting previously unselected package gcc.
+#6 228.8 Preparing to unpack .../39-gcc_4%3a13.2.0-7ubuntu1_amd64.deb ...
+#6 228.8 Unpacking gcc (4:13.2.0-7ubuntu1) ...
+#6 228.8 Selecting previously unselected package libstdc++-13-dev:amd64.
+#6 228.8 Preparing to unpack .../40-libstdc++-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+#6 228.8 Unpacking libstdc++-13-dev:amd64 (13.3.0-6ubuntu2~24.04.1) ...
+#6 229.2 Selecting previously unselected package g++-13-x86-64-linux-gnu.
+#6 229.2 Preparing to unpack .../41-g++-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+#6 229.2 Unpacking g++-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1) ...
+#6 229.5 Selecting previously unselected package g++-13.
+#6 229.5 Preparing to unpack .../42-g++-13_13.3.0-6ubuntu2~24.04.1_amd64.deb ...
+#6 229.6 Unpacking g++-13 (13.3.0-6ubuntu2~24.04.1) ...
+#6 229.6 Selecting previously unselected package g++-x86-64-linux-gnu.
+#6 229.6 Preparing to unpack .../43-g++-x86-64-linux-gnu_4%3a13.2.0-7ubuntu1_amd64.deb ...
+#6 229.6 Unpacking g++-x86-64-linux-gnu (4:13.2.0-7ubuntu1) ...
+#6 229.6 Selecting previously unselected package g++.
+#6 229.6 Preparing to unpack .../44-g++_4%3a13.2.0-7ubuntu1_amd64.deb ...
+#6 229.6 Unpacking g++ (4:13.2.0-7ubuntu1) ...
+#6 229.7 Selecting previously unselected package make.
+#6 229.7 Preparing to unpack .../45-make_4.3-4.1build2_amd64.deb ...
+#6 229.7 Unpacking make (4.3-4.1build2) ...
+#6 229.7 Selecting previously unselected package libdpkg-perl.
+#6 229.7 Preparing to unpack .../46-libdpkg-perl_1.22.6ubuntu6.6_all.deb ...
+#6 229.7 Unpacking libdpkg-perl (1.22.6ubuntu6.6) ...
+#6 229.8 Selecting previously unselected package bzip2.
+#6 229.8 Preparing to unpack .../47-bzip2_1.0.8-5.1ubuntu0.1_amd64.deb ...
+#6 229.8 Unpacking bzip2 (1.0.8-5.1ubuntu0.1) ...
+#6 229.9 Selecting previously unselected package patch.
+#6 229.9 Preparing to unpack .../48-patch_2.7.6-7build3_amd64.deb ...
+#6 229.9 Unpacking patch (2.7.6-7build3) ...
+#6 229.9 Selecting previously unselected package lto-disabled-list.
+#6 229.9 Preparing to unpack .../49-lto-disabled-list_47_all.deb ...
+#6 229.9 Unpacking lto-disabled-list (47) ...
+#6 229.9 Selecting previously unselected package dpkg-dev.
+#6 229.9 Preparing to unpack .../50-dpkg-dev_1.22.6ubuntu6.6_all.deb ...
+#6 229.9 Unpacking dpkg-dev (1.22.6ubuntu6.6) ...
+#6 230.0 Selecting previously unselected package build-essential.
+#6 230.0 Preparing to unpack .../51-build-essential_12.10ubuntu1_amd64.deb ...
+#6 230.0 Unpacking build-essential (12.10ubuntu1) ...
+#6 230.1 Setting up lto-disabled-list (47) ...
+#6 230.1 Setting up libgdbm6t64:amd64 (1.23-5.1build1) ...
+#6 230.1 Setting up libgdbm-compat4t64:amd64 (1.23-5.1build1) ...
+#6 230.1 Setting up binutils-common:amd64 (2.42-4ubuntu2.10) ...
+#6 230.1 Setting up linux-libc-dev:amd64 (6.8.0-146.146) ...
+#6 230.1 Setting up libctf-nobfd0:amd64 (2.42-4ubuntu2.10) ...
+#6 230.2 Setting up libgomp1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 230.2 Setting up bzip2 (1.0.8-5.1ubuntu0.1) ...
+#6 230.2 Setting up libsframe1:amd64 (2.42-4ubuntu2.10) ...
+#6 230.2 Setting up libjansson4:amd64 (2.14-2build2) ...
+#6 230.2 Setting up rpcsvc-proto (1.4.2-0ubuntu7) ...
+#6 230.2 Setting up gcc-13-base:amd64 (13.3.0-6ubuntu2~24.04.1) ...
+#6 230.2 Setting up make (4.3-4.1build2) ...
+#6 230.2 Setting up libmpfr6:amd64 (4.2.1-1build1.1) ...
+#6 230.3 Setting up xz-utils (5.6.1+really5.4.5-1ubuntu0.3) ...
+#6 230.3 update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
+#6 230.3 update-alternatives: warning: skip creation of /usr/share/man/man1/lzma.1.gz because associated file /usr/share/man/man1/xz.1.gz (of link group lzma) doesn't exist
+#6 230.3 update-alternatives: warning: skip creation of /usr/share/man/man1/unlzma.1.gz because associated file /usr/share/man/man1/unxz.1.gz (of link group lzma) doesn't exist
+#6 230.3 update-alternatives: warning: skip creation of /usr/share/man/man1/lzcat.1.gz because associated file /usr/share/man/man1/xzcat.1.gz (of link group lzma) doesn't exist
+#6 230.3 update-alternatives: warning: skip creation of /usr/share/man/man1/lzmore.1.gz because associated file /usr/share/man/man1/xzmore.1.gz (of link group lzma) doesn't exist
+#6 230.3 update-alternatives: warning: skip creation of /usr/share/man/man1/lzless.1.gz because associated file /usr/share/man/man1/xzless.1.gz (of link group lzma) doesn't exist
+#6 230.3 update-alternatives: warning: skip creation of /usr/share/man/man1/lzdiff.1.gz because associated file /usr/share/man/man1/xzdiff.1.gz (of link group lzma) doesn't exist
+#6 230.3 update-alternatives: warning: skip creation of /usr/share/man/man1/lzcmp.1.gz because associated file /usr/share/man/man1/xzcmp.1.gz (of link group lzma) doesn't exist
+#6 230.3 update-alternatives: warning: skip creation of /usr/share/man/man1/lzgrep.1.gz because associated file /usr/share/man/man1/xzgrep.1.gz (of link group lzma) doesn't exist
+#6 230.3 update-alternatives: warning: skip creation of /usr/share/man/man1/lzegrep.1.gz because associated file /usr/share/man/man1/xzegrep.1.gz (of link group lzma) doesn't exist
+#6 230.3 update-alternatives: warning: skip creation of /usr/share/man/man1/lzfgrep.1.gz because associated file /usr/share/man/man1/xzfgrep.1.gz (of link group lzma) doesn't exist
+#6 230.3 Setting up perl-modules-5.38 (5.38.2-3.2ubuntu0.6) ...
+#6 230.3 Setting up libquadmath0:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 230.3 Setting up libmpc3:amd64 (1.3.1-1build1.1) ...
+#6 230.3 Setting up libatomic1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 230.3 Setting up patch (2.7.6-7build3) ...
+#6 230.3 Setting up libubsan1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 230.4 Setting up libhwasan0:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 230.4 Setting up libcrypt-dev:amd64 (1:4.4.36-4build1) ...
+#6 230.4 Setting up libasan8:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 230.4 Setting up libperl5.38t64:amd64 (5.38.2-3.2ubuntu0.6) ...
+#6 230.4 Setting up libtsan2:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 230.5 Setting up libbinutils:amd64 (2.42-4ubuntu2.10) ...
+#6 230.5 Setting up libisl23:amd64 (0.26-3build1.1) ...
+#6 230.5 Setting up libc-dev-bin (2.39-0ubuntu8.9) ...
+#6 230.5 Setting up openssl (3.0.13-0ubuntu3.16) ...
+#6 230.5 Setting up libcc1-0:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 230.5 Setting up liblsan0:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 230.5 Setting up libitm1:amd64 (14.2.0-4ubuntu2~24.04.1) ...
+#6 230.5 Setting up libctf0:amd64 (2.42-4ubuntu2.10) ...
+#6 230.6 Setting up cpp-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1) ...
+#6 230.6 Setting up ca-certificates (20260601~24.04.1) ...
+#6 231.3 Updating certificates in /etc/ssl/certs...
+#6 232.2 121 added, 0 removed; done.
+#6 232.2 Setting up perl (5.38.2-3.2ubuntu0.6) ...
+#6 232.2 Setting up libgprofng0:amd64 (2.42-4ubuntu2.10) ...
+#6 232.2 Setting up libdpkg-perl (1.22.6ubuntu6.6) ...
+#6 232.2 Setting up libgcc-13-dev:amd64 (13.3.0-6ubuntu2~24.04.1) ...
+#6 232.2 Setting up libc6-dev:amd64 (2.39-0ubuntu8.9) ...
+#6 232.3 Setting up libstdc++-13-dev:amd64 (13.3.0-6ubuntu2~24.04.1) ...
+#6 232.3 Setting up binutils-x86-64-linux-gnu (2.42-4ubuntu2.10) ...
+#6 232.3 Setting up cpp-x86-64-linux-gnu (4:13.2.0-7ubuntu1) ...
+#6 232.3 Setting up cpp-13 (13.3.0-6ubuntu2~24.04.1) ...
+#6 232.3 Setting up gcc-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1) ...
+#6 232.3 Setting up binutils (2.42-4ubuntu2.10) ...
+#6 232.3 Setting up dpkg-dev (1.22.6ubuntu6.6) ...
+#6 232.3 Setting up gcc-13 (13.3.0-6ubuntu2~24.04.1) ...
+#6 232.4 Setting up cpp (4:13.2.0-7ubuntu1) ...
+#6 232.4 Setting up g++-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1) ...
+#6 232.4 Setting up gcc-x86-64-linux-gnu (4:13.2.0-7ubuntu1) ...
+#6 232.4 Setting up gcc (4:13.2.0-7ubuntu1) ...
+#6 232.4 Setting up g++-x86-64-linux-gnu (4:13.2.0-7ubuntu1) ...
+#6 232.4 Setting up g++-13 (13.3.0-6ubuntu2~24.04.1) ...
+#6 232.5 Setting up g++ (4:13.2.0-7ubuntu1) ...
+#6 232.5 update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+#6 232.5 update-alternatives: warning: skip creation of /usr/share/man/man1/c++.1.gz because associated file /usr/share/man/man1/g++.1.gz (of link group c++) doesn't exist
+#6 232.5 Setting up build-essential (12.10ubuntu1) ...
+#6 232.5 Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+#6 232.5 Processing triggers for ca-certificates (20260601~24.04.1) ...
+#6 232.5 Updating certificates in /etc/ssl/certs...
+#6 233.2 0 added, 0 removed; done.
+#6 233.2 Running hooks in /etc/ca-certificates/update.d...
+#6 233.2 done.
+#6 DONE 234.5s
+
+#7 [3/5] WORKDIR /workspace/E3/fixtures/incremental
+#7 DONE 0.1s
+
+#8 [4/5] COPY . /workspace/
+#8 DONE 0.1s
+
+#9 [5/5] RUN make clean && make -j2
+#9 0.355 rm -rf build bin
+#9 0.359 mkdir -p build
+#9 0.365 gcc -Iinclude -DMODE=7 -Wall -Wextra -O2 -c src/main.c -o build/main.o
+#9 0.404 mkdir -p bin
+#9 0.407 gcc -Wall -Wextra -O2 build/main.o -o bin/demo
+#9 DONE 0.4s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 16.2s done
+#10 exporting manifest sha256:a46c6bd726ab0b28cc158b6f27b15362da9ac88bbb029d5f8f905a9dec2bcbea 0.0s done
+#10 exporting config sha256:a2f9455353b836ccb54659bb932b241f78d407219ec7c9913717d3b7c362439e 0.0s done
+#10 exporting attestation manifest sha256:9d25ccb8b3b157d7e1bf0d9ef4c7d5d01284c54f4035ca2b6e4ea2d400ab9b33 0.0s done
+#10 exporting manifest list sha256:7ab01a1cc4a4d3ad195d9776bcb16ab19b181d22a4b8e4ff261d60af6a8e0538 0.0s done
+#10 naming to docker.io/library/a08-e3-c2:local-20261008-194444391847 done
+#10 unpacking to docker.io/library/a08-e3-c2:local-20261008-194444391847
+#10 unpacking to docker.io/library/a08-e3-c2:local-20261008-194444391847 4.1s done
+#10 DONE 20.5s
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "image", "inspect", "a08-e3-c2:local-20261008-194444391847"]
+$ docker image inspect a08-e3-c2:local-20261008-194444391847
+[
+    {
+        "Id": "sha256:7ab01a1cc4a4d3ad195d9776bcb16ab19b181d22a4b8e4ff261d60af6a8e0538",
+        "RepoTags": [
+            "a08-e3-c2:local-20261008-194444391847"
+        ],
+        "RepoDigests": [
+            "a08-e3-c2@sha256:7ab01a1cc4a4d3ad195d9776bcb16ab19b181d22a4b8e4ff261d60af6a8e0538"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-08T11:49:20.546749702Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "./bin/demo",
+                "--version"
+            ],
+            "WorkingDir": "/workspace/E3/fixtures/incremental",
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 135148159,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:d81fb2a7c6ee3be05fdefaa7fd223be219c1ab172083ec1b994c3ecda33ac0a8",
+                "sha256:50ca498ff6b1372ad91c4d2cfe0b1ce627b0099a2b21fbd89bb2c156bbb54616",
+                "sha256:9917e8af53ed870e19028733be91196062ca7d36945a27a51d760a5e328b48a6",
+                "sha256:6d5113db3f3519b995fdcfb9ef905dba169fb4e25d739817496ee8b58ff67f9c",
+                "sha256:75e21f7aebaa1818b42a2d8871682cc680d8594fd73ce8590036f1c95267aec0"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-08T11:49:36.83373161Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:7ab01a1cc4a4d3ad195d9776bcb16ab19b181d22a4b8e4ff261d60af6a8e0538",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "xtht8tolqfd69q9nyv6twh7ya",
+                    "CreatedAt": "2026-10-08T11:49:40.981214102Z"
+                }
+            ]
+        }
+    }
+]
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "run", "--rm", "--network", "none", "sha256:7ab01a1cc4a4d3ad195d9776bcb16ab19b181d22a4b8e4ff261d60af6a8e0538"]
+$ docker run --rm --network none sha256:7ab01a1cc4a4d3ad195d9776bcb16ab19b181d22a4b8e4ff261d60af6a8e0538
+demo 1.0.0
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "run", "--rm", "--network", "none", "sha256:7ab01a1cc4a4d3ad195d9776bcb16ab19b181d22a4b8e4ff261d60af6a8e0538", "./bin/demo"]
+$ docker run --rm --network none sha256:7ab01a1cc4a4d3ad195d9776bcb16ab19b181d22a4b8e4ff261d60af6a8e0538 ./bin/demo
+19
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "run", "--detach", "--network", "none", "--name", "a08-e3-c2-1fa6c5dae46c", "--entrypoint", "sleep", "sha256:7ab01a1cc4a4d3ad195d9776bcb16ab19b181d22a4b8e4ff261d60af6a8e0538", "infinity"]
+$ docker run --detach --network none --name a08-e3-c2-1fa6c5dae46c --entrypoint sleep sha256:7ab01a1cc4a4d3ad195d9776bcb16ab19b181d22a4b8e4ff261d60af6a8e0538 infinity
+da0fd409f11c142d8fe660c89929f176af0e8c890934fbfe2e93e75ccf9b36cd
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "a08-e3-c2-1fa6c5dae46c", "mkdir", "-p", "/tmp/a08-e3-incremental"]
+$ docker exec a08-e3-c2-1fa6c5dae46c mkdir -p /tmp/a08-e3-incremental
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "cp", "C:\\Users\\yevhen\\AppData\\Local\\Temp\\a08-e3-c2-63b2rb09\\c1\\E3\\fixtures\\incremental/.", "a08-e3-c2-1fa6c5dae46c:/tmp/a08-e3-incremental"]
+$ docker cp 'C:\Users\yevhen\AppData\Local\Temp\a08-e3-c2-63b2rb09\c1\E3\fixtures\incremental/.' a08-e3-c2-1fa6c5dae46c:/tmp/a08-e3-incremental
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "cat", "/etc/os-release"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c cat /etc/os-release
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.5 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "uname", "-m"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c uname -m
+x86_64
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "gcc", "--version"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c gcc --version
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "make", "--version"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c make --version
+GNU Make 4.3
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "make", "clean"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c make clean
+rm -rf build bin
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "make", "-j2"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c make -j2
+mkdir -p build
+gcc -Iinclude -Wall -Wextra -O2 -c src/main.c -o build/main.o
+mkdir -p bin
+gcc -Wall -Wextra -O2 build/main.o -o bin/demo
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "./bin/demo", "--version"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c ./bin/demo --version
+demo 1.0.0
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "./bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c ./bin/demo
+12
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "sha256sum", "src/main.c", "include/common.h", "include/config.h", "include/feature.h", "build/main.o", "bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c sha256sum src/main.c include/common.h include/config.h include/feature.h build/main.o bin/demo
+5608cf3b12341e9533deb502febbac2bd6961dba64093435944c81b46a54cd1c  src/main.c
+7a99265f8389394468a479afa84b32245bdfc2c96cc00418e56445fbec26da52  include/common.h
+89dbcecf7ad1dbcd10013dc978dd31763f799f31193367a7be43e981136abff1  include/config.h
+92c5adda7962e816ecae0911f4e62db0a8d1cbb8f20a2ba6d0b039f35004938d  include/feature.h
+a218ecbf03281e1598ed57ca037c8cf467f1edc2f4756bb7442679bba9064a48  build/main.o
+dbb09f14ef10b4e819781467f5f884857fd801f28548c05b246a283ea08a34f8  bin/demo
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "stat", "--format=%n|%s|%y", "src/main.c", "include/common.h", "include/config.h", "include/feature.h", "build/main.o", "bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c stat '--format=%n|%s|%y' src/main.c include/common.h include/config.h include/feature.h build/main.o bin/demo
+src/main.c|478|2026-10-07 06:27:39.000000000 +0000
+include/common.h|76|2026-10-07 06:27:39.000000000 +0000
+include/config.h|76|2026-10-07 06:27:39.000000000 +0000
+include/feature.h|79|2026-10-07 06:27:39.000000000 +0000
+build/main.o|2112|2026-10-08 11:49:46.779768244 +0000
+bin/demo|16144|2026-10-08 11:49:46.812469654 +0000
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "sha256sum", "Makefile"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c sha256sum Makefile
+f9b32ef8c18955f7222e42a5b928d1f15bdb94fa4c1a6b4e4e1b7e872a4dac0b  Makefile
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "cp", "C:\\Users\\yevhen\\AppData\\Local\\Temp\\a08-e3-c2-63b2rb09\\c2\\E3\\fixtures\\incremental\\Makefile", "a08-e3-c2-1fa6c5dae46c:/tmp/a08-e3-incremental/Makefile"]
+$ docker cp 'C:\Users\yevhen\AppData\Local\Temp\a08-e3-c2-63b2rb09\c2\E3\fixtures\incremental\Makefile' a08-e3-c2-1fa6c5dae46c:/tmp/a08-e3-incremental/Makefile
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "make", "--always-make", "--dry-run"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c make --always-make --dry-run
+mkdir -p build
+gcc -Iinclude -DMODE=7 -Wall -Wextra -O2 -c src/main.c -o build/main.o
+mkdir -p bin
+gcc -Wall -Wextra -O2 build/main.o -o bin/demo
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "make", "-j2"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c make -j2
+make: Nothing to be done for 'all'.
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "./bin/demo", "--version"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c ./bin/demo --version
+demo 1.0.0
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "./bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c ./bin/demo
+12
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "sha256sum", "src/main.c", "include/common.h", "include/config.h", "include/feature.h", "build/main.o", "bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c sha256sum src/main.c include/common.h include/config.h include/feature.h build/main.o bin/demo
+5608cf3b12341e9533deb502febbac2bd6961dba64093435944c81b46a54cd1c  src/main.c
+7a99265f8389394468a479afa84b32245bdfc2c96cc00418e56445fbec26da52  include/common.h
+89dbcecf7ad1dbcd10013dc978dd31763f799f31193367a7be43e981136abff1  include/config.h
+92c5adda7962e816ecae0911f4e62db0a8d1cbb8f20a2ba6d0b039f35004938d  include/feature.h
+a218ecbf03281e1598ed57ca037c8cf467f1edc2f4756bb7442679bba9064a48  build/main.o
+dbb09f14ef10b4e819781467f5f884857fd801f28548c05b246a283ea08a34f8  bin/demo
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "stat", "--format=%n|%s|%y", "src/main.c", "include/common.h", "include/config.h", "include/feature.h", "build/main.o", "bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c stat '--format=%n|%s|%y' src/main.c include/common.h include/config.h include/feature.h build/main.o bin/demo
+src/main.c|478|2026-10-07 06:27:39.000000000 +0000
+include/common.h|76|2026-10-07 06:27:39.000000000 +0000
+include/config.h|76|2026-10-07 06:27:39.000000000 +0000
+include/feature.h|79|2026-10-07 06:27:39.000000000 +0000
+build/main.o|2112|2026-10-08 11:49:46.779768244 +0000
+bin/demo|16144|2026-10-08 11:49:46.812469654 +0000
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "sha256sum", "Makefile"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c sha256sum Makefile
+0a9e5bd417679ea4322f53306e89825097ab0351b072bf82b5f0af8bc4ba01a1  Makefile
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "make", "clean"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c make clean
+rm -rf build bin
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "make", "-j2"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c make -j2
+mkdir -p build
+gcc -Iinclude -DMODE=7 -Wall -Wextra -O2 -c src/main.c -o build/main.o
+mkdir -p bin
+gcc -Wall -Wextra -O2 build/main.o -o bin/demo
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "./bin/demo", "--version"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c ./bin/demo --version
+demo 1.0.0
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "./bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c ./bin/demo
+19
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "sha256sum", "src/main.c", "include/common.h", "include/config.h", "include/feature.h", "build/main.o", "bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c sha256sum src/main.c include/common.h include/config.h include/feature.h build/main.o bin/demo
+5608cf3b12341e9533deb502febbac2bd6961dba64093435944c81b46a54cd1c  src/main.c
+7a99265f8389394468a479afa84b32245bdfc2c96cc00418e56445fbec26da52  include/common.h
+89dbcecf7ad1dbcd10013dc978dd31763f799f31193367a7be43e981136abff1  include/config.h
+92c5adda7962e816ecae0911f4e62db0a8d1cbb8f20a2ba6d0b039f35004938d  include/feature.h
+564559ce82a25c3d6119cea814554fff2f5cee61512ad3b0f5e59696c1c408dd  build/main.o
+8d67d5b68f55e80466fb4fdf5ec255c0f3172375c08c46e634bdeff2e1117051  bin/demo
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "stat", "--format=%n|%s|%y", "src/main.c", "include/common.h", "include/config.h", "include/feature.h", "build/main.o", "bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c stat '--format=%n|%s|%y' src/main.c include/common.h include/config.h include/feature.h build/main.o bin/demo
+src/main.c|478|2026-10-07 06:27:39.000000000 +0000
+include/common.h|76|2026-10-07 06:27:39.000000000 +0000
+include/config.h|76|2026-10-07 06:27:39.000000000 +0000
+include/feature.h|79|2026-10-07 06:27:39.000000000 +0000
+build/main.o|2112|2026-10-08 11:49:49.630993963 +0000
+bin/demo|16144|2026-10-08 11:49:49.664826707 +0000
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "sha256sum", "Makefile"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c sha256sum Makefile
+0a9e5bd417679ea4322f53306e89825097ab0351b072bf82b5f0af8bc4ba01a1  Makefile
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "gcc", "-MM", "-Iinclude", "-DMODE=7", "-MT", "build/main.o", "src/main.c"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c gcc -MM -Iinclude -DMODE=7 -MT build/main.o src/main.c
+build/main.o: src/main.c include/common.h include/config.h \
+ include/feature.h
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-1fa6c5dae46c", "make", "-pn"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-1fa6c5dae46c make -pn
+make: Nothing to be done for 'all'.
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Thu Oct  8 11:49:50 2026
+
+# Variables
+
+# default
+PREPROCESS.S = $(CC) -E $(CPPFLAGS)
+# default
+COMPILE.m = $(OBJC) $(OBJCFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+ARFLAGS = rv
+# default
+AS = as
+# default
+AR = ar
+# default
+OBJC = cc
+# default
+LINK.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_MACH)
+# default
+LINK.s = $(CC) $(ASFLAGS) $(LDFLAGS) $(TARGET_MACH)
+# default
+MAKE_COMMAND := make
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# default
+COFLAGS = 
+# default
+COMPILE.mod = $(M2C) $(M2FLAGS) $(MODFLAGS) $(TARGET_ARCH)
+# default
+.VARIABLES := 
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+HOSTNAME = da0fd409f11c
+# default
+LINK.o = $(CC) $(LDFLAGS) $(TARGET_ARCH)
+# default
+TEXI2DVI = texi2dvi
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# automatic
+%F = $(notdir $%)
+# default
+LEX.l = $(LEX) $(LFLAGS) -t
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# default
+COMPILE.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# makefile
+MAKEFLAGS = np
+# default
+LINK.f = $(FC) $(FFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+TANGLE = tangle
+# makefile
+CURDIR := /tmp/a08-e3-incremental
+# default
+PREPROCESS.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -F
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -np
+# default
+COMPILE.p = $(PC) $(PFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+.SHELLFLAGS := -c
+# default
+M2C = m2c
+# default
+COMPILE.cpp = $(COMPILE.cc)
+# default
+TEX = tex
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# default
+F77FLAGS = $(FFLAGS)
+# automatic
+@F = $(notdir $@)
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# default
+COMPILE.def = $(M2C) $(M2FLAGS) $(DEFFLAGS) $(TARGET_ARCH)
+# default
+CTANGLE = ctangle
+# automatic
+*F = $(notdir $*)
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# default
+COMPILE.C = $(COMPILE.cc)
+# default
+YACC.m = $(YACC) $(YFLAGS)
+# default
+LINK.C = $(LINK.cc)
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# default
+LINK.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+SHELL := /bin/sh
+# makefile (from 'Makefile', line 4)
+HEADERS := include/common.h include/config.h
+# default
+LINK.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+FC = f77
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# default
+LINT = lint
+# default
+PC = pc
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# default
+LEX.m = $(LEX) $(LFLAGS) -t
+# default
+.LIBPATTERNS = lib%.so lib%.a
+# default
+CPP = $(CC) -E
+# default
+LINK.cc = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+CHECKOUT,v = +$(if $(wildcard $@),,$(CO) $(COFLAGS) $< $@)
+# default
+COMPILE.f = $(FC) $(FFLAGS) $(TARGET_ARCH) -c
+# default
+COMPILE.r = $(FC) $(FFLAGS) $(RFLAGS) $(TARGET_ARCH) -c
+# default
+COMPILE.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(TARGET_MACH) -c
+# automatic
+?F = $(notdir $?)
+# default
+GET = get
+# default
+LINK.r = $(FC) $(FFLAGS) $(RFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# automatic
++F = $(notdir $+)
+# default
+MAKEINFO = makeinfo
+# 'override' directive
+GNUMAKEFLAGS := 
+# default
+PREPROCESS.r = $(FC) $(FFLAGS) $(RFLAGS) $(TARGET_ARCH) -F
+# default
+LINK.m = $(OBJC) $(OBJCFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+LINK.p = $(PC) $(PFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+YACC = yacc
+# makefile (from 'Makefile', line 2)
+CPPFLAGS := -Iinclude -DMODE=7
+# makefile
+.DEFAULT_GOAL := all
+# default
+RM = rm -f
+# default
+WEAVE = weave
+# default
+MAKE_VERSION := 4.3
+# default
+F77 = $(FC)
+# default
+CWEAVE = cweave
+# default
+YACC.y = $(YACC) $(YFLAGS)
+# default
+LINK.cpp = $(LINK.cc)
+# default
+CO = co
+# makefile (from 'Makefile', line 3)
+CFLAGS := -Wall -Wextra -O2
+# default
+OUTPUT_OPTION = -o $@
+# default
+COMPILE.s = $(AS) $(ASFLAGS) $(TARGET_MACH)
+# environment
+HOME = /root
+# default
+LEX = lex
+# default
+LINT.c = $(LINT) $(LINTFLAGS) $(CPPFLAGS) $(TARGET_ARCH)
+# default
+COMPILE.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := .out .a .ln .o .c .cc .C .cpp .p .f .F .m .r .y .l .ym .yl .s .S .mod .sym .def .h .info .dvi .tex .texinfo .texi .txinfo .w .ch .web .sh .elc .el
+# default
+LD = ld
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# default
+CXX = g++
+# makefile (from 'Makefile', line 1)
+CC := gcc
+# default
+COMPILE.cc = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# variable set hash-table stats:
+# Load=103/1024=10%, Rehash=0, Collisions=3/134=2%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# RCS: could not be stat'd.
+# SCCS: could not be stat'd.
+# include (device 92, inode 800335): 5 files, no impossibilities.
+# src (device 92, inode 800341): 3 files, 3 impossibilities.
+# . (device 92, inode 800308): 9 files, 19 impossibilities.
+# include/SCCS: could not be stat'd.
+# src/RCS: could not be stat'd.
+# src/SCCS: could not be stat'd.
+# include/RCS: could not be stat'd.
+
+# 17 files, 22 impossibilities in 9 directories.
+
+# Implicit Rules
+
+%.out:
+
+%.a:
+
+%.ln:
+
+%.o:
+
+%: %.o
+#  recipe to execute (built-in):
+	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.c:
+
+%: %.c
+#  recipe to execute (built-in):
+	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.ln: %.c
+#  recipe to execute (built-in):
+	$(LINT.c) -C$* $<
+
+%.o: %.c
+#  recipe to execute (built-in):
+	$(COMPILE.c) $(OUTPUT_OPTION) $<
+
+%.cc:
+
+%: %.cc
+#  recipe to execute (built-in):
+	$(LINK.cc) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.cc
+#  recipe to execute (built-in):
+	$(COMPILE.cc) $(OUTPUT_OPTION) $<
+
+%.C:
+
+%: %.C
+#  recipe to execute (built-in):
+	$(LINK.C) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.C
+#  recipe to execute (built-in):
+	$(COMPILE.C) $(OUTPUT_OPTION) $<
+
+%.cpp:
+
+%: %.cpp
+#  recipe to execute (built-in):
+	$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.cpp
+#  recipe to execute (built-in):
+	$(COMPILE.cpp) $(OUTPUT_OPTION) $<
+
+%.p:
+
+%: %.p
+#  recipe to execute (built-in):
+	$(LINK.p) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.p
+#  recipe to execute (built-in):
+	$(COMPILE.p) $(OUTPUT_OPTION) $<
+
+%.f:
+
+%: %.f
+#  recipe to execute (built-in):
+	$(LINK.f) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.f
+#  recipe to execute (built-in):
+	$(COMPILE.f) $(OUTPUT_OPTION) $<
+
+%.F:
+
+%: %.F
+#  recipe to execute (built-in):
+	$(LINK.F) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.F
+#  recipe to execute (built-in):
+	$(COMPILE.F) $(OUTPUT_OPTION) $<
+
+%.f: %.F
+#  recipe to execute (built-in):
+	$(PREPROCESS.F) $(OUTPUT_OPTION) $<
+
+%.m:
+
+%: %.m
+#  recipe to execute (built-in):
+	$(LINK.m) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.m
+#  recipe to execute (built-in):
+	$(COMPILE.m) $(OUTPUT_OPTION) $<
+
+%.r:
+
+%: %.r
+#  recipe to execute (built-in):
+	$(LINK.r) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.r
+#  recipe to execute (built-in):
+	$(COMPILE.r) $(OUTPUT_OPTION) $<
+
+%.f: %.r
+#  recipe to execute (built-in):
+	$(PREPROCESS.r) $(OUTPUT_OPTION) $<
+
+%.y:
+
+%.ln: %.y
+#  recipe to execute (built-in):
+	$(YACC.y) $< 
+	 $(LINT.c) -C$* y.tab.c 
+	 $(RM) y.tab.c
+
+%.c: %.y
+#  recipe to execute (built-in):
+	$(YACC.y) $< 
+	 mv -f y.tab.c $@
+
+%.l:
+
+%.ln: %.l
+#  recipe to execute (built-in):
+	@$(RM) $*.c
+	 $(LEX.l) $< > $*.c
+	$(LINT.c) -i $*.c -o $@
+	 $(RM) $*.c
+
+%.c: %.l
+#  recipe to execute (built-in):
+	@$(RM) $@ 
+	 $(LEX.l) $< > $@
+
+%.r: %.l
+#  recipe to execute (built-in):
+	$(LEX.l) $< > $@ 
+	 mv -f lex.yy.r $@
+
+%.ym:
+
+%.m: %.ym
+#  recipe to execute (built-in):
+	$(YACC.m) $< 
+	 mv -f y.tab.c $@
+
+%.yl:
+
+%.s:
+
+%: %.s
+#  recipe to execute (built-in):
+	$(LINK.s) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.s
+#  recipe to execute (built-in):
+	$(COMPILE.s) -o $@ $<
+
+%.S:
+
+%: %.S
+#  recipe to execute (built-in):
+	$(LINK.S) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.S
+#  recipe to execute (built-in):
+	$(COMPILE.S) -o $@ $<
+
+%.s: %.S
+#  recipe to execute (built-in):
+	$(PREPROCESS.S) $< > $@
+
+%.mod:
+
+%: %.mod
+#  recipe to execute (built-in):
+	$(COMPILE.mod) -o $@ -e $@ $^
+
+%.o: %.mod
+#  recipe to execute (built-in):
+	$(COMPILE.mod) -o $@ $<
+
+%.sym:
+
+%.def:
+
+%.sym: %.def
+#  recipe to execute (built-in):
+	$(COMPILE.def) -o $@ $<
+
+%.h:
+
+%.info:
+
+%.dvi:
+
+%.tex:
+
+%.dvi: %.tex
+#  recipe to execute (built-in):
+	$(TEX) $<
+
+%.texinfo:
+
+%.info: %.texinfo
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.texinfo
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.texi:
+
+%.info: %.texi
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.texi
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.txinfo:
+
+%.info: %.txinfo
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.txinfo
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.w:
+
+%.c: %.w
+#  recipe to execute (built-in):
+	$(CTANGLE) $< - $@
+
+%.tex: %.w
+#  recipe to execute (built-in):
+	$(CWEAVE) $< - $@
+
+%.ch:
+
+%.web:
+
+%.p: %.web
+#  recipe to execute (built-in):
+	$(TANGLE) $<
+
+%.tex: %.web
+#  recipe to execute (built-in):
+	$(WEAVE) $<
+
+%.sh:
+
+%: %.sh
+#  recipe to execute (built-in):
+	cat $< >$@ 
+	 chmod a+x $@
+
+%.elc:
+
+%.el:
+
+(%): %
+#  recipe to execute (built-in):
+	$(AR) $(ARFLAGS) $@ $<
+
+%.out: %
+#  recipe to execute (built-in):
+	@rm -f $@ 
+	 cp $< $@
+
+%.c: %.w %.ch
+#  recipe to execute (built-in):
+	$(CTANGLE) $^ $@
+
+%.tex: %.w %.ch
+#  recipe to execute (built-in):
+	$(CWEAVE) $^ $@
+
+%:: %,v
+#  recipe to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: RCS/%,v
+#  recipe to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: RCS/%
+#  recipe to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: s.%
+#  recipe to execute (built-in):
+	$(GET) $(GFLAGS) $(SCCS_OUTPUT_OPTION) $<
+
+%:: SCCS/s.%
+#  recipe to execute (built-in):
+	$(GET) $(GFLAGS) $(SCCS_OUTPUT_OPTION) $<
+
+# 92 implicit rules, 5 (5.4%) terminal.
+# Files
+
+# Not a target:
+.cpp:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.c.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.c) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.h:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.sh:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	cat $< >$@ 
+	 chmod a+x $@
+
+# Not a target:
+.ch:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.r.f:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(PREPROCESS.r) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.dvi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.def.sym:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.def) -o $@ $<
+
+# Not a target:
+.m.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.m) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.lm.m:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	@$(RM) $@ 
+	 $(LEX.m) $< > $@
+
+# Not a target:
+.p.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.p) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.texinfo:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.ln:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.C:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.C) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.web:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.elc:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.y.ln:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(YACC.y) $< 
+	 $(LINT.c) -C$* y.tab.c 
+	 $(RM) y.tab.c
+
+# Not a target:
+.l.c:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	@$(RM) $@ 
+	 $(LEX.l) $< > $@
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2026-10-08 11:39:48
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.sym:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.r.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.r) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.mod:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.mod) -o $@ -e $@ $^
+
+# Not a target:
+.def:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.S:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.S) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.texi.dvi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+.txinfo.dvi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+include/common.h:
+#  Implicit rule search has been done.
+#  Last modified 2026-10-07 06:27:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.y.c:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(YACC.y) $< 
+	 mv -f y.tab.c $@
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 18):
+	rm -rf build bin
+
+# Not a target:
+.cpp.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.cpp) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.el:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.cc:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.cc) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.tex:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.m:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.m) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.F:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.F) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.web.tex:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(WEAVE) $<
+
+# Not a target:
+.texinfo.info:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+src/main.c:
+#  Implicit rule search has been done.
+#  Last modified 2026-10-07 06:27:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.ym.m:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(YACC.m) $< 
+	 mv -f y.tab.c $@
+
+# Not a target:
+.l:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bin/demo: build/main.o
+#  Implicit rule search has not been done.
+#  Last modified 2026-10-08 11:49:49.664826707
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 10):
+	mkdir -p bin
+	$(CC) $(CFLAGS) build/main.o -o bin/demo
+
+# Not a target:
+.f:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.f) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.texi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.r:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.r) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.a:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: bin/demo
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.w.tex:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(CWEAVE) $< - $@
+
+# Not a target:
+include/config.h:
+#  Implicit rule search has been done.
+#  Last modified 2026-10-07 06:27:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.s.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.s) -o $@ $<
+
+# Not a target:
+.txinfo:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.c.ln:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINT.c) -C$* $<
+
+# Not a target:
+.tex.dvi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(TEX) $<
+
+# Not a target:
+.info:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.out:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.texinfo.dvi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+.F.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.F) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.yl:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.s:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.s) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.S.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.S) -o $@ $<
+
+# Not a target:
+.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.C.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.C) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.c:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.txinfo.info:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+.texi.info:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+.y:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.l.r:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LEX.l) $< > $@ 
+	 mv -f lex.yy.r $@
+
+# Not a target:
+.p:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.p) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.l.ln:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	@$(RM) $*.c
+	 $(LEX.l) $< > $*.c
+	$(LINT.c) -i $*.c -o $@
+	 $(RM) $*.c
+
+# Not a target:
+.w:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES: .out .a .ln .o .c .cc .C .cpp .p .f .F .m .r .y .l .ym .yl .s .S .mod .sym .def .h .info .dvi .tex .texinfo .texi .txinfo .w .ch .web .sh .elc .el
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/main.o: src/main.c include/common.h include/config.h
+#  Implicit rule search has not been done.
+#  Last modified 2026-10-08 11:49:49.630993963
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 14):
+	mkdir -p build
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c src/main.c -o build/main.o
+
+.PHONY: all clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.mod.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.mod) -o $@ $<
+
+# Not a target:
+.web.p:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(TANGLE) $<
+
+# Not a target:
+.S.s:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(PREPROCESS.S) $< > $@
+
+# Not a target:
+.f.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.f) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.ym:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.cc.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.cc) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.F.f:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(PREPROCESS.F) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.w.c:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(CTANGLE) $< - $@
+
+# files hash-table stats:
+# Load=81/1024=8%, Rehash=0, Collisions=130/1533=8%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 297 / storage = 3227 B / avg = 10 B
+# current buf: size = 8162 B / used = 3227 B / count = 297 / avg = 10 B
+
+# strcache performance: lookups = 506 / hit rate = 41%
+# hash-table stats:
+# Load=297/8192=4%, Rehash=0, Collisions=11/506=2%
+# Finished Make data base on Thu Oct  8 11:49:50 2026
+
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "a08-e3-c2-1fa6c5dae46c", "/workspace/E3/fixtures/incremental/bin/demo"]
+$ docker exec a08-e3-c2-1fa6c5dae46c /workspace/E3/fixtures/incremental/bin/demo
+19
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "rm", "--force", "a08-e3-c2-1fa6c5dae46c"]
+$ docker rm --force a08-e3-c2-1fa6c5dae46c
+a08-e3-c2-1fa6c5dae46c
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "status", "--porcelain", "--untracked-files=no"]
+$ git status --porcelain --untracked-files=no
+
+exit_code=0
+

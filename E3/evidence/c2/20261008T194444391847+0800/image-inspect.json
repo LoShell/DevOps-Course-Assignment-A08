@@ -1,0 +1,56 @@
+[
+    {
+        "Id": "sha256:7ab01a1cc4a4d3ad195d9776bcb16ab19b181d22a4b8e4ff261d60af6a8e0538",
+        "RepoTags": [
+            "a08-e3-c2:local-20261008-194444391847"
+        ],
+        "RepoDigests": [
+            "a08-e3-c2@sha256:7ab01a1cc4a4d3ad195d9776bcb16ab19b181d22a4b8e4ff261d60af6a8e0538"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-08T11:49:20.546749702Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "./bin/demo",
+                "--version"
+            ],
+            "WorkingDir": "/workspace/E3/fixtures/incremental",
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 135148159,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:d81fb2a7c6ee3be05fdefaa7fd223be219c1ab172083ec1b994c3ecda33ac0a8",
+                "sha256:50ca498ff6b1372ad91c4d2cfe0b1ce627b0099a2b21fbd89bb2c156bbb54616",
+                "sha256:9917e8af53ed870e19028733be91196062ca7d36945a27a51d760a5e328b48a6",
+                "sha256:6d5113db3f3519b995fdcfb9ef905dba169fb4e25d739817496ee8b58ff67f9c",
+                "sha256:75e21f7aebaa1818b42a2d8871682cc680d8594fd73ce8590036f1c95267aec0"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-08T11:49:36.83373161Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:7ab01a1cc4a4d3ad195d9776bcb16ab19b181d22a4b8e4ff261d60af6a8e0538",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "xtht8tolqfd69q9nyv6twh7ya",
+                    "CreatedAt": "2026-10-08T11:49:40.981214102Z"
+                }
+            ]
+        }
+    }
+]
