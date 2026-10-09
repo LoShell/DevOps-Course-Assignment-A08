@@ -1,0 +1,51 @@
+# C1 commands and exit codes
+
+Repository: https://github.com/LoShell/DevOps-Course-Assignment-A08.git
+Base tag/commit: e3-c0 / 88ffce8aeaa9172fc724130d5796ad18ca1ab9e4
+C1 tag/commit: e3-c1 / 4b70cabad1be8f6e98ee90ed9c5803b7aa793253
+Working directory: /mnt/d/My_Work/Homework/DevOps/lab2/DevOps-Course-Assignment-A08/E3/fixtures/incremental
+Execution environment: Ubuntu 20.04.6 LTS WSL2, GNU Make 4.2.1, GCC 9.4.0, x86_64
+
+All commands below exited 0 unless a result explicitly says otherwise.
+
+1. `git diff --exit-code e3-c0 e3-c1 -- E3/fixtures/incremental/Makefile`
+   Result: no output; C1 did not modify the Makefile.
+
+2. `make clean && make -j2`
+   Key output:
+   ```text
+   rm -rf build bin
+   mkdir -p build
+   gcc -Iinclude -Wall -Wextra -O2 -c src/main.c -o build/main.o
+   mkdir -p bin
+   gcc -Wall -Wextra -O2 build/main.o -o bin/demo
+   ```
+
+3. `./bin/demo --version`
+   Output: `demo 1.0.0`
+
+4. `./bin/demo`
+   Output: `12`
+
+5. `gcc -Iinclude -MM src/main.c`
+   Output: `main.o: src/main.c include/common.h include/config.h include/feature.h`
+
+6. In this disposable verification state only, change `#define FEATURE_VALUE 2` to `#define FEATURE_VALUE 3`; then run `make -j2 && ./bin/demo`.
+   Key output:
+   ```text
+   make: Nothing to be done for 'all'.
+   12
+   ```
+
+7. With the same disposable mutation, run `make clean && make -j2 && ./bin/demo`.
+   Key output:
+   ```text
+   rm -rf build bin
+   gcc -Iinclude -Wall -Wextra -O2 -c src/main.c -o build/main.o
+   gcc -Wall -Wextra -O2 build/main.o -o bin/demo
+   13
+   ```
+
+8. Restore `FEATURE_VALUE` to `2`, run `make clean`, and verify:
+   `git diff --exit-code e3-c1 -- E3/fixtures/incremental/src/main.c E3/fixtures/incremental/include/feature.h`.
+   Result: exit 0; the evidence mutation is not part of C1.

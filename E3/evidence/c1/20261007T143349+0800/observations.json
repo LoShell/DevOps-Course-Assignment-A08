@@ -1,0 +1,30 @@
+{
+  "recorded_at": "2026-10-07T14:33:49+08:00",
+  "operator": "Codex, acting in the authorized workspace; C1 Git author is FanCongyu",
+  "repository": "https://github.com/LoShell/DevOps-Course-Assignment-A08.git",
+  "base": {"tag": "e3-c0", "commit": "88ffce8aeaa9172fc724130d5796ad18ca1ab9e4"},
+  "subject": {"tag": "e3-c1", "commit": "4b70cabad1be8f6e98ee90ed9c5803b7aa793253"},
+  "environment": {
+    "kind": "WSL2",
+    "os": "Ubuntu 20.04.6 LTS",
+    "make": "GNU Make 4.2.1",
+    "compiler": "gcc 9.4.0",
+    "architecture": "x86_64",
+    "configuration_id": "wsl-ubuntu-20.04.6-gcc-9.4.0-make-4.2.1-x86_64-default-mode"
+  },
+  "commands_file": "commands.txt",
+  "clean_c1": {"exit_code": 0, "version_output": "demo 1.0.0", "behavior_output": "12"},
+  "actual_project_dependencies": ["include/common.h", "include/config.h", "include/feature.h"],
+  "declared_project_dependencies": ["include/common.h", "include/config.h"],
+  "mutation": {
+    "change": "FEATURE_VALUE 2 -> 3",
+    "part_of_c1_commit": false,
+    "incremental_make_exit_code": 0,
+    "incremental_make_output": "make: Nothing to be done for 'all'.",
+    "incremental_behavior_output": "12",
+    "clean_make_exit_code": 0,
+    "clean_behavior_output": "13",
+    "source_restored_to_c1": true
+  },
+  "manual_conclusion": "build/main.o reads include/feature.h but the C1 Makefile does not declare it. The stale incremental result and changed clean-build result establish the intended missing-dependency scenario."
+}

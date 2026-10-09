@@ -1,0 +1,22 @@
+{
+  "operator": "Codex on behalf of member 4 (Yevhen277)",
+  "runner_sha256": "53204d142c48608526253cce9ea643b094f0db1641966b16c14a8de71ae9dfcc",
+  "tests": [
+    {
+      "scenario": "reject C1 supplied as C2 before Docker mutation",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "scenario": "refuse existing evidence directory without changing any file",
+      "passed": true,
+      "exit_code": 2
+    },
+    {
+      "scenario": "invalid Git ref retains failed command; early failure README links only actual files",
+      "passed": true,
+      "exit_code": 1
+    }
+  ],
+  "test_outputs": "Temporary directories removed after verification; genuine development failure is retained separately under evidence/failures."
+}

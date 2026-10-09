@@ -1,0 +1,278 @@
+{
+  "timestamp_utc": "20261006T052505901061Z",
+  "executor": "Codex local execution on behalf of member 2; human review pending",
+  "source_state": "uncommitted working tree; hashes identify tested files",
+  "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "architecture": "x86_64",
+  "commands": [
+    {
+      "argv": [
+        "gcc",
+        "--version"
+      ],
+      "cwd": "/workspace/E3",
+      "exit_code": 0,
+      "stdout": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "make",
+        "--version"
+      ],
+      "cwd": "/workspace/E3",
+      "exit_code": 0,
+      "stdout": "GNU Make 4.3\nBuilt for x86_64-pc-linux-gnu\nCopyright (C) 1988-2020 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "--version"
+      ],
+      "cwd": "/workspace/E3",
+      "exit_code": 0,
+      "stdout": "Python 3.12.3\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "uname",
+        "-a"
+      ],
+      "cwd": "/workspace/E3",
+      "exit_code": 0,
+      "stdout": "Linux 9e6a1df7f615 6.6.114.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Mon Dec  1 20:46:23 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "cat",
+        "/etc/os-release"
+      ],
+      "cwd": "/workspace/E3",
+      "exit_code": 0,
+      "stdout": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "make",
+        "clean"
+      ],
+      "cwd": "/tmp/a08-md-rd-m4g2hxc1/sample",
+      "exit_code": 0,
+      "stdout": "rm -rf build bin\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "make",
+        "-j2"
+      ],
+      "cwd": "/tmp/a08-md-rd-m4g2hxc1/sample",
+      "exit_code": 0,
+      "stdout": "mkdir -p build\ngcc -Iinclude -Wall -Wextra -O2 -c src/main.c -o build/main.o\nmkdir -p bin\ngcc -Wall -Wextra -O2 build/main.o -o bin/demo\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "./bin/demo",
+        "--version"
+      ],
+      "cwd": "/tmp/a08-md-rd-m4g2hxc1/sample",
+      "exit_code": 0,
+      "stdout": "demo 1.0.0\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "./bin/demo"
+      ],
+      "cwd": "/tmp/a08-md-rd-m4g2hxc1/sample",
+      "exit_code": 0,
+      "stdout": "10\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "gcc",
+        "-MM",
+        "-Iinclude",
+        "-MT",
+        "build/main.o",
+        "src/main.c"
+      ],
+      "cwd": "/tmp/a08-md-rd-m4g2hxc1/sample",
+      "exit_code": 0,
+      "stdout": "build/main.o: src/main.c include/common.h include/config.h\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "make",
+        "-pn"
+      ],
+      "cwd": "/tmp/a08-md-rd-m4g2hxc1/sample",
+      "exit_code": 0,
+      "stdout": "make: Nothing to be done for 'all'.\n# GNU Make 4.3\n# Built for x86_64-pc-linux-gnu\n# Copyright (C) 1988-2020 Free Software Foundation, Inc.\n# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n# This is free software: you are free to change and redistribute it.\n# There is NO WARRANTY, to the extent permitted by law.\n\n# Make data base, printed on Tue Oct  6 05:25:06 2026\n\n# Variables\n\n# default\nPREPROCESS.S = $(CC) -E $(CPPFLAGS)\n# default\nCOMPILE.m = $(OBJC) $(OBJCFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c\n# default\nARFLAGS = rv\n# default\nAS = as\n# environment\nLC_ALL = C\n# default\nAR = ar\n# default\nOBJC = cc\n# default\nLINK.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_MACH)\n# default\nLINK.s = $(CC) $(ASFLAGS) $(LDFLAGS) $(TARGET_MACH)\n# default\nMAKE_COMMAND := make\n# automatic\n@D = $(patsubst %/,%,$(dir $@))\n# default\nCOFLAGS = \n# default\nCOMPILE.mod = $(M2C) $(M2FLAGS) $(MODFLAGS) $(TARGET_ARCH)\n# default\n.VARIABLES := \n# automatic\n%D = $(patsubst %/,%,$(dir $%))\n# default\nLINK.o = $(CC) $(LDFLAGS) $(TARGET_ARCH)\n# default\nTEXI2DVI = texi2dvi\n# automatic\n^D = $(patsubst %/,%,$(dir $^))\n# automatic\n%F = $(notdir $%)\n# default\nLEX.l = $(LEX) $(LFLAGS) -t\n# environment\nLANG = C\n# default\n.LOADED := \n# default\n.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include\n# default\nCOMPILE.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c\n# makefile\nMAKEFLAGS = np\n# default\nLINK.f = $(FC) $(FFLAGS) $(LDFLAGS) $(TARGET_ARCH)\n# default\nTANGLE = tangle\n# makefile\nCURDIR := /tmp/a08-md-rd-m4g2hxc1/sample\n# default\nPREPROCESS.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -F\n# automatic\n*D = $(patsubst %/,%,$(dir $*))\n# environment\nMFLAGS = -np\n# default\nCOMPILE.p = $(PC) $(PFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c\n# default\n.SHELLFLAGS := -c\n# default\nM2C = m2c\n# default\nCOMPILE.cpp = $(COMPILE.cc)\n# default\nTEX = tex\n# automatic\n+D = $(patsubst %/,%,$(dir $+))\n# makefile (from 'Makefile', line 1)\nMAKEFILE_LIST := Makefile\n# default\nF77FLAGS = $(FFLAGS)\n# automatic\n@F = $(notdir $@)\n# automatic\n?D = $(patsubst %/,%,$(dir $?))\n# default\nCOMPILE.def = $(M2C) $(M2FLAGS) $(DEFFLAGS) $(TARGET_ARCH)\n# default\nCTANGLE = ctangle\n# automatic\n*F = $(notdir $*)\n# automatic\n<D = $(patsubst %/,%,$(dir $<))\n# default\nCOMPILE.C = $(COMPILE.cc)\n# default\nYACC.m = $(YACC) $(YFLAGS)\n# default\nLINK.C = $(LINK.cc)\n# default\nMAKE_HOST := x86_64-pc-linux-gnu\n# default\nLINK.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)\n# default\nSHELL := /bin/sh\n# makefile (from 'Makefile', line 5)\nHEADERS := include/common.h include/unused.h\n# default\nLINK.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)\n# environment\nMAKELEVEL := 0\n# default\nMAKE = $(MAKE_COMMAND)\n# default\nFC = f77\n# environment\nPATH = /bin:/usr/bin\n# default\nLINT = lint\n# default\nPC = pc\n# default\nMAKEFILES := \n# automatic\n^F = $(notdir $^)\n# default\nLEX.m = $(LEX) $(LFLAGS) -t\n# default\n.LIBPATTERNS = lib%.so lib%.a\n# default\nCPP = $(CC) -E\n# default\nLINK.cc = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)\n# default\nCHECKOUT,v = +$(if $(wildcard $@),,$(CO) $(COFLAGS) $< $@)\n# default\nCOMPILE.f = $(FC) $(FFLAGS) $(TARGET_ARCH) -c\n# default\nCOMPILE.r = $(FC) $(FFLAGS) $(RFLAGS) $(TARGET_ARCH) -c\n# default\nCOMPILE.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(TARGET_MACH) -c\n# automatic\n?F = $(notdir $?)\n# default\nGET = get\n# default\nLINK.r = $(FC) $(FFLAGS) $(RFLAGS) $(LDFLAGS) $(TARGET_ARCH)\n# automatic\n+F = $(notdir $+)\n# default\nMAKEINFO = makeinfo\n# 'override' directive\nGNUMAKEFLAGS := \n# default\nPREPROCESS.r = $(FC) $(FFLAGS) $(RFLAGS) $(TARGET_ARCH) -F\n# default\nLINK.m = $(OBJC) $(OBJCFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)\n# default\nLINK.p = $(PC) $(PFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)\n# default\nYACC = yacc\n# makefile (from 'Makefile', line 2)\nCPPFLAGS := -Iinclude\n# makefile\n.DEFAULT_GOAL := all\n# default\nRM = rm -f\n# default\nWEAVE = weave\n# default\nMAKE_VERSION := 4.3\n# default\nF77 = $(FC)\n# default\nCWEAVE = cweave\n# default\nYACC.y = $(YACC) $(YFLAGS)\n# default\nLINK.cpp = $(LINK.cc)\n# default\nCO = co\n# makefile (from 'Makefile', line 3)\nCFLAGS := -Wall -Wextra -O2\n# default\nOUTPUT_OPTION = -o $@\n# default\nCOMPILE.s = $(AS) $(ASFLAGS) $(TARGET_MACH)\n# default\nLEX = lex\n# default\nLINT.c = $(LINT) $(LINTFLAGS) $(CPPFLAGS) $(TARGET_ARCH)\n# default\nCOMPILE.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c\n# default\n.RECIPEPREFIX := \n# automatic\n<F = $(notdir $<)\n# default\nSUFFIXES := .out .a .ln .o .c .cc .C .cpp .p .f .F .m .r .y .l .ym .yl .s .S .mod .sym .def .h .info .dvi .tex .texinfo .texi .txinfo .w .ch .web .sh .elc .el\n# default\nLD = ld\n# default\n.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load\n# default\nCXX = g++\n# makefile (from 'Makefile', line 1)\nCC := gcc\n# default\nCOMPILE.cc = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c\n# variable set hash-table stats:\n# Load=103/1024=10%, Rehash=0, Collisions=3/134=2%\n\n# Pattern-specific Variable Values\n\n# No pattern-specific variable values.\n\n# Directories\n\n# RCS: could not be stat'd.\n# SCCS: could not be stat'd.\n# include (device 162, inode 108331): 5 files, no impossibilities.\n# src (device 162, inode 108338): 3 files, 3 impossibilities.\n# . (device 162, inode 108330): 10 files, 19 impossibilities.\n# include/SCCS: could not be stat'd.\n# src/RCS: could not be stat'd.\n# src/SCCS: could not be stat'd.\n# include/RCS: could not be stat'd.\n\n# 18 files, 22 impossibilities in 9 directories.\n\n# Implicit Rules\n\n%.out:\n\n%.a:\n\n%.ln:\n\n%.o:\n\n%: %.o\n#  recipe to execute (built-in):\n\t$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n%.c:\n\n%: %.c\n#  recipe to execute (built-in):\n\t$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n%.ln: %.c\n#  recipe to execute (built-in):\n\t$(LINT.c) -C$* $<\n\n%.o: %.c\n#  recipe to execute (built-in):\n\t$(COMPILE.c) $(OUTPUT_OPTION) $<\n\n%.cc:\n\n%: %.cc\n#  recipe to execute (built-in):\n\t$(LINK.cc) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n%.o: %.cc\n#  recipe to execute (built-in):\n\t$(COMPILE.cc) $(OUTPUT_OPTION) $<\n\n%.C:\n\n%: %.C\n#  recipe to execute (built-in):\n\t$(LINK.C) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n%.o: %.C\n#  recipe to execute (built-in):\n\t$(COMPILE.C) $(OUTPUT_OPTION) $<\n\n%.cpp:\n\n%: %.cpp\n#  recipe to execute (built-in):\n\t$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n%.o: %.cpp\n#  recipe to execute (built-in):\n\t$(COMPILE.cpp) $(OUTPUT_OPTION) $<\n\n%.p:\n\n%: %.p\n#  recipe to execute (built-in):\n\t$(LINK.p) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n%.o: %.p\n#  recipe to execute (built-in):\n\t$(COMPILE.p) $(OUTPUT_OPTION) $<\n\n%.f:\n\n%: %.f\n#  recipe to execute (built-in):\n\t$(LINK.f) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n%.o: %.f\n#  recipe to execute (built-in):\n\t$(COMPILE.f) $(OUTPUT_OPTION) $<\n\n%.F:\n\n%: %.F\n#  recipe to execute (built-in):\n\t$(LINK.F) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n%.o: %.F\n#  recipe to execute (built-in):\n\t$(COMPILE.F) $(OUTPUT_OPTION) $<\n\n%.f: %.F\n#  recipe to execute (built-in):\n\t$(PREPROCESS.F) $(OUTPUT_OPTION) $<\n\n%.m:\n\n%: %.m\n#  recipe to execute (built-in):\n\t$(LINK.m) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n%.o: %.m\n#  recipe to execute (built-in):\n\t$(COMPILE.m) $(OUTPUT_OPTION) $<\n\n%.r:\n\n%: %.r\n#  recipe to execute (built-in):\n\t$(LINK.r) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n%.o: %.r\n#  recipe to execute (built-in):\n\t$(COMPILE.r) $(OUTPUT_OPTION) $<\n\n%.f: %.r\n#  recipe to execute (built-in):\n\t$(PREPROCESS.r) $(OUTPUT_OPTION) $<\n\n%.y:\n\n%.ln: %.y\n#  recipe to execute (built-in):\n\t$(YACC.y) $< \n\t $(LINT.c) -C$* y.tab.c \n\t $(RM) y.tab.c\n\n%.c: %.y\n#  recipe to execute (built-in):\n\t$(YACC.y) $< \n\t mv -f y.tab.c $@\n\n%.l:\n\n%.ln: %.l\n#  recipe to execute (built-in):\n\t@$(RM) $*.c\n\t $(LEX.l) $< > $*.c\n\t$(LINT.c) -i $*.c -o $@\n\t $(RM) $*.c\n\n%.c: %.l\n#  recipe to execute (built-in):\n\t@$(RM) $@ \n\t $(LEX.l) $< > $@\n\n%.r: %.l\n#  recipe to execute (built-in):\n\t$(LEX.l) $< > $@ \n\t mv -f lex.yy.r $@\n\n%.ym:\n\n%.m: %.ym\n#  recipe to execute (built-in):\n\t$(YACC.m) $< \n\t mv -f y.tab.c $@\n\n%.yl:\n\n%.s:\n\n%: %.s\n#  recipe to execute (built-in):\n\t$(LINK.s) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n%.o: %.s\n#  recipe to execute (built-in):\n\t$(COMPILE.s) -o $@ $<\n\n%.S:\n\n%: %.S\n#  recipe to execute (built-in):\n\t$(LINK.S) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n%.o: %.S\n#  recipe to execute (built-in):\n\t$(COMPILE.S) -o $@ $<\n\n%.s: %.S\n#  recipe to execute (built-in):\n\t$(PREPROCESS.S) $< > $@\n\n%.mod:\n\n%: %.mod\n#  recipe to execute (built-in):\n\t$(COMPILE.mod) -o $@ -e $@ $^\n\n%.o: %.mod\n#  recipe to execute (built-in):\n\t$(COMPILE.mod) -o $@ $<\n\n%.sym:\n\n%.def:\n\n%.sym: %.def\n#  recipe to execute (built-in):\n\t$(COMPILE.def) -o $@ $<\n\n%.h:\n\n%.info:\n\n%.dvi:\n\n%.tex:\n\n%.dvi: %.tex\n#  recipe to execute (built-in):\n\t$(TEX) $<\n\n%.texinfo:\n\n%.info: %.texinfo\n#  recipe to execute (built-in):\n\t$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@\n\n%.dvi: %.texinfo\n#  recipe to execute (built-in):\n\t$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<\n\n%.texi:\n\n%.info: %.texi\n#  recipe to execute (built-in):\n\t$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@\n\n%.dvi: %.texi\n#  recipe to execute (built-in):\n\t$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<\n\n%.txinfo:\n\n%.info: %.txinfo\n#  recipe to execute (built-in):\n\t$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@\n\n%.dvi: %.txinfo\n#  recipe to execute (built-in):\n\t$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<\n\n%.w:\n\n%.c: %.w\n#  recipe to execute (built-in):\n\t$(CTANGLE) $< - $@\n\n%.tex: %.w\n#  recipe to execute (built-in):\n\t$(CWEAVE) $< - $@\n\n%.ch:\n\n%.web:\n\n%.p: %.web\n#  recipe to execute (built-in):\n\t$(TANGLE) $<\n\n%.tex: %.web\n#  recipe to execute (built-in):\n\t$(WEAVE) $<\n\n%.sh:\n\n%: %.sh\n#  recipe to execute (built-in):\n\tcat $< >$@ \n\t chmod a+x $@\n\n%.elc:\n\n%.el:\n\n(%): %\n#  recipe to execute (built-in):\n\t$(AR) $(ARFLAGS) $@ $<\n\n%.out: %\n#  recipe to execute (built-in):\n\t@rm -f $@ \n\t cp $< $@\n\n%.c: %.w %.ch\n#  recipe to execute (built-in):\n\t$(CTANGLE) $^ $@\n\n%.tex: %.w %.ch\n#  recipe to execute (built-in):\n\t$(CWEAVE) $^ $@\n\n%:: %,v\n#  recipe to execute (built-in):\n\t$(CHECKOUT,v)\n\n%:: RCS/%,v\n#  recipe to execute (built-in):\n\t$(CHECKOUT,v)\n\n%:: RCS/%\n#  recipe to execute (built-in):\n\t$(CHECKOUT,v)\n\n%:: s.%\n#  recipe to execute (built-in):\n\t$(GET) $(GFLAGS) $(SCCS_OUTPUT_OPTION) $<\n\n%:: SCCS/s.%\n#  recipe to execute (built-in):\n\t$(GET) $(GFLAGS) $(SCCS_OUTPUT_OPTION) $<\n\n# 92 implicit rules, 5 (5.4%) terminal.\n# Files\n\n# Not a target:\n.cpp:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n# Not a target:\n.c.o:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(COMPILE.c) $(OUTPUT_OPTION) $<\n\n# Not a target:\n.h:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.sh:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\tcat $< >$@ \n\t chmod a+x $@\n\n# Not a target:\n.ch:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.r.f:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(PREPROCESS.r) $(OUTPUT_OPTION) $<\n\n# Not a target:\n.dvi:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.def.sym:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(COMPILE.def) -o $@ $<\n\n# Not a target:\n.m.o:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(COMPILE.m) $(OUTPUT_OPTION) $<\n\n# Not a target:\n.lm.m:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t@$(RM) $@ \n\t $(LEX.m) $< > $@\n\n# Not a target:\n.p.o:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(COMPILE.p) $(OUTPUT_OPTION) $<\n\n# Not a target:\n.texinfo:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.ln:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.C:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(LINK.C) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n# Not a target:\n.web:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.elc:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.y.ln:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(YACC.y) $< \n\t $(LINT.c) -C$* y.tab.c \n\t $(RM) y.tab.c\n\n# Not a target:\n.l.c:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t@$(RM) $@ \n\t $(LEX.l) $< > $@\n\n# Not a target:\nMakefile:\n#  Implicit rule search has been done.\n#  Last modified 2026-10-06 03:35:57\n#  File has been updated.\n#  Successfully updated.\n\n# Not a target:\n.sym:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.r.o:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(COMPILE.r) $(OUTPUT_OPTION) $<\n\n# Not a target:\n.mod:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(COMPILE.mod) -o $@ -e $@ $^\n\n# Not a target:\n.def:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.S:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(LINK.S) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n# Not a target:\n.texi.dvi:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<\n\n# Not a target:\n.txinfo.dvi:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<\n\n# Not a target:\ninclude/common.h:\n#  Implicit rule search has been done.\n#  Last modified 2026-10-06 03:35:41\n#  File has been updated.\n#  Successfully updated.\n\n# Not a target:\n.y.c:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(YACC.y) $< \n\t mv -f y.tab.c $@\n\nclean:\n#  Phony target (prerequisite of .PHONY).\n#  Implicit rule search has not been done.\n#  File does not exist.\n#  File has not been updated.\n#  recipe to execute (from 'Makefile', line 19):\n\trm -rf build bin\n\n# Not a target:\n.cpp.o:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(COMPILE.cpp) $(OUTPUT_OPTION) $<\n\n# Not a target:\n.el:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.cc:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(LINK.cc) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n# Not a target:\n.tex:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.m:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(LINK.m) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n# Not a target:\n.F:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(LINK.F) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n# Not a target:\n.web.tex:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(WEAVE) $<\n\n# Not a target:\n.texinfo.info:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@\n\n# Not a target:\nsrc/main.c:\n#  Implicit rule search has been done.\n#  Last modified 2026-10-06 03:35:31\n#  File has been updated.\n#  Successfully updated.\n\n# Not a target:\n.ym.m:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(YACC.m) $< \n\t mv -f y.tab.c $@\n\n# Not a target:\n.l:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\nbin/demo: build/main.o\n#  Implicit rule search has not been done.\n#  Last modified 2026-10-06 05:25:06.534873452\n#  File has been updated.\n#  Successfully updated.\n#  recipe to execute (from 'Makefile', line 11):\n\tmkdir -p bin\n\t$(CC) $(CFLAGS) build/main.o -o bin/demo\n\n# Not a target:\n.f:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(LINK.f) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n# Not a target:\n.texi:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.DEFAULT:\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.r:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(LINK.r) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n# Not a target:\n.a:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\nall: bin/demo\n#  Phony target (prerequisite of .PHONY).\n#  Implicit rule search has not been done.\n#  File does not exist.\n#  File has been updated.\n#  Successfully updated.\n\n# Not a target:\n.w.tex:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(CWEAVE) $< - $@\n\n# Not a target:\n.s.o:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(COMPILE.s) -o $@ $<\n\n# Not a target:\n.txinfo:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.c.ln:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(LINT.c) -C$* $<\n\n# Not a target:\n.tex.dvi:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(TEX) $<\n\n# Not a target:\n.info:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.out:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.texinfo.dvi:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<\n\n# Not a target:\n.F.o:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(COMPILE.F) $(OUTPUT_OPTION) $<\n\n# Not a target:\n.yl:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.s:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(LINK.s) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n# Not a target:\n.S.o:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(COMPILE.S) -o $@ $<\n\n# Not a target:\n.o:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n# Not a target:\n.C.o:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(COMPILE.C) $(OUTPUT_OPTION) $<\n\n# Not a target:\n.c:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n# Not a target:\n.txinfo.info:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@\n\n# Not a target:\n.texi.info:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@\n\n# Not a target:\n.y:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.l.r:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(LEX.l) $< > $@ \n\t mv -f lex.yy.r $@\n\n# Not a target:\n.p:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(LINK.p) $^ $(LOADLIBES) $(LDLIBS) -o $@\n\n# Not a target:\n.l.ln:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t@$(RM) $*.c\n\t $(LEX.l) $< > $*.c\n\t$(LINT.c) -i $*.c -o $@\n\t $(RM) $*.c\n\n# Not a target:\n.w:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.SUFFIXES: .out .a .ln .o .c .cc .C .cpp .p .f .F .m .r .y .l .ym .yl .s .S .mod .sym .def .h .info .dvi .tex .texinfo .texi .txinfo .w .ch .web .sh .elc .el\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\nbuild/main.o: src/main.c include/common.h include/unused.h\n#  Implicit rule search has not been done.\n#  Last modified 2026-10-06 05:25:06.415067526\n#  File has been updated.\n#  Successfully updated.\n#  recipe to execute (from 'Makefile', line 15):\n\tmkdir -p build\n\t$(CC) $(CPPFLAGS) $(CFLAGS) -c src/main.c -o build/main.o\n\n.PHONY: all clean\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.mod.o:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(COMPILE.mod) -o $@ $<\n\n# Not a target:\n.web.p:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(TANGLE) $<\n\n# Not a target:\n.S.s:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(PREPROCESS.S) $< > $@\n\n# Not a target:\n.f.o:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(COMPILE.f) $(OUTPUT_OPTION) $<\n\n# Not a target:\ninclude/unused.h:\n#  Implicit rule search has been done.\n#  Last modified 2026-10-06 03:35:52\n#  File has been updated.\n#  Successfully updated.\n\n# Not a target:\n.ym:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n\n# Not a target:\n.cc.o:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(COMPILE.cc) $(OUTPUT_OPTION) $<\n\n# Not a target:\n.F.f:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(PREPROCESS.F) $(OUTPUT_OPTION) $<\n\n# Not a target:\n.w.c:\n#  Builtin rule\n#  Implicit rule search has not been done.\n#  Modification time never checked.\n#  File has not been updated.\n#  recipe to execute (built-in):\n\t$(CTANGLE) $< - $@\n\n# files hash-table stats:\n# Load=81/1024=8%, Rehash=0, Collisions=131/1533=9%\n# VPATH Search Paths\n\n# No 'vpath' search paths.\n\n# No general ('VPATH' variable) search path.\n\n# strcache buffers: 1 (0) / strings = 298 / storage = 3250 B / avg = 10 B\n# current buf: size = 8162 B / used = 3250 B / count = 298 / avg = 10 B\n\n# strcache performance: lookups = 507 / hit rate = 41%\n# hash-table stats:\n# Load=298/8192=4%, Rehash=0, Collisions=11/507=2%\n# Finished Make data base on Tue Oct  6 05:25:06 2026\n\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "make",
+        "-j2"
+      ],
+      "cwd": "/tmp/a08-md-rd-m4g2hxc1/sample",
+      "exit_code": 0,
+      "stdout": "make: Nothing to be done for 'all'.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "./bin/demo"
+      ],
+      "cwd": "/tmp/a08-md-rd-m4g2hxc1/sample",
+      "exit_code": 0,
+      "stdout": "10\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "make",
+        "clean"
+      ],
+      "cwd": "/tmp/a08-md-rd-m4g2hxc1/sample",
+      "exit_code": 0,
+      "stdout": "rm -rf build bin\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "make",
+        "-j2"
+      ],
+      "cwd": "/tmp/a08-md-rd-m4g2hxc1/sample",
+      "exit_code": 0,
+      "stdout": "mkdir -p build\ngcc -Iinclude -Wall -Wextra -O2 -c src/main.c -o build/main.o\nmkdir -p bin\ngcc -Wall -Wextra -O2 build/main.o -o bin/demo\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "./bin/demo"
+      ],
+      "cwd": "/tmp/a08-md-rd-m4g2hxc1/sample",
+      "exit_code": 0,
+      "stdout": "11\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "make",
+        "-j2"
+      ],
+      "cwd": "/tmp/a08-md-rd-m4g2hxc1/sample",
+      "exit_code": 0,
+      "stdout": "mkdir -p build\ngcc -Iinclude -Wall -Wextra -O2 -c src/main.c -o build/main.o\nmkdir -p bin\ngcc -Wall -Wextra -O2 build/main.o -o bin/demo\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "./bin/demo"
+      ],
+      "cwd": "/tmp/a08-md-rd-m4g2hxc1/sample",
+      "exit_code": 0,
+      "stdout": "11\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    {
+      "name": "version",
+      "passed": true
+    },
+    {
+      "name": "initial output 10",
+      "passed": true
+    },
+    {
+      "name": "compiler dependencies",
+      "passed": true
+    },
+    {
+      "name": "edit token exists: CONFIG_VALUE 4",
+      "passed": true
+    },
+    {
+      "name": "edited header is newer than object",
+      "passed": true
+    },
+    {
+      "name": "MD object unchanged",
+      "passed": true
+    },
+    {
+      "name": "MD incremental output 10",
+      "passed": true
+    },
+    {
+      "name": "MD clean output 11",
+      "passed": true
+    },
+    {
+      "name": "edit token exists: /* Deliberately",
+      "passed": true
+    },
+    {
+      "name": "edited header is newer than object",
+      "passed": true
+    },
+    {
+      "name": "RD compile command executed",
+      "passed": true
+    },
+    {
+      "name": "RD object rebuilt",
+      "passed": true
+    },
+    {
+      "name": "RD output unchanged 11",
+      "passed": true
+    },
+    {
+      "name": "source fixture unchanged",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "fixtures/md-rd/Dockerfile": "d015e3b64edafab50c7055a78fa462c707afe2fe6b828073b2c23e29cd7acef4",
+    "fixtures/md-rd/Dockerfile.dockerignore": "1c06e33bc4ce5a2884939d2fc997a42af61f4148147922afce4e474df91a1ef9",
+    "fixtures/md-rd/Makefile": "2792f60f8c09f0cbadbcbae146d21518584947590d2cb1aeef408f2fdf3a172d",
+    "fixtures/md-rd/README.md": "af8e6fbb49248afa9b3d902ea9241d523147f49c470807d0500dfe9198bda8c7",
+    "fixtures/md-rd/include/common.h": "573b20faebed4c96c03cbeff2ae1bd0f7369415783ba27a32252cac8a49f8484",
+    "fixtures/md-rd/include/config.h": "6b31c52c4653489ad5a9e0472291992a5b285775046796f862497d63877943d1",
+    "fixtures/md-rd/include/unused.h": "c27bfa6d4c84ba1ae99a4d536fcdf36eb51b7cd7945c7c65d0f180aa74642510",
+    "fixtures/md-rd/src/main.c": "899644451b3ca5906e423393f85179dfeb855460b01c6fe17d175e15d2f0b4c1",
+    "scripts/run_md_rd.py": "e81d4b8ee78d5c94bcce765e29548021985baaa0db343b473e5b0e39dfd25c1b",
+    "scripts/run-md-rd.sh": "11893410ed8e7203e0502fa83147d8385548463547e1f4b28f362eb31ace4c00",
+    "oracle/md-rd.expected.json": "ee6a765a598136c0b91300ba005c8d3844a733036ab7cddca200b3bf89e89629"
+  },
+  "status": "PASS",
+  "base_commit": "60318cf03e7f988058160ccf422147cf2d424e04",
+  "container_image_id": "sha256:93a41bef5c15dfbcead963a13a5bae5ca37682504e98a020e7b25c08b349fef6",
+  "local_configuration_id": "local-md-rd-fe579904174d88c9",
+  "configuration_note": "Local evidence identifier only; team configuration_id pending confirmation.",
+  "temporary_workdir": "/tmp/a08-md-rd-m4g2hxc1/sample",
+  "edits": [
+    {
+      "file": "config.h",
+      "before": "CONFIG_VALUE 4",
+      "after": "CONFIG_VALUE 5"
+    },
+    {
+      "file": "unused.h",
+      "before": "/* Deliberately",
+      "after": "/* Edited comment. Deliberately"
+    }
+  ]
+}

@@ -5,16 +5,7 @@
 `main` 只保存共同确认的 E3 骨架。实际实验统一在
 `a08/e3-baseline` 分支完成，不再为每名成员建立额外工作分支或 worktree。
 
-首次进入工作分支：
-
-```bash
-git checkout main
-git pull --rebase origin main
-git checkout -b a08/e3-baseline
-git push -u origin a08/e3-baseline
-```
-
-若远端工作分支已经由组长建立，其他成员使用：
+远端工作分支已经由组长建立，其他成员使用：
 
 ```bash
 git fetch origin
@@ -32,13 +23,12 @@ git pull --rebase origin a08/e3-baseline
 
 | 成员 | 主要任务 | 主要责任目录或文件 |
 |---|---|---|
-| 1 | 建立可运行基础项目和 C0；整合环境证据与最终检查 | `fixtures/incremental/`、`evidence/environment/`、公共汇总 |
-| 2 | 构造固定 MD/RD 样本；编写人工 oracle 与复现证据 | `fixtures/md-rd/`、`oracle/md-rd.expected.json`、对应证据 |
-| 3 | 在 C0 后构造 C1 新增头文件场景；记录预期与证据 | C1 源码提交、`oracle/incremental.expected.json` 的 C1 部分、对应证据 |
-| 4 | 在 C1 后构造 C2 编译命令变化；对比增量与干净构建 | C2 Makefile 提交、C2 证据、`BACKLOG.md`、`AI_USAGE.md`、`CONTRIBUTIONS.md` |
+| 刘馨雅 | 建立可运行基础项目和 C0；整合环境证据与最终检查 | `fixtures/incremental/`、`evidence/environment/`、公共汇总 |
+| 邱莉扉 | 构造固定 MD/RD 样本；编写人工 oracle 与复现证据 | `fixtures/md-rd/`、`oracle/md-rd.expected.json`、对应证据 |
+| 范从钰 | 在 C0 后构造 C1 新增头文件场景；记录预期与证据 | C1 源码提交、`oracle/incremental.expected.json` 的 C1 部分、对应证据 |
+| 叶原原 | 在 C1 后构造 C2 编译命令变化；对比增量与干净构建 | C2 Makefile 提交、C2 证据、`BACKLOG.md`、`AI_USAGE.md`、`CONTRIBUTIONS.md` |
 
-分工中的“证据”包括本人执行的命令、原始输出、结果解释和关联 Commit SHA，
-不把成员工作缩减为只写文档。
+分工中的“证据”包括本人执行的命令、原始输出、结果解释和关联 Commit SHA。
 
 ## 三、提交顺序
 
@@ -62,11 +52,19 @@ C0、C1、C2 必须依次完成；不得并行修改同一份增量样本。固�
 
 ## 五、最终检查
 
-- [ ] 固定 MD 和 RD 均可从干净环境复现，人工依据明确。
-- [ ] C0、C1、C2 对应三个真实 Commit 和三个固定标签。
-- [ ] C1 只引入预定的新头文件读取及必要代码变化。
-- [ ] C2 只修改预定的编译命令或编译选项。
-- [ ] C2 的增量构建和干净构建输出符合 oracle。
-- [ ] Docker 镜像、编译器、Make 和架构版本已记录。
-- [ ] 每名成员的贡献与 Commit SHA 可追溯。
-- [ ] A08 独立复现通过，不依赖 B08 尚未交付的运行产物。
+- [x] 固定 MD 和 RD 均可从干净环境复现，人工依据明确。
+- [x] C0、C1、C2 对应三个真实 Commit 和三个固定标签。
+- [x] C1 只引入预定的新头文件读取及必要代码变化。
+- [x] C2 只修改预定的编译命令或编译选项。
+- [x] C2 的增量构建和干净构建输出符合 oracle。
+- [x] Docker 镜像、编译器、Make 和架构版本已记录。
+- [x] 每名成员的贡献与 Commit SHA 可追溯。
+- [x] A08 独立复现通过，不依赖 B08 尚未交付的运行产物。
+
+成员 4 于 2026-10-08 完成 C2 Makefile 独立提交、`e3-c2` 注释标签、复现脚本
+及 Ubuntu 24.04 容器证据；37 项实验断言与 3 项脚本异常检查通过，见
+[C2 证据索引](evidence/c2/README.md)。2026-10-09 已核对三个远端标签，
+组长转述 C1/C2 负责人的人工 oracle 确认，见
+[审阅记录](oracle/incremental-review-20261009.md)。组长 2026-10-09 的三项
+独立复现见[最终检查记录](evidence/final-review-20261009.md)；跨提交团队配置
+标识仍待核对，不将 C1→C2 行为实验当作 E2 同配置增量请求。

@@ -1,0 +1,1783 @@
+# C1 -> C2 real command transcript
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "status", "--porcelain", "--untracked-files=no"]
+$ git status --porcelain --untracked-files=no
+ M E3/AI_USAGE.md
+ M E3/BACKLOG.md
+ M E3/CONTRACT_REFERENCE.md
+ M E3/CONTRIBUTIONS.md
+ M E3/README.md
+ M E3/WORKFLOW.md
+ M E3/evidence/README.md
+ M E3/fixtures/incremental/README.md
+ M E3/oracle/README.md
+ M E3/oracle/incremental.expected.json
+ M E3/scripts/README.md
+ M README.md
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "rev-parse", "HEAD"]
+$ git rev-parse HEAD
+ae86618b602a08ce4d893b396dde6b6f75e3fccc
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "--version"]
+$ git --version
+git version 2.47.1.windows.1
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "rev-parse", "--verify", "--end-of-options", "e3-c1^{commit}"]
+$ git rev-parse --verify --end-of-options 'e3-c1^{commit}'
+4b70cabad1be8f6e98ee90ed9c5803b7aa793253
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "rev-parse", "--verify", "--end-of-options", "e3-c2^{commit}"]
+$ git rev-parse --verify --end-of-options 'e3-c2^{commit}'
+56deea9199679907893fa53add1d867ff62028e1
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "merge-base", "--is-ancestor", "4b70cabad1be8f6e98ee90ed9c5803b7aa793253", "56deea9199679907893fa53add1d867ff62028e1"]
+$ git merge-base --is-ancestor 4b70cabad1be8f6e98ee90ed9c5803b7aa793253 56deea9199679907893fa53add1d867ff62028e1
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "diff-tree", "--no-commit-id", "--name-only", "-r", "56deea9199679907893fa53add1d867ff62028e1"]
+$ git diff-tree --no-commit-id --name-only -r 56deea9199679907893fa53add1d867ff62028e1
+E3/fixtures/incremental/Makefile
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "-c", "core.autocrlf=false", "-c", "core.eol=lf", "archive", "--format=tar", "--output=C:\\Users\\yevhen\\AppData\\Local\\Temp\\a08-e3-c2-qiiu0b6b\\c1.tar", "4b70cabad1be8f6e98ee90ed9c5803b7aa793253", "E3/fixtures/incremental"]
+$ git -c core.autocrlf=false -c core.eol=lf archive --format=tar '--output=C:\Users\yevhen\AppData\Local\Temp\a08-e3-c2-qiiu0b6b\c1.tar' 4b70cabad1be8f6e98ee90ed9c5803b7aa793253 E3/fixtures/incremental
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "-c", "core.autocrlf=false", "-c", "core.eol=lf", "archive", "--format=tar", "--output=C:\\Users\\yevhen\\AppData\\Local\\Temp\\a08-e3-c2-qiiu0b6b\\c2.tar", "56deea9199679907893fa53add1d867ff62028e1", "E3/fixtures/incremental"]
+$ git -c core.autocrlf=false -c core.eol=lf archive --format=tar '--output=C:\Users\yevhen\AppData\Local\Temp\a08-e3-c2-qiiu0b6b\c2.tar' 56deea9199679907893fa53add1d867ff62028e1 E3/fixtures/incremental
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "version"]
+$ docker version
+Client:
+ Version:           29.7.2
+ API version:       1.55
+ Go version:        go1.26.5
+ Git commit:        a7dcaa6
+ Built:             Wed Aug  5 18:31:33 2026
+ OS/Arch:           windows/amd64
+ Context:           desktop-linux
+
+Server: Docker Desktop 4.90.0 (238679)
+ Engine:
+  Version:          29.7.2
+  API version:      1.55 (minimum version 1.40)
+  Go version:       go1.26.5
+  Git commit:       6a43e3d
+  Built:            Wed Aug  5 18:28:36 2026
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          v2.3.3
+  GitCommit:        aad11006b869517fcd3009450b6f82da282e1a9b
+ runc:
+  Version:          1.4.3
+  GitCommit:        v1.4.3-0-gbb14dabe
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "build", "--progress=plain", "--file", "C:\\Users\\yevhen\\AppData\\Local\\Temp\\a08-e3-c2-qiiu0b6b\\c2\\E3\\fixtures\\incremental\\Dockerfile", "--tag", "a08-e3-c2:local-20261008-201035798727", "C:\\Users\\yevhen\\AppData\\Local\\Temp\\a08-e3-c2-qiiu0b6b\\c2"]
+$ docker build --progress=plain --file 'C:\Users\yevhen\AppData\Local\Temp\a08-e3-c2-qiiu0b6b\c2\E3\fixtures\incremental\Dockerfile' --tag a08-e3-c2:local-20261008-201035798727 'C:\Users\yevhen\AppData\Local\Temp\a08-e3-c2-qiiu0b6b\c2'
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 361B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:24.04
+#2 DONE 3.2s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/ubuntu:24.04@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55
+#4 resolve docker.io/library/ubuntu:24.04@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 587B done
+#5 DONE 0.0s
+
+#6 [2/5] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends        build-essential ca-certificates     && rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [3/5] WORKDIR /workspace/E3/fixtures/incremental
+#7 CACHED
+
+#8 [4/5] COPY . /workspace/
+#8 CACHED
+
+#9 [5/5] RUN make clean && make -j2
+#9 CACHED
+
+#10 exporting to image
+#10 exporting layers done
+#10 exporting manifest sha256:a46c6bd726ab0b28cc158b6f27b15362da9ac88bbb029d5f8f905a9dec2bcbea done
+#10 exporting config sha256:a2f9455353b836ccb54659bb932b241f78d407219ec7c9913717d3b7c362439e done
+#10 exporting attestation manifest sha256:8737e5736b3edf6764a668c3d27ab132107c11a0a1a8f75218e16831f3f565b1
+#10 exporting attestation manifest sha256:8737e5736b3edf6764a668c3d27ab132107c11a0a1a8f75218e16831f3f565b1 0.0s done
+#10 exporting manifest list sha256:196934e56dcb3f9f4bfa48d5c250f863259faa4e2fef90c9ca83c1bc6bab311e 0.0s done
+#10 naming to docker.io/library/a08-e3-c2:local-20261008-201035798727 done
+#10 unpacking to docker.io/library/a08-e3-c2:local-20261008-201035798727 0.0s done
+#10 DONE 0.1s
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "image", "inspect", "a08-e3-c2:local-20261008-201035798727"]
+$ docker image inspect a08-e3-c2:local-20261008-201035798727
+[
+    {
+        "Id": "sha256:196934e56dcb3f9f4bfa48d5c250f863259faa4e2fef90c9ca83c1bc6bab311e",
+        "RepoTags": [
+            "a08-e3-c2:local-20261008-201035798727"
+        ],
+        "RepoDigests": [
+            "a08-e3-c2@sha256:196934e56dcb3f9f4bfa48d5c250f863259faa4e2fef90c9ca83c1bc6bab311e"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-08T11:49:20.546749702Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "./bin/demo",
+                "--version"
+            ],
+            "WorkingDir": "/workspace/E3/fixtures/incremental",
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 135148159,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:d81fb2a7c6ee3be05fdefaa7fd223be219c1ab172083ec1b994c3ecda33ac0a8",
+                "sha256:50ca498ff6b1372ad91c4d2cfe0b1ce627b0099a2b21fbd89bb2c156bbb54616",
+                "sha256:9917e8af53ed870e19028733be91196062ca7d36945a27a51d760a5e328b48a6",
+                "sha256:6d5113db3f3519b995fdcfb9ef905dba169fb4e25d739817496ee8b58ff67f9c",
+                "sha256:75e21f7aebaa1818b42a2d8871682cc680d8594fd73ce8590036f1c95267aec0"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-08T12:10:41.135749811Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:196934e56dcb3f9f4bfa48d5c250f863259faa4e2fef90c9ca83c1bc6bab311e",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "4pyfspvf44sg2xnyic81js0zv",
+                    "CreatedAt": "2026-10-08T12:10:41.154032498Z"
+                }
+            ]
+        }
+    }
+]
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "run", "--rm", "--network", "none", "sha256:196934e56dcb3f9f4bfa48d5c250f863259faa4e2fef90c9ca83c1bc6bab311e"]
+$ docker run --rm --network none sha256:196934e56dcb3f9f4bfa48d5c250f863259faa4e2fef90c9ca83c1bc6bab311e
+demo 1.0.0
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "run", "--rm", "--network", "none", "sha256:196934e56dcb3f9f4bfa48d5c250f863259faa4e2fef90c9ca83c1bc6bab311e", "./bin/demo"]
+$ docker run --rm --network none sha256:196934e56dcb3f9f4bfa48d5c250f863259faa4e2fef90c9ca83c1bc6bab311e ./bin/demo
+19
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "run", "--detach", "--network", "none", "--name", "a08-e3-c2-f6fbaceb243a", "--entrypoint", "sleep", "sha256:196934e56dcb3f9f4bfa48d5c250f863259faa4e2fef90c9ca83c1bc6bab311e", "infinity"]
+$ docker run --detach --network none --name a08-e3-c2-f6fbaceb243a --entrypoint sleep sha256:196934e56dcb3f9f4bfa48d5c250f863259faa4e2fef90c9ca83c1bc6bab311e infinity
+d245d164b824b6c4569bf123605b021758676e25effcb841a01979ebe1d78ffa
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "a08-e3-c2-f6fbaceb243a", "mkdir", "-p", "/tmp/a08-e3-incremental"]
+$ docker exec a08-e3-c2-f6fbaceb243a mkdir -p /tmp/a08-e3-incremental
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "cp", "C:\\Users\\yevhen\\AppData\\Local\\Temp\\a08-e3-c2-qiiu0b6b\\c1\\E3\\fixtures\\incremental/.", "a08-e3-c2-f6fbaceb243a:/tmp/a08-e3-incremental"]
+$ docker cp 'C:\Users\yevhen\AppData\Local\Temp\a08-e3-c2-qiiu0b6b\c1\E3\fixtures\incremental/.' a08-e3-c2-f6fbaceb243a:/tmp/a08-e3-incremental
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "cat", "/etc/os-release"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a cat /etc/os-release
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.5 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "uname", "-m"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a uname -m
+x86_64
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "gcc", "--version"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a gcc --version
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "make", "--version"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a make --version
+GNU Make 4.3
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "make", "clean"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a make clean
+rm -rf build bin
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "make", "-j2"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a make -j2
+mkdir -p build
+gcc -Iinclude -Wall -Wextra -O2 -c src/main.c -o build/main.o
+mkdir -p bin
+gcc -Wall -Wextra -O2 build/main.o -o bin/demo
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "./bin/demo", "--version"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a ./bin/demo --version
+demo 1.0.0
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "./bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a ./bin/demo
+12
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "sha256sum", "src/main.c", "include/common.h", "include/config.h", "include/feature.h", "build/main.o", "bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a sha256sum src/main.c include/common.h include/config.h include/feature.h build/main.o bin/demo
+5608cf3b12341e9533deb502febbac2bd6961dba64093435944c81b46a54cd1c  src/main.c
+7a99265f8389394468a479afa84b32245bdfc2c96cc00418e56445fbec26da52  include/common.h
+89dbcecf7ad1dbcd10013dc978dd31763f799f31193367a7be43e981136abff1  include/config.h
+92c5adda7962e816ecae0911f4e62db0a8d1cbb8f20a2ba6d0b039f35004938d  include/feature.h
+a218ecbf03281e1598ed57ca037c8cf467f1edc2f4756bb7442679bba9064a48  build/main.o
+dbb09f14ef10b4e819781467f5f884857fd801f28548c05b246a283ea08a34f8  bin/demo
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "stat", "--format=%n|%s|%y", "src/main.c", "include/common.h", "include/config.h", "include/feature.h", "build/main.o", "bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a stat '--format=%n|%s|%y' src/main.c include/common.h include/config.h include/feature.h build/main.o bin/demo
+src/main.c|478|2026-10-07 06:27:39.000000000 +0000
+include/common.h|76|2026-10-07 06:27:39.000000000 +0000
+include/config.h|76|2026-10-07 06:27:39.000000000 +0000
+include/feature.h|79|2026-10-07 06:27:39.000000000 +0000
+build/main.o|2112|2026-10-08 12:10:44.832550763 +0000
+bin/demo|16144|2026-10-08 12:10:44.865908115 +0000
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "sha256sum", "Makefile"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a sha256sum Makefile
+f9b32ef8c18955f7222e42a5b928d1f15bdb94fa4c1a6b4e4e1b7e872a4dac0b  Makefile
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "cp", "C:\\Users\\yevhen\\AppData\\Local\\Temp\\a08-e3-c2-qiiu0b6b\\c2\\E3\\fixtures\\incremental\\Makefile", "a08-e3-c2-f6fbaceb243a:/tmp/a08-e3-incremental/Makefile"]
+$ docker cp 'C:\Users\yevhen\AppData\Local\Temp\a08-e3-c2-qiiu0b6b\c2\E3\fixtures\incremental\Makefile' a08-e3-c2-f6fbaceb243a:/tmp/a08-e3-incremental/Makefile
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "make", "--always-make", "--dry-run"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a make --always-make --dry-run
+mkdir -p build
+gcc -Iinclude -DMODE=7 -Wall -Wextra -O2 -c src/main.c -o build/main.o
+mkdir -p bin
+gcc -Wall -Wextra -O2 build/main.o -o bin/demo
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "make", "-j2"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a make -j2
+make: Nothing to be done for 'all'.
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "./bin/demo", "--version"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a ./bin/demo --version
+demo 1.0.0
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "./bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a ./bin/demo
+12
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "sha256sum", "src/main.c", "include/common.h", "include/config.h", "include/feature.h", "build/main.o", "bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a sha256sum src/main.c include/common.h include/config.h include/feature.h build/main.o bin/demo
+5608cf3b12341e9533deb502febbac2bd6961dba64093435944c81b46a54cd1c  src/main.c
+7a99265f8389394468a479afa84b32245bdfc2c96cc00418e56445fbec26da52  include/common.h
+89dbcecf7ad1dbcd10013dc978dd31763f799f31193367a7be43e981136abff1  include/config.h
+92c5adda7962e816ecae0911f4e62db0a8d1cbb8f20a2ba6d0b039f35004938d  include/feature.h
+a218ecbf03281e1598ed57ca037c8cf467f1edc2f4756bb7442679bba9064a48  build/main.o
+dbb09f14ef10b4e819781467f5f884857fd801f28548c05b246a283ea08a34f8  bin/demo
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "stat", "--format=%n|%s|%y", "src/main.c", "include/common.h", "include/config.h", "include/feature.h", "build/main.o", "bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a stat '--format=%n|%s|%y' src/main.c include/common.h include/config.h include/feature.h build/main.o bin/demo
+src/main.c|478|2026-10-07 06:27:39.000000000 +0000
+include/common.h|76|2026-10-07 06:27:39.000000000 +0000
+include/config.h|76|2026-10-07 06:27:39.000000000 +0000
+include/feature.h|79|2026-10-07 06:27:39.000000000 +0000
+build/main.o|2112|2026-10-08 12:10:44.832550763 +0000
+bin/demo|16144|2026-10-08 12:10:44.865908115 +0000
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "sha256sum", "Makefile"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a sha256sum Makefile
+0a9e5bd417679ea4322f53306e89825097ab0351b072bf82b5f0af8bc4ba01a1  Makefile
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "make", "clean"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a make clean
+rm -rf build bin
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "make", "-j2"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a make -j2
+mkdir -p build
+gcc -Iinclude -DMODE=7 -Wall -Wextra -O2 -c src/main.c -o build/main.o
+mkdir -p bin
+gcc -Wall -Wextra -O2 build/main.o -o bin/demo
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "./bin/demo", "--version"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a ./bin/demo --version
+demo 1.0.0
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "./bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a ./bin/demo
+19
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "sha256sum", "src/main.c", "include/common.h", "include/config.h", "include/feature.h", "build/main.o", "bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a sha256sum src/main.c include/common.h include/config.h include/feature.h build/main.o bin/demo
+5608cf3b12341e9533deb502febbac2bd6961dba64093435944c81b46a54cd1c  src/main.c
+7a99265f8389394468a479afa84b32245bdfc2c96cc00418e56445fbec26da52  include/common.h
+89dbcecf7ad1dbcd10013dc978dd31763f799f31193367a7be43e981136abff1  include/config.h
+92c5adda7962e816ecae0911f4e62db0a8d1cbb8f20a2ba6d0b039f35004938d  include/feature.h
+564559ce82a25c3d6119cea814554fff2f5cee61512ad3b0f5e59696c1c408dd  build/main.o
+8d67d5b68f55e80466fb4fdf5ec255c0f3172375c08c46e634bdeff2e1117051  bin/demo
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "stat", "--format=%n|%s|%y", "src/main.c", "include/common.h", "include/config.h", "include/feature.h", "build/main.o", "bin/demo"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a stat '--format=%n|%s|%y' src/main.c include/common.h include/config.h include/feature.h build/main.o bin/demo
+src/main.c|478|2026-10-07 06:27:39.000000000 +0000
+include/common.h|76|2026-10-07 06:27:39.000000000 +0000
+include/config.h|76|2026-10-07 06:27:39.000000000 +0000
+include/feature.h|79|2026-10-07 06:27:39.000000000 +0000
+build/main.o|2112|2026-10-08 12:10:48.016771770 +0000
+bin/demo|16144|2026-10-08 12:10:48.057625035 +0000
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "sha256sum", "Makefile"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a sha256sum Makefile
+0a9e5bd417679ea4322f53306e89825097ab0351b072bf82b5f0af8bc4ba01a1  Makefile
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "gcc", "-MM", "-Iinclude", "-DMODE=7", "-MT", "build/main.o", "src/main.c"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a gcc -MM -Iinclude -DMODE=7 -MT build/main.o src/main.c
+build/main.o: src/main.c include/common.h include/config.h \
+ include/feature.h
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "--workdir", "/tmp/a08-e3-incremental", "a08-e3-c2-f6fbaceb243a", "make", "-pn"]
+$ docker exec --workdir /tmp/a08-e3-incremental a08-e3-c2-f6fbaceb243a make -pn
+make: Nothing to be done for 'all'.
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Thu Oct  8 12:10:49 2026
+
+# Variables
+
+# default
+PREPROCESS.S = $(CC) -E $(CPPFLAGS)
+# default
+COMPILE.m = $(OBJC) $(OBJCFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+ARFLAGS = rv
+# default
+AS = as
+# default
+AR = ar
+# default
+OBJC = cc
+# default
+LINK.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_MACH)
+# default
+LINK.s = $(CC) $(ASFLAGS) $(LDFLAGS) $(TARGET_MACH)
+# default
+MAKE_COMMAND := make
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# default
+COFLAGS = 
+# default
+COMPILE.mod = $(M2C) $(M2FLAGS) $(MODFLAGS) $(TARGET_ARCH)
+# default
+.VARIABLES := 
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+HOSTNAME = d245d164b824
+# default
+LINK.o = $(CC) $(LDFLAGS) $(TARGET_ARCH)
+# default
+TEXI2DVI = texi2dvi
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# automatic
+%F = $(notdir $%)
+# default
+LEX.l = $(LEX) $(LFLAGS) -t
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# default
+COMPILE.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# makefile
+MAKEFLAGS = np
+# default
+LINK.f = $(FC) $(FFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+TANGLE = tangle
+# makefile
+CURDIR := /tmp/a08-e3-incremental
+# default
+PREPROCESS.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -F
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -np
+# default
+COMPILE.p = $(PC) $(PFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+.SHELLFLAGS := -c
+# default
+M2C = m2c
+# default
+COMPILE.cpp = $(COMPILE.cc)
+# default
+TEX = tex
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# default
+F77FLAGS = $(FFLAGS)
+# automatic
+@F = $(notdir $@)
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# default
+COMPILE.def = $(M2C) $(M2FLAGS) $(DEFFLAGS) $(TARGET_ARCH)
+# default
+CTANGLE = ctangle
+# automatic
+*F = $(notdir $*)
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# default
+COMPILE.C = $(COMPILE.cc)
+# default
+YACC.m = $(YACC) $(YFLAGS)
+# default
+LINK.C = $(LINK.cc)
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# default
+LINK.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+SHELL := /bin/sh
+# makefile (from 'Makefile', line 4)
+HEADERS := include/common.h include/config.h
+# default
+LINK.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+FC = f77
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# default
+LINT = lint
+# default
+PC = pc
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# default
+LEX.m = $(LEX) $(LFLAGS) -t
+# default
+.LIBPATTERNS = lib%.so lib%.a
+# default
+CPP = $(CC) -E
+# default
+LINK.cc = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+CHECKOUT,v = +$(if $(wildcard $@),,$(CO) $(COFLAGS) $< $@)
+# default
+COMPILE.f = $(FC) $(FFLAGS) $(TARGET_ARCH) -c
+# default
+COMPILE.r = $(FC) $(FFLAGS) $(RFLAGS) $(TARGET_ARCH) -c
+# default
+COMPILE.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(TARGET_MACH) -c
+# automatic
+?F = $(notdir $?)
+# default
+GET = get
+# default
+LINK.r = $(FC) $(FFLAGS) $(RFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# automatic
++F = $(notdir $+)
+# default
+MAKEINFO = makeinfo
+# 'override' directive
+GNUMAKEFLAGS := 
+# default
+PREPROCESS.r = $(FC) $(FFLAGS) $(RFLAGS) $(TARGET_ARCH) -F
+# default
+LINK.m = $(OBJC) $(OBJCFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+LINK.p = $(PC) $(PFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+YACC = yacc
+# makefile (from 'Makefile', line 2)
+CPPFLAGS := -Iinclude -DMODE=7
+# makefile
+.DEFAULT_GOAL := all
+# default
+RM = rm -f
+# default
+WEAVE = weave
+# default
+MAKE_VERSION := 4.3
+# default
+F77 = $(FC)
+# default
+CWEAVE = cweave
+# default
+YACC.y = $(YACC) $(YFLAGS)
+# default
+LINK.cpp = $(LINK.cc)
+# default
+CO = co
+# makefile (from 'Makefile', line 3)
+CFLAGS := -Wall -Wextra -O2
+# default
+OUTPUT_OPTION = -o $@
+# default
+COMPILE.s = $(AS) $(ASFLAGS) $(TARGET_MACH)
+# environment
+HOME = /root
+# default
+LEX = lex
+# default
+LINT.c = $(LINT) $(LINTFLAGS) $(CPPFLAGS) $(TARGET_ARCH)
+# default
+COMPILE.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := .out .a .ln .o .c .cc .C .cpp .p .f .F .m .r .y .l .ym .yl .s .S .mod .sym .def .h .info .dvi .tex .texinfo .texi .txinfo .w .ch .web .sh .elc .el
+# default
+LD = ld
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# default
+CXX = g++
+# makefile (from 'Makefile', line 1)
+CC := gcc
+# default
+COMPILE.cc = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# variable set hash-table stats:
+# Load=103/1024=10%, Rehash=0, Collisions=3/134=2%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# RCS: could not be stat'd.
+# SCCS: could not be stat'd.
+# include (device 92, inode 800333): 5 files, no impossibilities.
+# src (device 92, inode 800340): 3 files, 3 impossibilities.
+# . (device 92, inode 800306): 9 files, 19 impossibilities.
+# include/SCCS: could not be stat'd.
+# src/RCS: could not be stat'd.
+# src/SCCS: could not be stat'd.
+# include/RCS: could not be stat'd.
+
+# 17 files, 22 impossibilities in 9 directories.
+
+# Implicit Rules
+
+%.out:
+
+%.a:
+
+%.ln:
+
+%.o:
+
+%: %.o
+#  recipe to execute (built-in):
+	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.c:
+
+%: %.c
+#  recipe to execute (built-in):
+	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.ln: %.c
+#  recipe to execute (built-in):
+	$(LINT.c) -C$* $<
+
+%.o: %.c
+#  recipe to execute (built-in):
+	$(COMPILE.c) $(OUTPUT_OPTION) $<
+
+%.cc:
+
+%: %.cc
+#  recipe to execute (built-in):
+	$(LINK.cc) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.cc
+#  recipe to execute (built-in):
+	$(COMPILE.cc) $(OUTPUT_OPTION) $<
+
+%.C:
+
+%: %.C
+#  recipe to execute (built-in):
+	$(LINK.C) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.C
+#  recipe to execute (built-in):
+	$(COMPILE.C) $(OUTPUT_OPTION) $<
+
+%.cpp:
+
+%: %.cpp
+#  recipe to execute (built-in):
+	$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.cpp
+#  recipe to execute (built-in):
+	$(COMPILE.cpp) $(OUTPUT_OPTION) $<
+
+%.p:
+
+%: %.p
+#  recipe to execute (built-in):
+	$(LINK.p) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.p
+#  recipe to execute (built-in):
+	$(COMPILE.p) $(OUTPUT_OPTION) $<
+
+%.f:
+
+%: %.f
+#  recipe to execute (built-in):
+	$(LINK.f) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.f
+#  recipe to execute (built-in):
+	$(COMPILE.f) $(OUTPUT_OPTION) $<
+
+%.F:
+
+%: %.F
+#  recipe to execute (built-in):
+	$(LINK.F) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.F
+#  recipe to execute (built-in):
+	$(COMPILE.F) $(OUTPUT_OPTION) $<
+
+%.f: %.F
+#  recipe to execute (built-in):
+	$(PREPROCESS.F) $(OUTPUT_OPTION) $<
+
+%.m:
+
+%: %.m
+#  recipe to execute (built-in):
+	$(LINK.m) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.m
+#  recipe to execute (built-in):
+	$(COMPILE.m) $(OUTPUT_OPTION) $<
+
+%.r:
+
+%: %.r
+#  recipe to execute (built-in):
+	$(LINK.r) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.r
+#  recipe to execute (built-in):
+	$(COMPILE.r) $(OUTPUT_OPTION) $<
+
+%.f: %.r
+#  recipe to execute (built-in):
+	$(PREPROCESS.r) $(OUTPUT_OPTION) $<
+
+%.y:
+
+%.ln: %.y
+#  recipe to execute (built-in):
+	$(YACC.y) $< 
+	 $(LINT.c) -C$* y.tab.c 
+	 $(RM) y.tab.c
+
+%.c: %.y
+#  recipe to execute (built-in):
+	$(YACC.y) $< 
+	 mv -f y.tab.c $@
+
+%.l:
+
+%.ln: %.l
+#  recipe to execute (built-in):
+	@$(RM) $*.c
+	 $(LEX.l) $< > $*.c
+	$(LINT.c) -i $*.c -o $@
+	 $(RM) $*.c
+
+%.c: %.l
+#  recipe to execute (built-in):
+	@$(RM) $@ 
+	 $(LEX.l) $< > $@
+
+%.r: %.l
+#  recipe to execute (built-in):
+	$(LEX.l) $< > $@ 
+	 mv -f lex.yy.r $@
+
+%.ym:
+
+%.m: %.ym
+#  recipe to execute (built-in):
+	$(YACC.m) $< 
+	 mv -f y.tab.c $@
+
+%.yl:
+
+%.s:
+
+%: %.s
+#  recipe to execute (built-in):
+	$(LINK.s) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.s
+#  recipe to execute (built-in):
+	$(COMPILE.s) -o $@ $<
+
+%.S:
+
+%: %.S
+#  recipe to execute (built-in):
+	$(LINK.S) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.S
+#  recipe to execute (built-in):
+	$(COMPILE.S) -o $@ $<
+
+%.s: %.S
+#  recipe to execute (built-in):
+	$(PREPROCESS.S) $< > $@
+
+%.mod:
+
+%: %.mod
+#  recipe to execute (built-in):
+	$(COMPILE.mod) -o $@ -e $@ $^
+
+%.o: %.mod
+#  recipe to execute (built-in):
+	$(COMPILE.mod) -o $@ $<
+
+%.sym:
+
+%.def:
+
+%.sym: %.def
+#  recipe to execute (built-in):
+	$(COMPILE.def) -o $@ $<
+
+%.h:
+
+%.info:
+
+%.dvi:
+
+%.tex:
+
+%.dvi: %.tex
+#  recipe to execute (built-in):
+	$(TEX) $<
+
+%.texinfo:
+
+%.info: %.texinfo
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.texinfo
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.texi:
+
+%.info: %.texi
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.texi
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.txinfo:
+
+%.info: %.txinfo
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.txinfo
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.w:
+
+%.c: %.w
+#  recipe to execute (built-in):
+	$(CTANGLE) $< - $@
+
+%.tex: %.w
+#  recipe to execute (built-in):
+	$(CWEAVE) $< - $@
+
+%.ch:
+
+%.web:
+
+%.p: %.web
+#  recipe to execute (built-in):
+	$(TANGLE) $<
+
+%.tex: %.web
+#  recipe to execute (built-in):
+	$(WEAVE) $<
+
+%.sh:
+
+%: %.sh
+#  recipe to execute (built-in):
+	cat $< >$@ 
+	 chmod a+x $@
+
+%.elc:
+
+%.el:
+
+(%): %
+#  recipe to execute (built-in):
+	$(AR) $(ARFLAGS) $@ $<
+
+%.out: %
+#  recipe to execute (built-in):
+	@rm -f $@ 
+	 cp $< $@
+
+%.c: %.w %.ch
+#  recipe to execute (built-in):
+	$(CTANGLE) $^ $@
+
+%.tex: %.w %.ch
+#  recipe to execute (built-in):
+	$(CWEAVE) $^ $@
+
+%:: %,v
+#  recipe to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: RCS/%,v
+#  recipe to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: RCS/%
+#  recipe to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: s.%
+#  recipe to execute (built-in):
+	$(GET) $(GFLAGS) $(SCCS_OUTPUT_OPTION) $<
+
+%:: SCCS/s.%
+#  recipe to execute (built-in):
+	$(GET) $(GFLAGS) $(SCCS_OUTPUT_OPTION) $<
+
+# 92 implicit rules, 5 (5.4%) terminal.
+# Files
+
+# Not a target:
+.cpp:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.c.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.c) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.h:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.sh:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	cat $< >$@ 
+	 chmod a+x $@
+
+# Not a target:
+.ch:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.r.f:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(PREPROCESS.r) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.dvi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.def.sym:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.def) -o $@ $<
+
+# Not a target:
+.m.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.m) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.lm.m:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	@$(RM) $@ 
+	 $(LEX.m) $< > $@
+
+# Not a target:
+.p.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.p) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.texinfo:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.ln:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.C:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.C) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.web:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.elc:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.y.ln:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(YACC.y) $< 
+	 $(LINT.c) -C$* y.tab.c 
+	 $(RM) y.tab.c
+
+# Not a target:
+.l.c:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	@$(RM) $@ 
+	 $(LEX.l) $< > $@
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2026-10-08 11:39:48
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.sym:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.r.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.r) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.mod:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.mod) -o $@ -e $@ $^
+
+# Not a target:
+.def:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.S:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.S) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.texi.dvi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+.txinfo.dvi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+include/common.h:
+#  Implicit rule search has been done.
+#  Last modified 2026-10-07 06:27:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.y.c:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(YACC.y) $< 
+	 mv -f y.tab.c $@
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 18):
+	rm -rf build bin
+
+# Not a target:
+.cpp.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.cpp) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.el:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.cc:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.cc) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.tex:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.m:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.m) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.F:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.F) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.web.tex:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(WEAVE) $<
+
+# Not a target:
+.texinfo.info:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+src/main.c:
+#  Implicit rule search has been done.
+#  Last modified 2026-10-07 06:27:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.ym.m:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(YACC.m) $< 
+	 mv -f y.tab.c $@
+
+# Not a target:
+.l:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bin/demo: build/main.o
+#  Implicit rule search has not been done.
+#  Last modified 2026-10-08 12:10:48.057625035
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 10):
+	mkdir -p bin
+	$(CC) $(CFLAGS) build/main.o -o bin/demo
+
+# Not a target:
+.f:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.f) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.texi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.r:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.r) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.a:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: bin/demo
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.w.tex:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(CWEAVE) $< - $@
+
+# Not a target:
+include/config.h:
+#  Implicit rule search has been done.
+#  Last modified 2026-10-07 06:27:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.s.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.s) -o $@ $<
+
+# Not a target:
+.txinfo:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.c.ln:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINT.c) -C$* $<
+
+# Not a target:
+.tex.dvi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(TEX) $<
+
+# Not a target:
+.info:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.out:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.texinfo.dvi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+.F.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.F) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.yl:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.s:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.s) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.S.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.S) -o $@ $<
+
+# Not a target:
+.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.C.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.C) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.c:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.txinfo.info:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+.texi.info:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+.y:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.l.r:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LEX.l) $< > $@ 
+	 mv -f lex.yy.r $@
+
+# Not a target:
+.p:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.p) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.l.ln:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	@$(RM) $*.c
+	 $(LEX.l) $< > $*.c
+	$(LINT.c) -i $*.c -o $@
+	 $(RM) $*.c
+
+# Not a target:
+.w:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES: .out .a .ln .o .c .cc .C .cpp .p .f .F .m .r .y .l .ym .yl .s .S .mod .sym .def .h .info .dvi .tex .texinfo .texi .txinfo .w .ch .web .sh .elc .el
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/main.o: src/main.c include/common.h include/config.h
+#  Implicit rule search has not been done.
+#  Last modified 2026-10-08 12:10:48.01677177
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 14):
+	mkdir -p build
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c src/main.c -o build/main.o
+
+.PHONY: all clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.mod.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.mod) -o $@ $<
+
+# Not a target:
+.web.p:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(TANGLE) $<
+
+# Not a target:
+.S.s:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(PREPROCESS.S) $< > $@
+
+# Not a target:
+.f.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.f) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.ym:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.cc.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.cc) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.F.f:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(PREPROCESS.F) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.w.c:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(CTANGLE) $< - $@
+
+# files hash-table stats:
+# Load=81/1024=8%, Rehash=0, Collisions=130/1533=8%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 297 / storage = 3227 B / avg = 10 B
+# current buf: size = 8162 B / used = 3227 B / count = 297 / avg = 10 B
+
+# strcache performance: lookups = 506 / hit rate = 41%
+# hash-table stats:
+# Load=297/8192=4%, Rehash=0, Collisions=11/506=2%
+# Finished Make data base on Thu Oct  8 12:10:49 2026
+
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "exec", "a08-e3-c2-f6fbaceb243a", "/workspace/E3/fixtures/incremental/bin/demo"]
+$ docker exec a08-e3-c2-f6fbaceb243a /workspace/E3/fixtures/incremental/bin/demo
+19
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["docker", "rm", "--force", "a08-e3-c2-f6fbaceb243a"]
+$ docker rm --force a08-e3-c2-f6fbaceb243a
+a08-e3-c2-f6fbaceb243a
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "status", "--porcelain", "--untracked-files=no"]
+$ git status --porcelain --untracked-files=no
+ M E3/AI_USAGE.md
+ M E3/BACKLOG.md
+ M E3/CONTRACT_REFERENCE.md
+ M E3/CONTRIBUTIONS.md
+ M E3/README.md
+ M E3/WORKFLOW.md
+ M E3/evidence/README.md
+ M E3/fixtures/incremental/README.md
+ M E3/oracle/README.md
+ M E3/oracle/incremental.expected.json
+ M E3/scripts/README.md
+ M README.md
+
+exit_code=0
+

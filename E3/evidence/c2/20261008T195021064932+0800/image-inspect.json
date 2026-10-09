@@ -1,0 +1,56 @@
+[
+    {
+        "Id": "sha256:7d79cc706ddc3299f7bb622e9a6009b0f0cf02a9c65343ad273fd09df14e4a10",
+        "RepoTags": [
+            "a08-e3-c2:local-20261008-195021064932"
+        ],
+        "RepoDigests": [
+            "a08-e3-c2@sha256:7d79cc706ddc3299f7bb622e9a6009b0f0cf02a9c65343ad273fd09df14e4a10"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-08T11:49:20.546749702Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "./bin/demo",
+                "--version"
+            ],
+            "WorkingDir": "/workspace/E3/fixtures/incremental",
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 135148159,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:d81fb2a7c6ee3be05fdefaa7fd223be219c1ab172083ec1b994c3ecda33ac0a8",
+                "sha256:50ca498ff6b1372ad91c4d2cfe0b1ce627b0099a2b21fbd89bb2c156bbb54616",
+                "sha256:9917e8af53ed870e19028733be91196062ca7d36945a27a51d760a5e328b48a6",
+                "sha256:6d5113db3f3519b995fdcfb9ef905dba169fb4e25d739817496ee8b58ff67f9c",
+                "sha256:75e21f7aebaa1818b42a2d8871682cc680d8594fd73ce8590036f1c95267aec0"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-08T11:50:25.489907148Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:7d79cc706ddc3299f7bb622e9a6009b0f0cf02a9c65343ad273fd09df14e4a10",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "xjfo1f3t1uh1jfaorhgqvdp30",
+                    "CreatedAt": "2026-10-08T11:50:25.505415992Z"
+                }
+            ]
+        }
+    }
+]

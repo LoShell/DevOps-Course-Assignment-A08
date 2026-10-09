@@ -1,0 +1,52 @@
+# C1 -> C2 real command transcript
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "status", "--porcelain", "--untracked-files=no"]
+$ git status --porcelain --untracked-files=no
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "rev-parse", "--verify", "--end-of-options", "e3-c1^{commit}"]
+$ git rev-parse --verify --end-of-options 'e3-c1^{commit}'
+4b70cabad1be8f6e98ee90ed9c5803b7aa793253
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "rev-parse", "--verify", "--end-of-options", "e3-c2^{commit}"]
+$ git rev-parse --verify --end-of-options 'e3-c2^{commit}'
+56deea9199679907893fa53add1d867ff62028e1
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "merge-base", "--is-ancestor", "4b70cabad1be8f6e98ee90ed9c5803b7aa793253", "56deea9199679907893fa53add1d867ff62028e1"]
+$ git merge-base --is-ancestor 4b70cabad1be8f6e98ee90ed9c5803b7aa793253 56deea9199679907893fa53add1d867ff62028e1
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "diff-tree", "--no-commit-id", "--name-only", "-r", "56deea9199679907893fa53add1d867ff62028e1"]
+$ git diff-tree --no-commit-id --name-only -r 56deea9199679907893fa53add1d867ff62028e1
+E3/fixtures/incremental/Makefile
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "archive", "--format=tar", "--output=C:\\Users\\yevhen\\AppData\\Local\\Temp\\a08-e3-c2-33c01ow0\\c1.tar", "4b70cabad1be8f6e98ee90ed9c5803b7aa793253", "E3/fixtures/incremental"]
+$ git archive --format=tar '--output=C:\Users\yevhen\AppData\Local\Temp\a08-e3-c2-33c01ow0\c1.tar' 4b70cabad1be8f6e98ee90ed9c5803b7aa793253 E3/fixtures/incremental
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "archive", "--format=tar", "--output=C:\\Users\\yevhen\\AppData\\Local\\Temp\\a08-e3-c2-33c01ow0\\c2.tar", "56deea9199679907893fa53add1d867ff62028e1", "E3/fixtures/incremental"]
+$ git archive --format=tar '--output=C:\Users\yevhen\AppData\Local\Temp\a08-e3-c2-33c01ow0\c2.tar' 56deea9199679907893fa53add1d867ff62028e1 E3/fixtures/incremental
+
+exit_code=0
+
+$ cwd: D:\MyDocument\Download\devops-labs\DevOps-Course-Assignment-A08
+$ argv: ["git", "status", "--porcelain", "--untracked-files=no"]
+$ git status --porcelain --untracked-files=no
+
+exit_code=0
+

@@ -1,0 +1,88 @@
+{
+  "provenance": "HUMAN_ORACLE_AI_ASSISTED",
+  "review_status": "approved_by_member_3",
+  "repository": "https://github.com/LoShell/DevOps-Course-Assignment-A08.git",
+  "scope": "C1/C2 incremental fixture, target build/main.o, project headers only; C2 also verifies stale artifacts after a compiler-option change; system headers excluded",
+  "review_status_note": "The top-level review_status applies to C1. On 2026-10-09 the team lead reported that members 3 and 4 had each reviewed and confirmed their oracle. This is a team-lead report, not a direct signature by either member; earlier run snapshots retain their historical pending status.",
+  "c1": {
+    "base_commit": "88ffce8aeaa9172fc724130d5796ad18ca1ab9e4",
+    "base_tag": "e3-c0",
+    "sample_commit": "4b70cabad1be8f6e98ee90ed9c5803b7aa793253",
+    "sample_tag": "e3-c1",
+    "working_directory": "E3/fixtures/incremental",
+    "configuration_id": "wsl-ubuntu-20.04.6-gcc-9.4.0-make-4.2.1-x86_64-default-mode",
+    "build_command": "make clean && make -j2",
+    "version_command": "./bin/demo --version",
+    "behavior_command": "./bin/demo",
+    "expected_behavior": {
+      "clean_build": 12,
+      "after_feature_2_to_3_incremental": 12,
+      "after_feature_2_to_3_clean": 13
+    },
+    "findings": [
+      {
+        "type": "MISSING",
+        "target": "build/main.o",
+        "dependency": "include/feature.h",
+        "reason": "src/main.c includes feature.h and uses FEATURE_VALUE, while the unchanged Makefile HEADERS declaration contains only include/common.h and include/config.h. gcc -MM lists include/feature.h as a project dependency."
+      }
+    ],
+    "expected_delta_from_c0": {
+      "added": 1,
+      "resolved": 0,
+      "unchanged": 0
+    },
+    "evidence": "E3/evidence/c1/20261007T143349+0800/README.md",
+    "review_note": "The expected finding and behavior were prepared by an authorized workspace agent. The team lead reported member 3's human confirmation on 2026-10-09; see E3/oracle/incremental-review-20261009.md."
+  },
+  "c2": {
+    "base_commit": "4b70cabad1be8f6e98ee90ed9c5803b7aa793253",
+    "base_tag": "e3-c1",
+    "sample_commit": "56deea9199679907893fa53add1d867ff62028e1",
+    "sample_tag": "e3-c2",
+    "runner_commit": "ae86618b602a08ce4d893b396dde6b6f75e3fccc",
+    "working_directory": "E3/fixtures/incremental",
+    "container_working_directory": "/workspace/E3/fixtures/incremental",
+    "experiment_working_directory": "/tmp/a08-e3-incremental",
+    "container_image_id": "sha256:196934e56dcb3f9f4bfa48d5c250f863259faa4e2fef90c9ca83c1bc6bab311e",
+    "configuration_id": "e3-incremental-589dbd0022ee0df7",
+    "base_configuration_id": "e3-incremental-2d73359c5ff8dc5d",
+    "configuration_note": "These IDs describe C1 and C2 rechecked in the same Ubuntu 24.04 container, including actual image/toolchain and compiler options. They differ because CPPFLAGS changes; this E3 behavior comparison is not a valid E2 same-configuration incremental request. Historical C1 WSL metadata is unchanged; the team lead must resolve later integration semantics. Basis and canonical hashing algorithm are recorded in the evidence.",
+    "build_command": "make clean && make -j2",
+    "incremental_build_command": "make -j2",
+    "version_command": "./bin/demo --version",
+    "behavior_command": "./bin/demo",
+    "change": {
+      "file": "E3/fixtures/incremental/Makefile",
+      "before": "CPPFLAGS := -Iinclude",
+      "after": "CPPFLAGS := -Iinclude -DMODE=7",
+      "source_and_headers_unchanged": true
+    },
+    "expected_behavior": {
+      "c1_clean_build": 12,
+      "c2_incremental_build": 12,
+      "c2_clean_build": 19,
+      "version_output": "demo 1.0.0",
+      "incremental_recompiles_or_relinks": false,
+      "incremental_artifact_hashes_and_timestamps_unchanged": true
+    },
+    "findings": [
+      {
+        "type": "MISSING",
+        "target": "build/main.o",
+        "dependency": "include/feature.h",
+        "reason": "C2 preserves C1 source and HEADERS. gcc -MM with -DMODE=7 still lists include/feature.h, while the Make target omits it. The inherited header MD remains; changing a compiler option does not introduce an additional header MD."
+      }
+    ],
+    "expected_delta_from_c1": {
+      "added": 0,
+      "resolved": 0,
+      "unchanged": 1
+    },
+    "delta_note": "Manual expectation for project-header findings only, not an EChecker output or a claim that the cross-configuration E2 request is accepted.",
+    "evidence": "E3/evidence/c2/20261008T201035798727+0800/README.md",
+    "review_status": "approved_by_member_4",
+    "review_note": "Codex executed the container experiment for member 4 and derived these expectations from actual outputs. All 37 experiment assertions passed. The team lead reported member 4's human confirmation on 2026-10-09; see E3/oracle/incremental-review-20261009.md.",
+    "not_a_detector_report": true
+  }
+}
