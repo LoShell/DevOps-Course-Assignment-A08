@@ -31,12 +31,16 @@ C1/C2 的人工确认由组长于 2026-10-09 转述，记录见
 
 C0 在 Ubuntu 24.04 宿主机与容器中均完成干净构建；`./bin/demo --version`
 输出 `demo 1.0.0`，`./bin/demo` 输出 `10`。GCC 列出的项目内头文件与
-Makefile 声明一致。完整 Docker 构建原始日志仍待保存。
+Makefile 声明一致。组长已从固定 `e3-c0` 标签重建并保存
+[完整 Docker 构建日志](evidence/environment/c0-replay-20261009T032247Z/docker-build.log)。
 
 C2 在 Ubuntu 24.04.5 容器中验证通过：先构建 C1 输出 `12`，仅替换 C2
 Makefile 后增量构建仍为 `12`，相同 C2 源码干净重建后为 `19`。增量阶段对象和
 可执行文件的哈希及时间戳均不变；37 项实验断言与 3 项脚本异常检查通过。
 命令由 Codex 代成员 4 执行；后续人工 oracle 确认的来源单独记录。
+组长于 2026-10-09 在自己的 Ubuntu 环境独立复现固定 MD/RD（14/14）、
+C1→C2（37/37）及 C0 镜像构建和运行，见
+[最终检查记录](evidence/final-review-20261009.md)。
 
 ## 已确定约定
 
@@ -55,7 +59,8 @@ C2 实测工具链为 Ubuntu 24.04.5、GCC 13.3.0、GNU Make 4.3、x86_64。
 本次同一容器中的 C1/C2 配置编号分别为 `e3-incremental-2d73359c5ff8dc5d`
 和 `e3-incremental-589dbd0022ee0df7`，计算依据和算法见原始证据。
 编译选项变化使配置编号不同，本次 E3 对比不能直接作为 E2 同配置增量请求；
-组长仍需统一接口对接策略、C0/固定 MD/RD 的团队配置及最终汇总。
+跨提交配置标识原则及对接边界见 [`CONTRACT_REFERENCE.md`](CONTRACT_REFERENCE.md)。
+C0/固定 MD/RD 的实际配置记录与最终汇总仍待补齐。
 成员 3 的历史 WSL 配置记录保持原样。
 
 从仓库根目录复现 C2（宿主机 Python 3.12+、Git、运行中的 Docker）：
@@ -88,4 +93,4 @@ E3/
 ```
 
 样本、运行脚本和真实输出由成员在工作分支上按
-[`WORKFLOW.md`](WORKFLOW.md) 分步提交。团队配置标识与最终综合复现仍待收尾。
+[`WORKFLOW.md`](WORKFLOW.md) 分步提交。团队跨提交配置标识仍待最终核对。

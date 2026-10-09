@@ -11,7 +11,8 @@
 - 容器镜像 ID：`sha256:2e8bf64b77d8cff4e17f6bf39d453759f24457d9c71fec85a361d9b402458828`
 - 项目工作目录：宿主机 `E3/fixtures/incremental`；容器内 `/workspace/E3/fixtures/incremental`
 
-以下结果由执行人从 Ubuntu 终端提供；Docker 构建记录是终端摘录，尚未保存完整原始日志。
+以下结果由执行人从 Ubuntu 终端提供；本节 Docker 构建记录为 2026-10-05 的
+终端摘录。2026-10-09 的固定版本完整重建日志已另行保存，见文末链接。
 
 ## 宿主机构建与行为
 
@@ -67,6 +68,9 @@ C0 在 Ubuntu 24.04 宿主机和 Ubuntu 24.04 容器中均完成构建与行为�
 项目内头文件依赖无预期 MD/RD。该结论基于人工对照和 GCC 依赖输出，
 尚不是 BuildChecker 自动检测报告。
 
-- 待保存供他人复核的 Docker 构建原始日志。
+- 已补录固定 `e3-c0` 标签的[完整 Docker 构建原始日志](c0-replay-20261009T032247Z/docker-build.log)、
+  [环境](c0-replay-20261009T032247Z/container-environment.txt)和
+  [运行输出](c0-replay-20261009T032247Z/output.txt)；补录提交为 `c354dcb39afc0c2ff3f5486d053c369b3710da83`。
 - 已核对远端注释标签 `e3-c0`，其目标提交为上述 C0 Commit。
-- `configuration_id` 在确认 C0/C1/C2 的配置标识策略后填写。
+- `configuration_id` 在按真实环境确认跨提交的团队配置标识后填写；
+  2026-10-09 重建镜像 ID 与上方首次镜像 ID 不同，分别保留。
