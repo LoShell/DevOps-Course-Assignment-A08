@@ -22,8 +22,12 @@
 |---|---|---|
 | 固定 MD/RD | 实现、测试及人工 oracle 确认完成 | `fixtures/md-rd/`、`oracle/md-rd.expected.json`、[确认记录](evidence/md-rd/oracle-review-20261006-132502/REVIEW.md) |
 | C0 | 已验证 | 提交 `88ffce8aeaa9172fc724130d5796ad18ca1ab9e4`，注释标签 `e3-c0`；[`环境与构建验证`](evidence/environment/c0-ubuntu-24.04.md) |
-| C1 | 实现与实验完成，人工 oracle 待成员 3 确认 | 提交 `4b70cabad1be8f6e98ee90ed9c5803b7aa793253`、`e3-c1`；[历史证据](evidence/c1/20261007T143349+0800/README.md) |
-| C2 | 实现与容器实验完成，人工 oracle 待成员 4 确认 | 提交 `56deea9199679907893fa53add1d867ff62028e1`、本地注释标签 `e3-c2`；[最终脚本运行证据](evidence/c2/20261008T201035798727+0800/README.md)，未推送 |
+| C1 | 实现、实验及人工 oracle 确认完成 | 提交 `4b70cabad1be8f6e98ee90ed9c5803b7aa793253`、远端标签 `e3-c1`；[实验依据](evidence/c1/20261007T143349+0800/README.md) |
+| C2 | 实现、容器实验及人工 oracle 确认完成 | 提交 `56deea9199679907893fa53add1d867ff62028e1`、远端标签 `e3-c2`；[最终脚本运行证据](evidence/c2/20261008T201035798727+0800/README.md) |
+
+C1/C2 的人工确认由组长于 2026-10-09 转述，记录见
+[`oracle/incremental-review-20261009.md`](oracle/incremental-review-20261009.md)。
+历史运行日志中的“待确认”描述保留当时状态，不改写执行者或旧证据。
 
 C0 在 Ubuntu 24.04 宿主机与容器中均完成干净构建；`./bin/demo --version`
 输出 `demo 1.0.0`，`./bin/demo` 输出 `10`。GCC 列出的项目内头文件与
@@ -32,7 +36,7 @@ Makefile 声明一致。完整 Docker 构建原始日志仍待保存。
 C2 在 Ubuntu 24.04.5 容器中验证通过：先构建 C1 输出 `12`，仅替换 C2
 Makefile 后增量构建仍为 `12`，相同 C2 源码干净重建后为 `19`。增量阶段对象和
 可执行文件的哈希及时间戳均不变；37 项实验断言与 3 项脚本异常检查通过。
-命令由 Codex 代成员 4 执行，人工 oracle 审阅状态单独记录。
+命令由 Codex 代成员 4 执行；后续人工 oracle 确认的来源单独记录。
 
 ## 已确定约定
 
@@ -83,5 +87,5 @@ E3/
     └── 0001-baseline-project-design.md
 ```
 
-后续样本、运行脚本和真实输出由成员在工作分支上按
-[`WORKFLOW.md`](WORKFLOW.md) 分步提交。
+样本、运行脚本和真实输出由成员在工作分支上按
+[`WORKFLOW.md`](WORKFLOW.md) 分步提交。团队配置标识与最终综合复现仍待收尾。

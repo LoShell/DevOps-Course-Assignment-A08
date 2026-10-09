@@ -4,7 +4,7 @@
 `e3-c0` 标签固定在提交 `88ffce8aeaa9172fc724130d5796ad18ca1ab9e4`；
 后续状态在同一目录逐次修改，并分别由真实 Commit SHA 和标签固定。
 当前工作分支源码已演进到 C2；直接干净构建输出 `19`，版本仍为 `demo 1.0.0`。
-C2 注释标签 `e3-c2` 固定在 `56deea9199679907893fa53add1d867ff62028e1`，
+C2 远端注释标签 `e3-c2` 固定在 `56deea9199679907893fa53add1d867ff62028e1`，
 其独立提交只把 `CPPFLAGS := -Iinclude` 改为 `CPPFLAGS := -Iinclude -DMODE=7`。
 
 从本目录构建和验证：
@@ -50,4 +50,6 @@ Makefile，保留源码、头文件和旧产物时间戳；增量阶段不能先
 启动两个干净镜像后将其结果当作增量比较。宿主机需 Python 3.12+、Git 和 Docker。
 
 C1 的 `feature.h` 缺失声明在 C2 中继续保留。编译命令变化不会被额外记成头文件
-MD。C1/C2 实测配置编号不同，E2 同配置接口的后续处理仍待组长统一。
+MD。C1/C2 的人工 oracle 确认来源见
+[`../../oracle/incremental-review-20261009.md`](../../oracle/incremental-review-20261009.md)。
+C1/C2 实测配置编号不同，E2 同配置接口的后续处理仍待组长统一。

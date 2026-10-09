@@ -1,9 +1,9 @@
 {
   "provenance": "HUMAN_ORACLE_AI_ASSISTED",
-  "review_status": "pending_member_3_confirmation",
+  "review_status": "approved_by_member_3",
   "repository": "https://github.com/LoShell/DevOps-Course-Assignment-A08.git",
   "scope": "C1/C2 incremental fixture, target build/main.o, project headers only; C2 also verifies stale artifacts after a compiler-option change; system headers excluded",
-  "review_status_note": "The legacy top-level review_status applies to C1 and is retained unchanged. C2 has its own review_status; no human approval is inferred from a successful script run.",
+  "review_status_note": "The top-level review_status applies to C1. On 2026-10-09 the team lead reported that members 3 and 4 had each reviewed and confirmed their oracle. This is a team-lead report, not a direct signature by either member; earlier run snapshots retain their historical pending status.",
   "c1": {
     "base_commit": "88ffce8aeaa9172fc724130d5796ad18ca1ab9e4",
     "base_tag": "e3-c0",
@@ -33,7 +33,7 @@
       "unchanged": 0
     },
     "evidence": "E3/evidence/c1/20261007T143349+0800/README.md",
-    "review_note": "The expected finding and behavior were prepared by an authorized workspace agent. Member 3 must review and confirm this manual oracle before it is marked approved."
+    "review_note": "The expected finding and behavior were prepared by an authorized workspace agent. The team lead reported member 3's human confirmation on 2026-10-09; see E3/oracle/incremental-review-20261009.md."
   },
   "c2": {
     "base_commit": "4b70cabad1be8f6e98ee90ed9c5803b7aa793253",
@@ -81,8 +81,8 @@
     },
     "delta_note": "Manual expectation for project-header findings only, not an EChecker output or a claim that the cross-configuration E2 request is accepted.",
     "evidence": "E3/evidence/c2/20261008T201035798727+0800/README.md",
-    "review_status": "pending_member_4_confirmation",
-    "review_note": "Codex executed the container experiment for member 4 and derived these expectations from actual outputs. All 37 experiment assertions passed; member 4 human oracle confirmation has not yet been recorded.",
+    "review_status": "approved_by_member_4",
+    "review_note": "Codex executed the container experiment for member 4 and derived these expectations from actual outputs. All 37 experiment assertions passed. The team lead reported member 4's human confirmation on 2026-10-09; see E3/oracle/incremental-review-20261009.md.",
     "not_a_detector_report": true
   }
 }

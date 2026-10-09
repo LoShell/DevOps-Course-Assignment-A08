@@ -15,10 +15,10 @@ BuildChecker 或 EChecker。
 目前 C0 初始项目已在 Ubuntu 24.04 宿主机和容器中完成构建与行为验证，
 并由 `e3-c0` 标签固定。验证依据见
 [`E3/evidence/environment/c0-ubuntu-24.04.md`](E3/evidence/environment/c0-ubuntu-24.04.md)；
-固定 MD/RD 已完成实现、实验与人工 oracle 确认；C1/C2 已构造并验证。
-C2 的 Ubuntu 24.04 容器对比证明增量输出 `12`、干净重建输出 `19`，
-详见 [`C2 证据索引`](E3/evidence/c2/README.md)。C2 提交及 `e3-c2` 标签
-目前仅在本地；C1/C2 人工 oracle 确认和组长最终汇总的待办状态如实保留。
+固定 MD/RD、C1 和 C2 均已构造、验证并完成人工 oracle 确认；三枚
+`e3-c0`/`e3-c1`/`e3-c2` 标签已推送。C2 的 Ubuntu 24.04 容器对比证明
+增量输出 `12`、干净重建输出 `19`，详见
+[`C2 证据索引`](E3/evidence/c2/README.md)。团队配置标识与最终汇总仍在收尾。
 
 ## 配对信息
 

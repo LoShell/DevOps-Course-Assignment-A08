@@ -6,9 +6,10 @@
 当前文件状态：
 
 - `md-rd.expected.json`：已完成，成员 2 于 2026-10-06 确认通过；含固定 MD/RD 的目标、路径、依据和确认记录。
-- `incremental.expected.json`：C1 部分已有源码、真实实验依据和预期 MD，仍待
-  成员 3 确认；顶层历史 review_status 保留。C2 部分已有真实容器证据，行为为
-  C1 干净构建 12、C2 增量 12、C2 干净构建 19，独立标注待成员 4 确认。
+- `incremental.expected.json`：C1、C2 均已有源码和真实实验依据。组长于
+  2026-10-09 转述两位负责人已分别确认人工 oracle；确认来源与边界见
+  [`incremental-review-20261009.md`](incremental-review-20261009.md)。C2 行为为
+  C1 干净构建 12、C2 增量 12、C2 干净构建 19。
 
 C2 保留 C1 的一条 `feature.h` MD，头文件发现的人工预期差异为新增 0、消除 0、
 未变 1；编译命令变化不额外计为头文件 MD。此统计不是 EChecker 运行报告。
