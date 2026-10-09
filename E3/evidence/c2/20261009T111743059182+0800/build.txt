@@ -1,0 +1,59 @@
+$ cwd: /home/ubuntu/Devops/DevOps-Course-Assignment-A08
+$ argv: ["docker", "build", "--progress=plain", "--file", "/tmp/a08-e3-c2-mtlz6d5v/c2/E3/fixtures/incremental/Dockerfile", "--tag", "a08-e3-c2:local-20261009-111743059182", "/tmp/a08-e3-c2-mtlz6d5v/c2"]
+$ docker build --progress=plain --file /tmp/a08-e3-c2-mtlz6d5v/c2/E3/fixtures/incremental/Dockerfile --tag a08-e3-c2:local-20261009-111743059182 /tmp/a08-e3-c2-mtlz6d5v/c2
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 361B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:24.04
+#2 DONE 4.8s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.1s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/ubuntu:24.04@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55
+#5 resolve docker.io/library/ubuntu:24.04@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55 0.1s done
+#5 DONE 0.1s
+
+#4 [internal] load build context
+#4 transferring context: 3.71kB 0.0s done
+#4 DONE 0.1s
+
+#6 [2/5] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends        build-essential ca-certificates     && rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [3/5] WORKDIR /workspace/E3/fixtures/incremental
+#7 CACHED
+
+#8 [4/5] COPY . /workspace/
+#8 DONE 0.2s
+
+#9 [5/5] RUN make clean && make -j2
+#9 1.490 rm -rf build bin
+#9 1.533 mkdir -p build
+#9 1.592 gcc -Iinclude -DMODE=7 -Wall -Wextra -O2 -c src/main.c -o build/main.o
+#9 2.289 mkdir -p bin
+#9 2.299 gcc -Wall -Wextra -O2 build/main.o -o bin/demo
+#9 DONE 2.6s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 0.5s done
+#10 exporting manifest sha256:431a4aab26a815ecd622c01c1d0e43b9e7a2c19216a501bb7d1021fcd076be07 0.1s done
+#10 exporting config sha256:71a9933f448ae6870b7a154d86dd1b978a8e448eb786f65541126dd3f81e1481 0.1s done
+#10 exporting attestation manifest sha256:db8fde2af39c7ff11b2d13bf5d0626309633cd89fed90f15a11a29e9b50ebc6d 0.1s done
+#10 exporting manifest list sha256:f9c6a090258dcebff09accf2be49de5e56ed3f285b51fdad36cb5eb46a951e85
+#10 exporting manifest list sha256:f9c6a090258dcebff09accf2be49de5e56ed3f285b51fdad36cb5eb46a951e85 0.1s done
+#10 naming to docker.io/library/a08-e3-c2:local-20261009-111743059182 0.0s done
+#10 unpacking to docker.io/library/a08-e3-c2:local-20261009-111743059182
+#10 unpacking to docker.io/library/a08-e3-c2:local-20261009-111743059182 0.2s done
+#10 DONE 1.3s
+
+exit_code=0
+
