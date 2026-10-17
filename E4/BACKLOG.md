@@ -3,7 +3,7 @@
 | 编号 | 事项 | 负责人 | 状态 | 完成证据 |
 | --- | --- | --- | --- | --- |
 | E4-01 | 在 E4 分支接入 A 组模板并保留 E2/E3 | 刘馨雅 | Done | `a8cb50bb31af205e44fce09b63889d9e1592630f`；根目录入口和 E2/E3 均保留，已推送远端分支 |
-| E4-02 | 核对服务器 Ubuntu、资源、Docker、Compose、Buildx 与镜像可达性 | 刘馨雅 | Todo | 待补服务器原始输出 |
+| E4-02 | 核对服务器 Ubuntu、资源、Docker、Compose、Buildx 与镜像可达性 | 刘馨雅 | In Progress | [服务器基线](SERVER_BASELINE.md)已记录；Docker 尚未安装，镜像可达性待测 |
 | E4-03 | 审阅 2 GiB 资源与自检门槛，依据真实运行结果处理 | 刘馨雅、叶原原 | Todo | 待补 `env.json`、构建日志及修订依据 |
 | E4-04 | 核对 A 组冒烟样本与 E3 的关系 | 邱莉扉 | Todo | 待补审阅记录及 `smoke.json` |
 | E4-05 | 核对 Dockerfile、Compose 与工具链锁定 | 范从钰 | Todo | 待补构建日志、镜像信息及 `toolchain.lock` |
