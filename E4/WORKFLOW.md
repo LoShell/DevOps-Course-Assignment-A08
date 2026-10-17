@@ -40,7 +40,7 @@ git checkout -b a08/e4-environment origin/a08/e4-environment
 
 ## 四、完成标准
 
-- [ ] 远端 `a08/e4-environment` 含完整 A 组模板，未覆盖 E2/E3。
+- [x] 远端 `a08/e4-environment` 含完整 A 组模板，未覆盖 E2/E3。
 - [ ] 服务器系统和工具版本已记录，2 GiB 差异有真实结果与处理记录。
 - [ ] `make all` 成功，五个步骤的证据位于同一目录。
 - [ ] A 组单测、冒烟与密钥扫描符合模板预期。
