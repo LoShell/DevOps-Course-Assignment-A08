@@ -40,3 +40,7 @@ Docker 安装及 `make all` 尚未验证，不将购买规格或模板预期当�
 镜像站对清单的 `HEAD` 请求返回 `502 Bad Gateway`。该结果只说明此次
 镜像站请求失败，尚不能判定摘要错误或 Docker 安装异常；待核对 Docker Hub
 原始地址和再次重试结果。
+
+随后用相同摘要检查 `docker.io/library/python` 原站，`registry-1.docker.io`
+连接解析得到的 `31.13.91.33:443` 超时（`i/o timeout`）。两条镜像路径均
+未取得清单，尚未进入构建；下一步检查 ECS 的 DNS 和华为云 SWR 镜像加速器。
