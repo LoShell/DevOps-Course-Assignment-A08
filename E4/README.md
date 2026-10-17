@@ -11,6 +11,9 @@ E4 运行入口放在**仓库根目录**：`Makefile`、`compose.yaml`、
 `fixtures/md-rd/` 与 `scripts/`。原有 `E2/`、`E3/` 保留；
 `fixtures/md-rd/` 是 E4 模板自带的冒烟样本，不覆盖 `E3/fixtures/md-rd/`。
 Docker 构建上下文排除 E2、E3、E4 文档和证据。
+基础镜像在 Dockerfile 中按 Docker Hub 摘要固定；本组 ECS 因原站超时，
+在服务器的 Docker 守护进程中配置华为云 SWR 镜像加速器。加速器地址只保留
+在服务器配置中，不写进仓库；组员共用这台服务器，无需各自重复配置。
 
 ## 组员连接服务器前：确认公网 IP
 

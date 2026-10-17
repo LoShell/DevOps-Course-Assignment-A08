@@ -3,8 +3,8 @@
 #   2. 系统工具和 Python 包的实际版本在构建时写入 /opt/toolchain.lock
 #   3. Python 依赖按锁文件和哈希安装
 #   4. 以普通用户 app 运行；.env、work/、.git 不会进入镜像（见 .dockerignore）
-# 此镜像站提供与 Docker Hub 相同的 OCI 索引摘要；供无法直连 Docker Hub 的 ECS 使用。
-ARG BASE_IMAGE=m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
+# 服务器通过 Docker 守护进程的镜像加速器拉取 Docker Hub；仓库中只固定原站名称和摘要。
+ARG BASE_IMAGE=docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
 FROM ${BASE_IMAGE}
 
 ENV LC_ALL=C.UTF-8 \
