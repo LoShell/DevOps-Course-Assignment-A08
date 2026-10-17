@@ -44,3 +44,8 @@ Docker 安装及 `make all` 尚未验证，不将购买规格或模板预期当�
 随后用相同摘要检查 `docker.io/library/python` 原站，`registry-1.docker.io`
 连接解析得到的 `31.13.91.33:443` 超时（`i/o timeout`）。两条镜像路径均
 未取得清单，尚未进入构建；下一步检查 ECS 的 DNS 和华为云 SWR 镜像加速器。
+
+组长随后报告 `resolvectl dns` 的 `eth0` 使用华北-北京四内网 DNS
+`100.125.1.250`，`getent ahostsv4 registry-1.docker.io` 仅返回
+`31.13.91.33`。DNS 服务器地址符合华为云该区域文档，但原站连接仍超时；
+尚未修改 ECS DNS 或 Docker 配置。下一步查看 SWR 控制台提供的镜像加速器地址。
