@@ -1,8 +1,8 @@
 # A08 E4 服务器环境基线
 
 以下是 2026-10-17 组长通过 SSH 在新购 ECS 上运行命令后提供的原始结果摘要；
-表中 Docker 状态为首次检查时的状态，后续安装结果见下文。`make all`
-尚未验证，不将购买规格或模板预期当成实测结果。
+表中 Docker 状态为首次检查时的状态，后续安装和首次 `make all` 结果见下文。
+不将购买规格或模板预期当成实测结果。
 
 | 检查项 | 服务器输出 |
 | --- | --- |
@@ -31,7 +31,7 @@
 | Docker Compose | `2.40.3+ds1-0ubuntu1~22.04.1` |
 | Docker Buildx | `0.30.1-0ubuntu1~22.04.1` |
 
-以上只确认守护进程和插件可用；后续镜像拉取结果见下文，构建、测试和扫描仍待实测。
+以上只确认守护进程和插件可用；后续镜像拉取、构建、测试和扫描结果见下文。
 
 ## 基础镜像可达性首次检查
 
@@ -60,7 +60,7 @@
 `docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74`，
 各层完成下载，输出 `Digest: sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74`。
 因此服务器可通过 SWR 加速器获取模板固定的原始摘要。Dockerfile 中的
-`BASE_IMAGE` 改用 Docker Hub 原站名称，并保留相同摘要；实际构建仍待验证。
+`BASE_IMAGE` 改用 Docker Hub 原站名称，并保留相同摘要；实际构建结果见下文。
 
 ## 原模板环境自检实测与临时门槛试验
 
@@ -82,5 +82,32 @@ Buildx、Git、Make、Python 均可用。唯一的 `problems` 为
 2026-10-17 06:59:50 UTC。报告的资源和工具版本与上次相同，
 `problems` 为空；CPU、内存、磁盘低于建议值各有一条 `warnings`，
 结论为“环境自检：通过”。Dockerfile 也在该个人克隆中临时改为相同摘要的
-Docker Hub 原站名称，以便利用 ECS 已配置的 SWR 加速器；完整 `make all`
-仍待实测。个人克隆中的临时修改没有提交；门槛调整也未纳入远端分支。
+Docker Hub 原站名称，以便利用 ECS 已配置的 SWR 加速器。个人克隆中的
+临时修改当时没有提交；门槛调整当时也尚未纳入远端分支。
+
+## 首次完整运行结果与待解决的复现差异
+
+首次构建从 `deb.debian.org` 下载 Debian trixie 的软件包索引时长时间停在
+`trixie/main amd64 Packages`。组长确认华为云 Debian 镜像的
+`trixie/InRelease` 返回 HTTP 200 后，在服务器个人克隆的 Dockerfile 中
+**临时、未提交**地把 Debian APT 源从 `http://deb.debian.org/debian`
+替换为 `https://mirrors.huaweicloud.com/debian`，再运行 `make all`。
+
+组长提供的运行输出显示，本次证据目录为 `work/20261017-151409/`；
+个人克隆的源码提交为 `d26609c5f2653464a5770edf68bc143f8ab5a1f6`
+（当时远端 `a08/e4-environment` 的提交），运行时 `git status --short`
+另有 `scripts/doctor.py` 和 `services/buildchecker/Dockerfile` 两个未提交改动。
+证据目录内已确认存在 `build.log`、`env.json`、`image.json`、
+`toolchain.lock`、`test.log`、`smoke.json`、`secret-scan.txt` 七个文件。
+`pytest` 为 `3 passed`，冒烟结果 `passed: true`、程序输出 `1`，并记录
+`config.h` 被打开、`unused.h` 未被打开；密钥扫描报告未发现问题。
+工具链输出包含 Debian trixie 的 `libc6-dev=2.41-12+deb13u4`、
+`make=4.4.1-2`、`strace=6.13+ds-1`、`python3=3.13.14` 和 `arch=amd64`。
+`make all` 打印了证据目录，表明本次运行完成；尚需审阅完整构建日志和
+镜像信息，再供其他组员复跑。
+
+本次成功依赖服务器个人克隆中的三处临时改动：可见内存最低门槛
+`3.5 → 1.5 GiB`、基础镜像地址改用 Docker Hub 原站名称、APT 源改用
+华为云镜像。审阅后，本分支已纳入这三处改动；但上述试验仍是带未提交改动
+的旧 SHA，不能充当新提交的复现证据。下一步让组员从更新后的同一源码 SHA
+各自干净克隆并运行 `make all`，记录新的证据目录和对照结论。
