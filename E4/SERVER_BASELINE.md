@@ -32,3 +32,11 @@ Docker 安装及 `make all` 尚未验证，不将购买规格或模板预期当�
 | Docker Buildx | `0.30.1-0ubuntu1~22.04.1` |
 
 以上只确认守护进程和插件可用；基础镜像可达性、构建、测试和扫描仍待实测。
+
+## 基础镜像可达性首次检查
+
+组长在服务器执行 `docker buildx imagetools inspect`，目标为 Dockerfile 中的
+`m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74`。
+镜像站对清单的 `HEAD` 请求返回 `502 Bad Gateway`。该结果只说明此次
+镜像站请求失败，尚不能判定摘要错误或 Docker 安装异常；待核对 Docker Hub
+原始地址和再次重试结果。
