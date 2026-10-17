@@ -80,10 +80,11 @@ make all
 另一名组员在自己的学号目录从同一源码 SHA 重跑，比较工具版本和结论。
 
 当前服务器按课程安排购买为 **2 vCPU、2 GiB、Ubuntu 22.04、80 GiB 系统盘**。
-模板 `scripts/doctor.py` 的最低可见内存仍为 **3.5 GiB**，因此原样执行
-`make all` 会在 `doctor` 步骤失败。这里如实保留该差异；先记录服务器
-`/proc/meminfo`、Docker 和实际构建结果，再按助教确认的课程标准修订
-自检门槛并重新运行完整流程。不能把单独通过的后续步骤当成 `make all` 通过。
+当前仓库的最低可见内存门槛仍为 **3.5 GiB**，在本组服务器上实测
+`make doctor` 因 `mem_gib=1.7` 失败。按助教认可的 2 GiB ECS 规格，
+组长在个人克隆中**临时、未提交**地把门槛调为 **1.5 GiB**，重跑自检已通过，
+低于建议内存仍有警告。是否正式修改模板，待完整 `make all` 的真实构建
+结果和组内审阅确定；单独通过自检不等于 E4 验收通过。
 
 进度、责任与真实验证记录见 [BACKLOG.md](BACKLOG.md)、
 [WORKFLOW.md](WORKFLOW.md)、[CONTRIBUTIONS.md](CONTRIBUTIONS.md)。

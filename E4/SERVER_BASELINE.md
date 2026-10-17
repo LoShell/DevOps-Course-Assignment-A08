@@ -18,9 +18,8 @@
 | Python | `3.10.12` |
 
 服务器购买规格为 2 vCPU / 2 GiB，但 Ubuntu 报告的可见内存约 1.7 GiB。
-模板 `scripts/doctor.py` 的 `MIN["mem_gib"]` 为 3.5，因此按当前模板运行
-`make doctor` 会将内存不足记为 `problems`。下一步仍须记录实际
-`env.json` 和运行结果，再依据助教确认的课程标准处理这一差异。
+模板 `scripts/doctor.py` 原来的 `MIN["mem_gib"]` 为 3.5，因此原样运行
+`make doctor` 会将内存不足记为 `problems`。实际结果与临时试验见下文。
 
 ## Docker 安装后复核
 
@@ -62,3 +61,26 @@
 各层完成下载，输出 `Digest: sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74`。
 因此服务器可通过 SWR 加速器获取模板固定的原始摘要。Dockerfile 中的
 `BASE_IMAGE` 改用 Docker Hub 原站名称，并保留相同摘要；实际构建仍待验证。
+
+## 原模板环境自检实测与临时门槛试验
+
+组长在个人克隆中运行原模板 `make doctor`，生成
+`work/20261017-145604/env.json`；运行时间为 2026-10-17 06:56:04 UTC。
+自检报告 `cpus=2`、`mem_gib=1.7`、`disk_gib=70.3`，Docker、Compose、
+Buildx、Git、Make、Python 均可用。唯一的 `problems` 为
+`mem_gib=1.7 低于最低要求 3.5`；CPU 低于建议 4、磁盘低于建议 100
+只列入 `warnings`。`make doctor` 因这 1 个必需项不满足而退出码为 1。
+
+助教认可购买 2 GiB ECS；本组实测该规格对系统可见约 1.7 GiB。
+因此组长在个人克隆的 `scripts/doctor.py` 中临时将最低**可见**内存改为
+1.5 GiB，保留低于建议值的警告，CPU 与磁盘最低门槛不变。这项修改
+尚未提交；其目的只是试验规格与自检条件的冲突，不能代替后续构建和
+完整 `make all` 验证。
+
+组长在服务器个人克隆中临时修改自检门槛（不提交），重跑 `make doctor`，
+生成 `work/20261017-145950/env.json`，运行时间为
+2026-10-17 06:59:50 UTC。报告的资源和工具版本与上次相同，
+`problems` 为空；CPU、内存、磁盘低于建议值各有一条 `warnings`，
+结论为“环境自检：通过”。Dockerfile 也在该个人克隆中临时改为相同摘要的
+Docker Hub 原站名称，以便利用 ECS 已配置的 SWR 加速器；完整 `make all`
+仍待实测。个人克隆中的临时修改没有提交；门槛调整也未纳入远端分支。
