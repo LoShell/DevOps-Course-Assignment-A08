@@ -12,6 +12,8 @@ ENV LC_ALL=C.UTF-8 \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
+# ECS 直连 Debian 官方源下载索引超时；改用已在该服务器完成构建的华为云镜像。
+RUN sed -i 's#http://deb.debian.org/debian#https://mirrors.huaweicloud.com/debian#g' /etc/apt/sources.list.d/debian.sources
 RUN apt-get update \
  && apt-get install -y --no-install-recommends gcc make libc6-dev strace git \
  && rm -rf /var/lib/apt/lists/* \
