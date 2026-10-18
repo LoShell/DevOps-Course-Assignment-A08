@@ -29,7 +29,16 @@ git checkout -b a08/e4-environment origin/a08/e4-environment
 2 GiB 服务器上的构建依次进行。审阅或实测中发现需要改动同一公共文件时，
 先在组内明确负责人，再提交，避免相互覆盖。
 
-## 三、执行顺序
+## 三、审阅文件
+
+| 审阅文件 | 负责人 | 内容 |
+| --- | --- | --- |
+| `E4/review/smoke-e3.md` | 邱莉扉 | 冒烟结果、`config.h` / `unused.h`、与 E3 样本的关系 |
+| `E4/review/container-deps.md` | 范从钰 | Dockerfile、Compose、固定 digest、依赖锁与工具链 |
+| `E4/review/workflow-security.md` | 叶原原 | Makefile、环境自检、证据目录、密钥扫描 |
+| `E4/review/integration.md` | 刘馨雅 | 四人同 SHA 的结果对照、2 GiB 差异、最终验收与遗留问题 |
+
+## 四、执行顺序
 
 1. 组长提交 E4 骨架，确认远端分支中保留 E2/E3，且根目录命令入口完整。
 2. 组长检查新服务器的系统、资源、Docker 与镜像可达性；记录原始输出。
@@ -45,7 +54,7 @@ git checkout -b a08/e4-environment origin/a08/e4-environment
 结论或待解决问题，由组长对照四人的 SHA、工具版本、测试和冒烟结论。
 `work/` 默认留在 ECS，不作为个人提交推送。
 
-## 四、完成标准
+## 五、完成标准
 
 - [x] 远端 `a08/e4-environment` 含完整 A 组模板，未覆盖 E2/E3。
 - [x] 服务器系统和工具版本已记录，2 GiB 差异有真实结果与处理记录。
