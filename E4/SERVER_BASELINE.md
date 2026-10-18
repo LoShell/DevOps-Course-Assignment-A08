@@ -111,3 +111,35 @@ Docker Hub 原站名称，以便利用 ECS 已配置的 SWR 加速器。个人�
 华为云镜像。审阅后，本分支已纳入这三处改动；但上述试验仍是带未提交改动
 的旧 SHA，不能充当新提交的复现证据。下一步让组员从更新后的同一源码 SHA
 各自干净克隆并运行 `make all`，记录新的证据目录和对照结论。
+
+## 更新分支后的组长复跑
+
+组长在新目录 `buildchecker-clean` 运行更新后的分支，提供的 `make all` 尾部
+输出显示证据目录为 `work/20261017-152852/`。构建得到 `amd64` 镜像，
+镜像 ID 为 `sha256:beda061d0cac2c35db18809455be549d2b834b32ad20f32ebd9f4133351b00e0`；
+`toolchain.lock` 中包含 `gcc=4:14.2.0-1`、`git=1:2.47.3-0+deb13u1`、
+`libc6-dev=2.41-12+deb13u4`、`make=4.4.1-2`、`strace=6.13+ds-1`、
+`python3=3.13.14` 和 `arch=amd64`。测试为 `3 passed`；冒烟的
+`make_exit_code: 0`、`app_output: "1"`、`passed: true`，且 `config.h`
+被打开、`unused.h` 未被打开；密钥扫描未发现问题。
+
+组长随后在同一 `buildchecker-clean` 目录核对：
+`git rev-parse HEAD` 为 `4c1ff6caf40fc4f1d90b730cbc2477824a6d4576`，
+`git status --short` 无输出。因此本次是更新后源码提交的干净工作区
+`make all` 成功运行。
+
+## 2026-10-18 组员独立复跑进度
+
+组长在三名组员各自的克隆中核对 `git rev-parse HEAD`，均为
+`4c1ff6caf40fc4f1d90b730cbc2477824a6d4576`；当时
+`git status --short` 均无输出。每人随后在自己的 `work/` 生成目录：
+
+| 学号 | 证据目录 | 已核对内容 |
+| --- | --- | --- |
+| 241250071 | `/root/241250071/buildchecker/work/20261018-150333/` | 七个预期文件齐全；`test.log` 为 `3 passed` |
+| 241250076 | `/root/241250076/buildchecker/work/20261018-152841/` | 七个预期文件齐全；终端显示冒烟 `passed: true`、输出 `1`，密钥扫描未发现问题 |
+| 241250097 | `/root/241250097/buildchecker/work/20261018-161219/` | 组长报告 `make all` 完成；七个预期文件齐全，文件内容待核对 |
+
+证据文件存在不等于内容已经全部审阅。三名组员还需分别核对本人负责的内容，
+组长需比较 `toolchain.lock`、`test.log` 和 `smoke.json` 的结论并记录差异。
+个人 `work/` 默认留在 ECS，不进入 Git 提交。
