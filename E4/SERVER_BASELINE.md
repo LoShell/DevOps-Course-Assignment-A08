@@ -140,6 +140,30 @@ Docker Hub 原站名称，以便利用 ECS 已配置的 SWR 加速器。个人�
 | 241250076 | `/root/241250076/buildchecker/work/20261018-152841/` | 七个预期文件齐全；终端显示冒烟 `passed: true`、输出 `1`，密钥扫描未发现问题 |
 | 241250097 | `/root/241250097/buildchecker/work/20261018-161219/` | 组长报告 `make all` 完成；七个预期文件齐全，文件内容待核对 |
 
-证据文件存在不等于内容已经全部审阅。三名组员还需分别核对本人负责的内容，
-组长需比较 `toolchain.lock`、`test.log` 和 `smoke.json` 的结论并记录差异。
+组长随后对上表三份证据与自己的
+`/root/241250088/buildchecker-clean/work/20261017-152852/` 运行了只读对照。
+四份 `toolchain.lock` 的 SHA-256 均为
+`bc70f4e9e436d2567c88588171d7fd4575a614c442874baa089407106bbf9358`，
+说明锁文件字节一致；四份 `test.log` 尾行均为 `3 passed in 0.01s`。
+四份 `smoke.json` 的关键字段均为 `passed: true`、`make_exit_code: 0`、
+`app_output: "1"`、`config_h_opened` 非空、`unused_h_opened` 为空。
+因此在同一源码 SHA 下，四人使用的工具链清单、单测和冒烟结论一致。
+这一对照未比较镜像 ID、进程号、跟踪行数或耗时，也不替代各人负责的
+Dockerfile、样本、自检和密钥扫描专项审阅。
+
 个人 `work/` 默认留在 ECS，不进入 Git 提交。
+
+## 扫描器负向验证
+
+组长在自己的干净克隆中创建未提交的 `leak-demo.txt`，写入手册指定的
+假 Key 并暂存。首次 `make scan` 在
+`work/20261018-163542/secret-scan.txt` 中报告同一行的两种匹配：
+`LLM/API Key` 和 `密钥赋值`，共 2 处疑似泄露；`make` 退出码为 2。
+随后组长从暂存区移除并删除该假文件，第二次 `make scan` 在
+`work/20261018-163607/secret-scan.txt` 中报告“密钥检查：未发现问题”，
+退出码为 0。清理后 `git status --short` 和 `git ls-files .env` 均无输出。
+这两次单独扫描的目录不代替前述完整 `make all` 的证据目录。
+
+组长的 Windows 本地仓库还核对了 `git ls-files work .env` 无输出，
+并在 UTF-8 模式下扫描当前工作区及 Git 历史，未发现问题；
+该本地检查未涉及服务器镜像，镜像检查以服务器的 `make scan` 为准。
