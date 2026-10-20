@@ -1,0 +1,66 @@
+# A08 E4 工作流程与分工
+
+## 一、分支和协作
+
+沿用 E2/E3 的单分支方式：本轮工作分支为 `a08/e4-environment`，
+由 `main` 建立。`main` 只接收审阅、验证后的 E4 成果。
+组员首次获取分支：
+
+```sh
+git fetch origin
+git checkout -b a08/e4-environment origin/a08/e4-environment
+```
+
+开始修改前先 `git pull --rebase origin a08/e4-environment`；
+只修改本人负责的文件，提交当前任务相关内容，禁止 `git push --force`。
+小组仓库的 E4 骨架需要提交；服务器上每人运行 `make all` 的个人证据
+默认保留在各自 `work/`，课程手册不要求个人为一次运行新建提交。
+
+## 二、四人分工
+
+| 成员 | 主要责任 | 主要检查内容 |
+| --- | --- | --- |
+| 刘馨雅 | 组长；整合模板、初始化服务器、汇总复现 | 根目录入口、仓库 SHA、最终验收与 2 GiB 差异记录 |
+| 邱莉扉 | A 组冒烟样本与 E3 衔接 | `fixtures/md-rd/`、`smoke.json` 的 `config.h` 与输出 `1` |
+| 范从钰 | 容器与依赖固定审阅 | Dockerfile digest、Compose 资源与 `SYS_PTRACE`、`toolchain.lock` |
+| 叶原原 | 一键命令、自检和密钥扫描审阅 | `Makefile`、`doctor.py`、扫描器及证据目录完整性 |
+
+四人都需在自己的学号目录运行一次完整流程；两人以上比较同一提交的结果。
+2 GiB 服务器上的构建依次进行。审阅或实测中发现需要改动同一公共文件时，
+先在组内明确负责人，再提交，避免相互覆盖。
+
+## 三、审阅文件
+
+| 审阅文件 | 负责人 | 内容 |
+| --- | --- | --- |
+| `E4/review/smoke-e3.md` | 邱莉扉 | 冒烟结果、`config.h` / `unused.h`、与 E3 样本的关系 |
+| `E4/review/container-deps.md` | 范从钰 | Dockerfile、Compose、固定 digest、依赖锁与工具链 |
+| `E4/review/workflow-security.md` | 叶原原 | Makefile、环境自检、证据目录、密钥扫描 |
+| `E4/review/integration.md` | 刘馨雅 | 四人同 SHA 的结果对照、2 GiB 差异、最终验收与遗留问题 |
+
+## 四、执行顺序
+
+1. 组长提交 E4 骨架，确认远端分支中保留 E2/E3，且根目录命令入口完整。
+2. 组长检查新服务器的系统、资源、Docker 与镜像可达性；记录原始输出。
+3. 全组审阅 2 GiB 与模板 3.5 GiB 自检门槛的差异，依据真实测试决定修订。
+4. 组员按学号目录依次克隆同一分支、设置本地 Git 身份、运行 `make all`。
+5. 邱莉扉核对冒烟结论，范从钰核对镜像和工具链，叶原原核对扫描与证据。
+6. 组长汇总源码 SHA、成功证据目录、两名以上组员的对照与已知差异。
+
+审阅时，邱莉扉核对 `smoke.json` 的程序输出、`config.h` 与 `unused.h`
+结果及 E3 样本关系；范从钰核对 Dockerfile 固定摘要、Compose 配置、
+`image.json` 和 `toolchain.lock`；叶原原核对 `Makefile`、`doctor.py`、
+`env.json`、七个证据文件和 `secret-scan.txt`。各人记录检查路径、观察结果、
+结论或待解决问题，由组长对照四人的 SHA、工具版本、测试和冒烟结论。
+`work/` 默认留在 ECS，不作为个人提交推送。
+
+## 五、完成标准
+
+- [x] 远端 `a08/e4-environment` 含完整 A 组模板，未覆盖 E2/E3。
+- [x] 服务器系统和工具版本已记录，2 GiB 差异有真实结果与处理记录。
+- [x] 组长在干净提交运行 `make all` 成功，五个步骤的证据位于同一目录。
+- [x] 组长运行的 A 组单测、冒烟与密钥扫描符合模板预期。
+- [x] 三名组员与组长使用同一源码 SHA，个人运行目录有七个预期文件。
+- [x] 至少两名组员使用同一源码 SHA 重跑；四人的工具链、测试和冒烟结论对照一致。
+- [x] 当前仓库未跟踪 `.env` 或个人 `work/`；服务器与本地扫描未发现真实密钥，假 Key 检出后已清理。
+- [x] 三名组员完成各自的专项审阅，组长完成 [整合审阅](review/integration.md)；已记录 E4 验证边界及 E5 后续证据要求。

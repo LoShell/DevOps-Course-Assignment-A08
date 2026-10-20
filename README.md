@@ -5,20 +5,14 @@ BuildChecker 和 EChecker。
 
 ## 当前阶段
 
-E2“需求与接口契约”已经完成并合并到 `main`。
+E2“需求与接口契约”和 E3“并行测试基线”已合并到 `main`。E3 的固定
+MD/RD 与 C0/C1/C2 样本、人工 oracle 和复现记录保留在 [`E3/`](E3/README.md)。
 
-当前任务为 E3“并行测试基线”。A08 负责准备可复现的 GNU Make 小型项目、
-固定 MD/RD 样本以及 C0/C1/C2 增量构建样本，并保存真实 Commit SHA、
-预期结果、执行命令、输出和失败记录。本阶段准备测试基线，不实现
-BuildChecker 或 EChecker。
-
-目前 C0 初始项目已在 Ubuntu 24.04 宿主机和容器中完成构建与行为验证，
-并由 `e3-c0` 标签固定。验证依据见
-[`E3/evidence/environment/c0-ubuntu-24.04.md`](E3/evidence/environment/c0-ubuntu-24.04.md)；
-固定 MD/RD、C1 和 C2 均已构造、验证并完成人工 oracle 确认；三枚
-`e3-c0`/`e3-c1`/`e3-c2` 标签已推送。C2 的 Ubuntu 24.04 容器对比证明
-增量输出 `12`、干净重建输出 `19`，详见
-[`C2 证据索引`](E3/evidence/c2/README.md)。团队配置标识与最终汇总仍在收尾。
+当前在 `a08/e4-environment` 分支搭建 E4“可重复工程环境”。仓库根目录的
+`Makefile`、`compose.yaml`、`services/buildchecker/` 与 `fixtures/md-rd/`
+来自课程 A 组模板，用于构建、测试和冒烟验证。E4 的范围、分工与运行方式见
+[`E4/README.md`](E4/README.md) 和 [`E4/WORKFLOW.md`](E4/WORKFLOW.md)。
+E4 骨架不代表已经实现 BuildChecker/EChecker 检测算法。
 
 ## 配对信息
 
@@ -32,7 +26,8 @@ BuildChecker 或 EChecker。
 ## 目录
 
 - `E2/`：已完成的需求与接口契约评审材料。
-- `E3/`：当前并行测试基线、实验样本和复现证据。
+- `E3/`：并行测试基线、实验样本和复现证据。
+- `E4/`：环境搭建、工作流程、任务与验证记录。
+- `services/`、`fixtures/`、`Makefile`、`compose.yaml`：A 组 E4 可运行模板。
 
-E3 的范围、分工和操作流程见 [`E3/README.md`](E3/README.md) 和
-[`E3/WORKFLOW.md`](E3/WORKFLOW.md)。
+E3 的历史流程见 [`E3/WORKFLOW.md`](E3/WORKFLOW.md)。
