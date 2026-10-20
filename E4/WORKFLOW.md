@@ -63,3 +63,4 @@ git checkout -b a08/e4-environment origin/a08/e4-environment
 - [x] 三名组员与组长使用同一源码 SHA，个人运行目录有七个预期文件。
 - [x] 至少两名组员使用同一源码 SHA 重跑；四人的工具链、测试和冒烟结论对照一致。
 - [x] 当前仓库未跟踪 `.env` 或个人 `work/`；服务器与本地扫描未发现真实密钥，假 Key 检出后已清理。
+- [x] 三名组员完成各自的专项审阅，组长完成 [整合审阅](review/integration.md)；已记录 E4 验证边界及 E5 后续证据要求。

@@ -138,7 +138,7 @@ Docker Hub 原站名称，以便利用 ECS 已配置的 SWR 加速器。个人�
 | --- | --- | --- |
 | 241250071 | `/root/241250071/buildchecker/work/20261018-150333/` | 七个预期文件齐全；`test.log` 为 `3 passed` |
 | 241250076 | `/root/241250076/buildchecker/work/20261018-152841/` | 七个预期文件齐全；终端显示冒烟 `passed: true`、输出 `1`，密钥扫描未发现问题 |
-| 241250097 | `/root/241250097/buildchecker/work/20261018-161219/` | 组长报告 `make all` 完成；七个预期文件齐全，文件内容待核对 |
+| 241250097 | `/root/241250097/buildchecker/work/20261018-161219/` | 七个预期文件齐全；四人只读对照确认测试及冒烟关键字段一致；本人另核对 `smoke.json`，见 [专项审阅](review/smoke-e3.md) |
 
 组长随后对上表三份证据与自己的
 `/root/241250088/buildchecker-clean/work/20261017-152852/` 运行了只读对照。
@@ -148,8 +148,8 @@ Docker Hub 原站名称，以便利用 ECS 已配置的 SWR 加速器。个人�
 四份 `smoke.json` 的关键字段均为 `passed: true`、`make_exit_code: 0`、
 `app_output: "1"`、`config_h_opened` 非空、`unused_h_opened` 为空。
 因此在同一源码 SHA 下，四人使用的工具链清单、单测和冒烟结论一致。
-这一对照未比较镜像 ID、进程号、跟踪行数或耗时，也不替代各人负责的
-Dockerfile、样本、自检和密钥扫描专项审阅。
+这一对照未比较镜像 ID、进程号、跟踪行数或耗时。各人的 Dockerfile、样本、
+自检和密钥扫描专项审阅随后完成，见 [组长整合审阅](review/integration.md)。
 
 个人 `work/` 默认留在 ECS，不进入 Git 提交。
 
