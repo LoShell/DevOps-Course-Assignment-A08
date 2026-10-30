@@ -7,6 +7,3 @@ setup
 *.key
 __pycache__
 .pytest_cache
-E2/
-E3/
-E4/
