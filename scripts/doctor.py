@@ -15,9 +15,7 @@ import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
-# 助教认可 2 GiB ECS；A08 实测该规格的 MemTotal 为约 1.7 GiB。
-# 最低门槛留出云主机预留内存的余量；实际能否构建仍以 make all 为准。
-MIN = {"cpus": 2, "mem_gib": 1.5, "disk_gib": 40}      # 最低可见资源
+MIN = {"cpus": 2, "mem_gib": 4, "disk_gib": 40}        # 最低
 REC = {"cpus": 4, "mem_gib": 8, "disk_gib": 100}       # 建议（DRAFT 后续要构建真实项目）
 
 TOOLS = [  # (名称, 版本命令, 是否必需)
