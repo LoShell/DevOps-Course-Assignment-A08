@@ -10,7 +10,7 @@
 
 - 完整运行 SHA：`25e57544fe7b98e496aeea8681e5cfaca128a255`。
 - 个人分支：`a08/241250076/e5-e6`；服务器仓库：`/root/241250076/buildchecker`。
-- 本人记录：[E5/records/241250076.md](../records/241250076.md)。文档正文提交 SHA、个人 PR：提交后回填。
+- 本人记录：[E5/records/241250076.md](../records/241250076.md)。文档正文提交 SHA：`7e34933595d8faea5c8b1ff1ac0b390f2bda7ec5`；个人 PR：[PR #8](https://github.com/LoShell/DevOps-Course-Assignment-A08/pull/8)，目标为 `a08/e5-e6`，待组长审阅。之后补充 PR 索引的提交与实验运行 SHA 分开记录。
 - 自检目录：`work/e5-preflight-20261031-215818/`；构建目录：`work/e5-build-20261031-215818/`；E5 目录：`work/e5-run-20261031-215818/`。下文以这三个目录分别指代自检、构建和实验材料。
 - 源码：运行基准中的 `scripts/course.py`、`scripts/lab_cloud.py`、`scripts/doctor.py`、服务 Dockerfile 和 `fixtures/md-rd/`。
 - 原始测试前后工作区均干净。个人仓库初始仍在 E4，经本人确认后按指南同步指定基准，再开始测试；未改写样例 Makefile、源码或资源门槛。
