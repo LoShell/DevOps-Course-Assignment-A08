@@ -15,7 +15,9 @@ import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
-MIN = {"cpus": 2, "mem_gib": 4, "disk_gib": 40}        # 最低
+# A08 使用课程统一配发的 2 GiB ECS，实际可见内存约 1.7 GiB。
+# 沿用 E4 经助教认可的资源门槛；E5—E7 实际运行结果另行验证并记录。
+MIN = {"cpus": 2, "mem_gib": 1.5, "disk_gib": 40}        # 最低
 REC = {"cpus": 4, "mem_gib": 8, "disk_gib": 100}       # 建议（DRAFT 后续要构建真实项目）
 
 TOOLS = [  # (名称, 版本命令, 是否必需)
