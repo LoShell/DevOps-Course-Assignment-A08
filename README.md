@@ -9,7 +9,7 @@
 | E3 | [并行测试基线](E3/README.md) | 保留历史成果 |
 | E4 | [可重复工程环境](E4/README.md) | 保留历史成果 |
 | E5 | [复现说明](E5/README.md)、[人工分析报告](docs/e5-a.md) | 个人报告及专项 PR 已合并；跨成员原包核验通过，归档及交付收尾进行中 |
-| E6 | 自动依赖检测与修复复检 | 与 E5 联合安排、独立提交；文档待建立 |
+| E6 | [自动依赖检测与修复复检](E6/README.md)、[测试分工](E6/TEST_PLAN.md) | 准备阶段：基线验证、个人测试、集成复验 |
 
 E5/E6 共同整合分支为 `a08/e5-e6`，协作见 [WORKFLOW](E5/WORKFLOW.md)。
 课程参考代码已由 [PR #4](https://github.com/LoShell/DevOps-Course-Assignment-A08/pull/4)
