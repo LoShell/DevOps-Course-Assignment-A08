@@ -1,0 +1,10 @@
+轨道,检查项,预期结果,实际结果,证据路径,通过
+A,基线构建,15项测试通过且构建退出0,15 passed in 0.09s且构建单测均0,work/e6-baseline-20261103-155301/build/,是
+A,基线修复前,精确MD(config.h)与RD(unused.h)且入口1,SUCCEEDED且精确两条发现入口1,work/e6-baseline-20261103-155301/before/evidence/findings.json,是
+A,基线修复后,findings为空且仅Makefile变化,after入口0且passed=true仅Makefile变化,work/e6-baseline-20261103-155301/meta/verification.json,是
+共同,新增测试,一致依赖返回空发现和精确两图,新增1项用例通过且完整服务16项通过,services/buildchecker/tests/test_e6_241250088.py,是
+A,个人版本构建,新增测试后重建成功,16 passed in 0.05s且构建单测均0,work/e6-personal-20261103-162844/build/,是
+A,个人版本修复前,精确MD(config.h)与RD(unused.h)且入口1,SUCCEEDED且精确两条发现入口1,work/e6-personal-20261103-162844/before/evidence/findings.json,是
+A,个人版本修复后,findings为空且仅Makefile变化,after入口0且passed=true仅Makefile变化,work/e6-personal-20261103-162844/meta/verification.json,是
+共同,证据备份,两轮完整证据可读取且校验通过,88及89份文件可读取且哈希原始重分析通过,个人报告第5节,是
+共同,报告审阅,本人确认报告和测试机制,2026-11-03本人审阅通过,E6/records/241250088.md,是
