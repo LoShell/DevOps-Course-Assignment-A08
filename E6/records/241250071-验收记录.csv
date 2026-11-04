@@ -1,0 +1,4 @@
+轨道,检查项,预期结果,实际结果,证据路径,通过
+A,修复前,精确MD(config.h)与RD(unused.h),baseline与personal均发现MISSING(main.o config.h)和REDUNDANT(main.o unused.h)，原始检测退出码均为1,work/e6-baseline-20261104-184801/before/evidence/findings.json；work/e6-personal-20261104-190926/before/evidence/findings.json,是
+A,修复后,findings为空且仅Makefile变化,baseline与personal的after findings均为空；verification均为passed=true且changed_inputs仅为Makefile,work/e6-baseline-20261104-184801/meta/verification.json；work/e6-personal-20261104-190926/meta/verification.json,是
+共同,新增测试,测试通过且镜像已重建,新增temporary.o重命名为unit.o的execution_graph测试；个人镜像重建后完整服务测试为16 passed,services/buildchecker/tests/test_e6_241250071.py；work/e6-personal-20261104-190926/build/unit-tests/stdout.log,是
