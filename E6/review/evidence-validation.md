@@ -2,7 +2,7 @@
 
 审阅人：叶原原（241250076）；日期：2026-11-06（北京时间）。
 
-状态：本人 baseline、personal 两轮实测与电脑原始证据复核完成，提交组长审阅。个人 PR：PR_LINK。
+状态：本人 baseline、personal 两轮实测与电脑原始证据复核完成，提交组长审阅。个人 PR：[PR #13](https://github.com/LoShell/DevOps-Course-Assignment-A08/pull/13)。
 
 负责机制：`full_check` 的参数检查、采集流程及报告边界；验证精确发现、修复输入哈希和证据归档。
 
