@@ -1,0 +1,7 @@
+轨道,检查项,预期结果,实际结果,证据路径,通过
+A,修复前,精确MD(config.h)与RD(unused.h),,,
+A,修复后,findings为空且仅Makefile变化,,,
+B,初始构建,MISSING_MAKE,,,
+B,候选构建,build_exit_code=0,,,
+B,运行验证,同一image_id且exit=0及hello E3,,,
+共同,新增测试,测试通过且镜像已重建,,,

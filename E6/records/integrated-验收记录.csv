@@ -1,0 +1,9 @@
+轨道,检查项,预期结果,实际结果,证据路径,通过
+共同,集成版本,四项个人测试已合并,PR11至14已合并；运行SHA为9716ae3a20cae6ff8eda89d69733ab71d4a7b3e6,E6/CONTRIBUTIONS.md,是
+A,集成构建,构建及单测退出0且19项测试通过,构建入口和底层构建单测均0；19 passed in 0.25s,work/e6-integrated-20261106-111142/build/,是
+A,修复前,精确MD与RD且入口1,SUCCEEDED；clean及build均0；精确MISSING与REDUNDANT；入口及runner均1,work/e6-integrated-20261106-111142/before/evidence/findings.json,是
+A,修复后,findings为空且入口0,SUCCEEDED；findings为空；入口及runner均0,work/e6-integrated-20261106-111142/after/evidence/findings.json,是
+A,报告与输入校验,passed为true且仅Makefile变化,校验退出0；passed为true；实际输入字节哈希匹配；仅Makefile改变,work/e6-integrated-20261106-111142/meta/verification.json,是
+共同,原始证据核验,原始分析与保存结果一致,两次检测各7份trace；重分析所得发现两图及进程记录一致,E6/validation/integrated-audit-20261106.json,是
+共同,同基线对照,至少两人同基线原包结果一致,088与097源码SHA输入哈希图边及发现一致；各自原始重分析通过,E6/validation/baseline-comparison-20261106.json,是
+共同,归档备份,原包完整且下载哈希一致,集成原包89个文件；SHA256与配套清单一致,E6/validation/integrated-audit-20261106.json,是

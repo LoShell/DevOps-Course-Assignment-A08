@@ -1,0 +1,16 @@
+轨道,检查项,预期结果,实际结果,证据路径,通过
+A,baseline版本,固定E6_BASE_SHA且工作区干净,aff4eba7dca7a09a372d1264375d9fe9cd11354f；各阶段前后工作区干净,work/e6-baseline-20261106-002801/meta/source-commit.txt；meta/git-status.txt,是
+A,baseline自检,退出0且problems为空,退出0；problems=[]；三项资源建议警告保留,work/e6-baseline-20261106-002801/meta/env.json；meta/doctor-exit-code.txt,是
+A,baseline构建与测试,构建及单测退出0且15项通过,包装入口0；构建0；单测0；15 passed in 0.08s,work/e6-baseline-20261106-002801/build/build/exit-code.json；build/unit-tests/stdout.log,是
+A,baseline修复前,精确MD(config.h)与RD(unused.h),SUCCEEDED；clean/build=0；入口1；精确MISSING(main.o→config.h)与REDUNDANT(main.o→unused.h),work/e6-baseline-20261106-002801/before/evidence/findings.json；meta/before-exit-code.txt,是
+A,baseline修复后,findings为空且仅Makefile变化,SUCCEEDED；clean/build=0；入口0；findings=[]；passed=true；changed_inputs仅Makefile,work/e6-baseline-20261106-002801/after/evidence/findings.json；meta/verification.json,是
+A,personal版本,个人测试提交SHA且工作区干净,bd00e74011c94d3fb0d3b300f17a35ca4d049564；各阶段前后工作区干净,work/e6-personal-20261106-002927/meta/source-commit.txt；meta/git-status.txt,是
+A,personal自检,退出0且problems为空,退出0；problems=[]；三项资源建议警告保留,work/e6-personal-20261106-002927/meta/env.json；meta/doctor-exit-code.txt,是
+A,personal修复前,精确MD(config.h)与RD(unused.h),SUCCEEDED；clean/build=0；入口1；精确MISSING(main.o→config.h)与REDUNDANT(main.o→unused.h),work/e6-personal-20261106-002927/before/evidence/findings.json；meta/before-exit-code.txt,是
+A,personal修复后,findings为空且仅Makefile变化,SUCCEEDED；clean/build=0；入口0；findings=[]；passed=true；changed_inputs仅Makefile,work/e6-personal-20261106-002927/after/evidence/findings.json；meta/verification.json,是
+B,初始构建,MISSING_MAKE,不适用：本人轨道A,不适用,不适用
+B,候选构建,build_exit_code=0,不适用：本人轨道A,不适用,不适用
+B,运行验证,同一image_id且exit=0及hello E3,不适用：本人轨道A,不适用,不适用
+共同,新增测试,测试通过且镜像已重建,新增嵌套输出目录边界用例；异常消息正确；execute未调用；输入清单和哈希不变；输出目录未创建；重建后16 passed in 0.20s,services/buildchecker/tests/test_e6_241250076.py；work/e6-personal-20261106-002927/build/unit-tests/stdout.log,是
+A,原始证据与图,两图边集合及每条发现均可追溯原始记录,两轮四图各3条精确边；证据行和成功返回值核对；编译及链接进程归属核对；实际输入哈希核对,两轮before/after/evidence/；最终包validation/raw-evidence-audit.json,是
+A,原始包备份,两轮完整归档下载电脑且哈希一致,baseline=a62ff53cc297d2d9fe02c29abcd4d77287cde6a61acd2465103651429845f746；personal=a22a4808524ee4b89d35e6422499a951de98c4926acd7bd1fd393379600eb037,服务器/root/devops-submissions/241250076/；电脑work/E6-backup-241250076-20261106/,是

@@ -1,0 +1,374 @@
+{
+  "archive": "A08-241250088-E6-integrated-20261106-111659.tar.gz",
+  "sha256": "5787c2ba5d5fdda31f2170e3cc77729c560f91fd0b82e511db5b5386da845505",
+  "source_sha": "9716ae3a20cae6ff8eda89d69733ab71d4a7b3e6",
+  "sides": {
+    "before": {
+      "trace_id": "e6-b997540ba6294d1eb7e8dd88e406c469",
+      "runner_exit_code": 1,
+      "trace_files": 7,
+      "findings": [
+        {
+          "type": "MISSING",
+          "target": "main.o",
+          "dependency": "config.h",
+          "evidence": [
+            {
+              "source": "system_call",
+              "trace_file": "t.14",
+              "line": 579,
+              "pid": 14,
+              "operation": "openat"
+            },
+            {
+              "source": "system_call",
+              "trace_file": "t.15",
+              "line": 23,
+              "pid": 15,
+              "operation": "openat"
+            }
+          ],
+          "declared_dependencies": [
+            "main.c",
+            "unused.h"
+          ]
+        },
+        {
+          "type": "REDUNDANT",
+          "target": "main.o",
+          "dependency": "unused.h",
+          "evidence": [
+            {
+              "source": "make_database",
+              "artifact": "make-db.txt",
+              "line": 1053,
+              "declaration": "main.o: main.c unused.h"
+            }
+          ],
+          "scope": "Not observed in this recipe job under this build configuration"
+        }
+      ],
+      "actual_graph": [
+        {
+          "target": "app",
+          "dependency": "main.o",
+          "kind": "ACTUAL_READ_OPEN",
+          "evidence": {
+            "source": "system_call",
+            "trace_file": "t.18",
+            "line": 82,
+            "pid": 18,
+            "operation": "openat"
+          }
+        },
+        {
+          "target": "main.o",
+          "dependency": "config.h",
+          "kind": "ACTUAL_READ_OPEN",
+          "evidence": {
+            "source": "system_call",
+            "trace_file": "t.14",
+            "line": 579,
+            "pid": 14,
+            "operation": "openat"
+          }
+        },
+        {
+          "target": "main.o",
+          "dependency": "main.c",
+          "kind": "ACTUAL_READ_OPEN",
+          "evidence": {
+            "source": "system_call",
+            "trace_file": "t.14",
+            "line": 67,
+            "pid": 14,
+            "operation": "openat"
+          }
+        }
+      ],
+      "declared_graph": [
+        {
+          "target": "app",
+          "dependency": "main.o",
+          "kind": "DECLARED",
+          "evidence": {
+            "source": "make_database",
+            "artifact": "make-db.txt",
+            "line": 601,
+            "declaration": "app: main.o"
+          }
+        },
+        {
+          "target": "main.o",
+          "dependency": "main.c",
+          "kind": "DECLARED",
+          "evidence": {
+            "source": "make_database",
+            "artifact": "make-db.txt",
+            "line": 1053,
+            "declaration": "main.o: main.c unused.h"
+          }
+        },
+        {
+          "target": "main.o",
+          "dependency": "unused.h",
+          "kind": "DECLARED",
+          "evidence": {
+            "source": "make_database",
+            "artifact": "make-db.txt",
+            "line": 1053,
+            "declaration": "main.o: main.c unused.h"
+          }
+        }
+      ],
+      "processes": [
+        {
+          "pid": 12,
+          "parent": null,
+          "executables": [
+            "/usr/bin/make"
+          ],
+          "job_pid": null
+        },
+        {
+          "pid": 13,
+          "parent": 12,
+          "executables": [
+            "/usr/bin/cc"
+          ],
+          "job_pid": 13
+        },
+        {
+          "pid": 14,
+          "parent": 13,
+          "executables": [
+            "/usr/libexec/gcc/x86_64-linux-gnu/14/cc1"
+          ],
+          "job_pid": 13
+        },
+        {
+          "pid": 15,
+          "parent": 13,
+          "executables": [
+            "/usr/bin/as"
+          ],
+          "job_pid": 13
+        },
+        {
+          "pid": 16,
+          "parent": 12,
+          "executables": [
+            "/usr/bin/cc"
+          ],
+          "job_pid": 16
+        },
+        {
+          "pid": 17,
+          "parent": 16,
+          "executables": [
+            "/usr/libexec/gcc/x86_64-linux-gnu/14/collect2"
+          ],
+          "job_pid": 16
+        },
+        {
+          "pid": 18,
+          "parent": 17,
+          "executables": [
+            "/usr/bin/ld"
+          ],
+          "job_pid": 16
+        }
+      ],
+      "raw_reanalysis_matches": true,
+      "input_hashes_match": true
+    },
+    "after": {
+      "trace_id": "e6-e643ecd4f97c4d39840ad57b72208f48",
+      "runner_exit_code": 0,
+      "trace_files": 7,
+      "findings": [],
+      "actual_graph": [
+        {
+          "target": "app",
+          "dependency": "main.o",
+          "kind": "ACTUAL_READ_OPEN",
+          "evidence": {
+            "source": "system_call",
+            "trace_file": "t.18",
+            "line": 82,
+            "pid": 18,
+            "operation": "openat"
+          }
+        },
+        {
+          "target": "main.o",
+          "dependency": "config.h",
+          "kind": "ACTUAL_READ_OPEN",
+          "evidence": {
+            "source": "system_call",
+            "trace_file": "t.14",
+            "line": 579,
+            "pid": 14,
+            "operation": "openat"
+          }
+        },
+        {
+          "target": "main.o",
+          "dependency": "main.c",
+          "kind": "ACTUAL_READ_OPEN",
+          "evidence": {
+            "source": "system_call",
+            "trace_file": "t.14",
+            "line": 67,
+            "pid": 14,
+            "operation": "openat"
+          }
+        }
+      ],
+      "declared_graph": [
+        {
+          "target": "app",
+          "dependency": "main.o",
+          "kind": "DECLARED",
+          "evidence": {
+            "source": "make_database",
+            "artifact": "make-db.txt",
+            "line": 601,
+            "declaration": "app: main.o"
+          }
+        },
+        {
+          "target": "main.o",
+          "dependency": "config.h",
+          "kind": "DECLARED",
+          "evidence": {
+            "source": "make_database",
+            "artifact": "make-db.txt",
+            "line": 1045,
+            "declaration": "main.o: main.c config.h"
+          }
+        },
+        {
+          "target": "main.o",
+          "dependency": "main.c",
+          "kind": "DECLARED",
+          "evidence": {
+            "source": "make_database",
+            "artifact": "make-db.txt",
+            "line": 1045,
+            "declaration": "main.o: main.c config.h"
+          }
+        }
+      ],
+      "processes": [
+        {
+          "pid": 12,
+          "parent": null,
+          "executables": [
+            "/usr/bin/make"
+          ],
+          "job_pid": null
+        },
+        {
+          "pid": 13,
+          "parent": 12,
+          "executables": [
+            "/usr/bin/cc"
+          ],
+          "job_pid": 13
+        },
+        {
+          "pid": 14,
+          "parent": 13,
+          "executables": [
+            "/usr/libexec/gcc/x86_64-linux-gnu/14/cc1"
+          ],
+          "job_pid": 13
+        },
+        {
+          "pid": 15,
+          "parent": 13,
+          "executables": [
+            "/usr/bin/as"
+          ],
+          "job_pid": 13
+        },
+        {
+          "pid": 16,
+          "parent": 12,
+          "executables": [
+            "/usr/bin/cc"
+          ],
+          "job_pid": 16
+        },
+        {
+          "pid": 17,
+          "parent": 16,
+          "executables": [
+            "/usr/libexec/gcc/x86_64-linux-gnu/14/collect2"
+          ],
+          "job_pid": 16
+        },
+        {
+          "pid": 18,
+          "parent": 17,
+          "executables": [
+            "/usr/bin/ld"
+          ],
+          "job_pid": 16
+        }
+      ],
+      "raw_reanalysis_matches": true,
+      "input_hashes_match": true
+    }
+  },
+  "image_id": "sha256:6ec1ac4b718c6362529a320aa2922f430985d2b8472844a73445d0cc90e66e1b",
+  "test_result": "19 passed in 0.25s",
+  "files": 89,
+  "environment": {
+    "time": "2026-11-06T03:11:54.062285+00:00",
+    "hostname": "ecs-f6ef",
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.0-186-generic",
+    "arch": "x86_64",
+    "spec": {
+      "cpus": 2,
+      "mem_gib": 1.7,
+      "disk_gib": 67.9
+    },
+    "tools": {
+      "docker": "29.1.3",
+      "compose": "2.40.3+ds1-0ubuntu1~22.04.1",
+      "buildx": "github.com/docker/buildx 0.30.1 0.30.1-0ubuntu1~22.04.1",
+      "git": "git version 2.34.1",
+      "make": "GNU Make 4.3",
+      "python3": "Python 3.10.12"
+    },
+    "problems": [],
+    "warnings": [
+      "cpus=2 低于建议值 4",
+      "mem_gib=1.7 低于建议值 8",
+      "disk_gib=67.9 低于建议值 100"
+    ],
+    "docker_sock_gid": 120,
+    "registry_mirrors": [
+      "https://58ba2b5151b74a5c8621c0b505bb2038.mirror.swr.myhuaweicloud.com/"
+    ],
+    "git": {
+      "user.name": "241250088",
+      "user.email": "241250088@smail.nju.edu.cn"
+    }
+  },
+  "verification": {
+    "passed": true,
+    "before_findings": 2,
+    "after_findings": 0,
+    "changed_inputs": [
+      "Makefile"
+    ],
+    "before_trace_id": "e6-b997540ba6294d1eb7e8dd88e406c469",
+    "after_trace_id": "e6-e643ecd4f97c4d39840ad57b72208f48",
+    "scope": "Saved report assertions; raw traces are not independently revalidated"
+  },
+  "passed": true
+}
