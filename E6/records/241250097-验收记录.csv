@@ -1,0 +1,9 @@
+轨道,检查项,预期结果,实际结果,证据路径,通过
+A,baseline修复前,精确MD(config.h)与RD(unused.h),"status=SUCCEEDED；clean_exit_code=0；build_exit_code=0；入口退出码1；精确MISSING(main.o, config.h)和REDUNDANT(main.o, unused.h)",work/e6-baseline-20261104-104839/before/evidence/findings.json；work/e6-baseline-20261104-104839/meta/before-exit-code.txt,是
+A,baseline修复后,findings为空且仅Makefile变化,"status=SUCCEEDED；clean_exit_code=0；build_exit_code=0；入口退出码0；findings=[]；校验退出码0；passed=true；changed_inputs=[""Makefile""]",work/e6-baseline-20261104-104839/after/evidence/findings.json；work/e6-baseline-20261104-104839/meta/verification.json；work/e6-baseline-20261104-104839/meta/after-exit-code.txt；work/e6-baseline-20261104-104839/meta/verification-exit-code.txt,是
+A,personal修复前,精确MD(config.h)与RD(unused.h),"status=SUCCEEDED；clean_exit_code=0；build_exit_code=0；入口退出码1；精确MISSING(main.o, config.h)和REDUNDANT(main.o, unused.h)",work/e6-personal-20261104-113209/before/evidence/findings.json；work/e6-personal-20261104-113209/meta/before-exit-code.txt,是
+A,personal修复后,findings为空且仅Makefile变化,"status=SUCCEEDED；clean_exit_code=0；build_exit_code=0；入口退出码0；findings=[]；校验退出码0；passed=true；changed_inputs=[""Makefile""]",work/e6-personal-20261104-113209/after/evidence/findings.json；work/e6-personal-20261104-113209/meta/verification.json；work/e6-personal-20261104-113209/meta/after-exit-code.txt；work/e6-personal-20261104-113209/meta/verification-exit-code.txt,是
+B,初始构建,MISSING_MAKE,不适用：本人选择轨道A,不适用,不适用
+B,候选构建,build_exit_code=0,不适用：本人选择轨道A,不适用,不适用
+B,运行验证,同一image_id且exit=0及hello E3,不适用：本人选择轨道A,不适用,不适用
+共同,新增测试,测试通过且镜像已重建,个人测试提交12f85dcbfc7ff58325f814c3c21c50962b0c6089；新增伪目标依赖环测试；断言Unsupported及指定消息；重建入口及单测退出码均为0；基线15 passed；个人轮16 passed,services/buildchecker/tests/test_e6_241250097.py；work/e6-personal-20261104-113209/build/unit-tests/stdout.log；work/e6-personal-20261104-113209/build/unit-tests/exit-code.json；work/e6-personal-20261104-113209/meta/build-exit-code.txt；work/e6-personal-20261104-113209/meta/service-image-inspect.json,是
