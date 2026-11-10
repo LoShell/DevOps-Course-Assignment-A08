@@ -1,0 +1,12 @@
+检查项,预期,实际,工具退出码,判定,证据路径或链接
+oracle,6 项独立判定测试通过,通过后进入构建,0,PASS,work/e7-241250088-personal-qfitdKaY/oracle.log
+unit-tests,当前服务测试全部通过,构建后 20 passed in 0.17s 且门禁 unit-tests 通过,0,PASS,work/e7-241250088-personal-qfitdKaY/build/unit-tests/stdout.log
+original-1,SUCCEEDED 且精确命中两条 MD/RD,SUCCEEDED e6-1c741b3077094027827fa0c160c5b0ed,1,PASS,work/e7-241250088-personal-qfitdKaY/full/gate/original-1/evidence/findings.json
+original-2,SUCCEEDED 且精确命中两条 MD/RD,SUCCEEDED e6-63965adfe8964ad7ba5ef8f1414e5820,1,PASS,work/e7-241250088-personal-qfitdKaY/full/gate/original-2/evidence/findings.json
+original-3,SUCCEEDED 且精确命中两条 MD/RD,SUCCEEDED e6-3efee48b136f4c348f065d929c71eabb,1,PASS,work/e7-241250088-personal-qfitdKaY/full/gate/original-3/evidence/findings.json
+fixed,SUCCEEDED 且 findings 为空并且仅 Makefile 变化,SUCCEEDED e6-0ab56698e90f49389252bce365059768,0,PASS,work/e7-241250088-personal-qfitdKaY/full/gate/fixed/evidence/findings.json
+build-failed,FAILED / CHECK_FAILED 且构建失败,FAILED e6-597397b5b5b64475ae3ea3e5ced35d34,1,PASS,work/e7-241250088-personal-qfitdKaY/full/gate/build-failed/evidence/findings.json
+unsupported,FAILED / UNSUPPORTED 且构建成功,FAILED e6-21e42ac8ee694abea3800971325a5174,1,PASS,work/e7-241250088-personal-qfitdKaY/full/gate/unsupported/evidence/findings.json
+timeout,TIMED_OUT / TIMEOUT,TIMED_OUT e6-dbe9388859d6469a86cd36f43b306283,1,PASS,work/e7-241250088-personal-qfitdKaY/full/gate/timeout/evidence/findings.json
+gate,八项通过且整体退出 0,八项均为 True,0,PASS,work/e7-241250088-personal-qfitdKaY/full/gate/results.csv
+personal-test,定向测试通过且包含在新镜像中,定向测试 1 项通过,0,PASS,work/e7-241250088-personal-qfitdKaY/personal-test.log
