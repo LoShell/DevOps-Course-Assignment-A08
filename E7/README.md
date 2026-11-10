@@ -4,7 +4,7 @@
 
 ## 导航
 
-- [测试计划](TEST_PLAN.md)、[协作流程](WORKFLOW.md)、[任务清单](BACKLOG.md)
+- [操作指南](OPERATION_GUIDE.md)、[测试计划](TEST_PLAN.md)、[协作流程](WORKFLOW.md)、[任务清单](BACKLOG.md)
 - [个人贡献](CONTRIBUTIONS.md)、[个人记录说明](records/TEMPLATE.md)、[专项审阅模板](review/TEMPLATE.md)
 - [CI 证据索引](validation/README.md)、[共同报告](../docs/e7-a.md)、[提交清单](SUBMISSION.md)
 
