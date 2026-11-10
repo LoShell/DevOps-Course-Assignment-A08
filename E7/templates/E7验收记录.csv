@@ -1,0 +1,12 @@
+检查项,预期,实际,工具退出码,判定,证据路径或链接
+oracle,6 项独立判定测试通过,,,PENDING,
+unit-tests,当前服务测试全部通过,,,PENDING,
+original-1,SUCCEEDED 且精确命中两条 MD/RD,,,PENDING,
+original-2,SUCCEEDED 且精确命中两条 MD/RD,,,PENDING,
+original-3,SUCCEEDED 且精确命中两条 MD/RD,,,PENDING,
+fixed,SUCCEEDED 且 findings 为空并且仅 Makefile 变化,,,PENDING,
+build-failed,FAILED / CHECK_FAILED 且构建失败,,,PENDING,
+unsupported,FAILED / UNSUPPORTED 且构建成功,,,PENDING,
+timeout,TIMED_OUT / TIMEOUT,,,PENDING,
+gate,八项 passed=true 且整体退出 0,,,PENDING,
+personal-test,定向测试通过且包含在新镜像中,,,PENDING,
