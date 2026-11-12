@@ -1,0 +1,22 @@
+检查项,预期,实际,工具退出码,判定,证据路径或链接
+baseline/oracle,6 项独立判定测试通过,6/6 通过,0,PASS,work/e7-241250076-baseline-0p7BTMgO/oracle.log
+baseline/unit-tests,当前服务测试全部通过,19 passed,0,PASS,work/e7-241250076-baseline-0p7BTMgO/full/gate/unit-tests/
+baseline/original-1,"SUCCEEDED / 1，精确命中 MD(main.o, config.h) 与 RD(main.o, unused.h)",SUCCEEDED; trace_id=e6-ed2caaa3154d4f8799a30aa82ab8ad18; findings=2,1,PASS,work/e7-241250076-baseline-0p7BTMgO/full/gate/original-1/
+baseline/original-2,"SUCCEEDED / 1，精确命中 MD(main.o, config.h) 与 RD(main.o, unused.h)",SUCCEEDED; trace_id=e6-95887b0bbc0446eb88eb534816bc7483; findings=2,1,PASS,work/e7-241250076-baseline-0p7BTMgO/full/gate/original-2/
+baseline/original-3,"SUCCEEDED / 1，精确命中 MD(main.o, config.h) 与 RD(main.o, unused.h)",SUCCEEDED; trace_id=e6-02ccaae511e44a62ae73167968bb6b95; findings=2,1,PASS,work/e7-241250076-baseline-0p7BTMgO/full/gate/original-3/
+baseline/fixed,SUCCEEDED / 0，findings 为空且仅 Makefile 变化,SUCCEEDED; trace_id=e6-b7045503c3d74345a29db880dcb221fd; findings=0; changed_inputs=[Makefile],0,PASS,work/e7-241250076-baseline-0p7BTMgO/full/gate/fixed/
+baseline/build-failed,FAILED / 1，CHECK_FAILED 且构建失败,FAILED; trace_id=e6-081c65479ce54ff6a3e1b9f5bf990da0; CHECK_FAILED,1,PASS,work/e7-241250076-baseline-0p7BTMgO/full/gate/build-failed/
+baseline/unsupported,FAILED / 1，UNSUPPORTED 且构建成功,FAILED; trace_id=e6-b694040eab9543cab5fd75caa7630b68; UNSUPPORTED,1,PASS,work/e7-241250076-baseline-0p7BTMgO/full/gate/unsupported/
+baseline/timeout,TIMED_OUT / 1，TIMEOUT,TIMED_OUT; trace_id=e6-7148ca2240594c099f064b2cb6baf92a; TIMEOUT,1,PASS,work/e7-241250076-baseline-0p7BTMgO/full/gate/timeout/
+baseline/gate,八项 passed=true，整体退出 0,8/8 passed=true,0,PASS,work/e7-241250076-baseline-0p7BTMgO/full/gate/gate-result.json
+personal/oracle,6 项独立判定测试通过,6/6 通过,0,PASS,work/e7-241250076-personal-nBIdmim1/oracle.log
+personal/unit-tests,当前服务测试全部通过,20 passed,0,PASS,work/e7-241250076-personal-nBIdmim1/full/gate/unit-tests/
+personal/original-1,"SUCCEEDED / 1，精确命中 MD(main.o, config.h) 与 RD(main.o, unused.h)",SUCCEEDED; trace_id=e6-5b0b40e599784f01b7e896f7a0a02f51; findings=2,1,PASS,work/e7-241250076-personal-nBIdmim1/full/gate/original-1/
+personal/original-2,"SUCCEEDED / 1，精确命中 MD(main.o, config.h) 与 RD(main.o, unused.h)",SUCCEEDED; trace_id=e6-cd73e1c4fc164905b25d185041c69468; findings=2,1,PASS,work/e7-241250076-personal-nBIdmim1/full/gate/original-2/
+personal/original-3,"SUCCEEDED / 1，精确命中 MD(main.o, config.h) 与 RD(main.o, unused.h)",SUCCEEDED; trace_id=e6-50d57eabd18143298b57b4592c2c05e5; findings=2,1,PASS,work/e7-241250076-personal-nBIdmim1/full/gate/original-3/
+personal/fixed,SUCCEEDED / 0，findings 为空且仅 Makefile 变化,SUCCEEDED; trace_id=e6-446bc10c84d14d77b6e6a81e7e54fd3b; findings=0; changed_inputs=[Makefile],0,PASS,work/e7-241250076-personal-nBIdmim1/full/gate/fixed/
+personal/build-failed,FAILED / 1，CHECK_FAILED 且构建失败,FAILED; trace_id=e6-926d96f5e09d4d2a9b06d3019fd109aa; CHECK_FAILED,1,PASS,work/e7-241250076-personal-nBIdmim1/full/gate/build-failed/
+personal/unsupported,FAILED / 1，UNSUPPORTED 且构建成功,FAILED; trace_id=e6-37212dafa868484cb57d54963dc978c8; UNSUPPORTED,1,PASS,work/e7-241250076-personal-nBIdmim1/full/gate/unsupported/
+personal/timeout,TIMED_OUT / 1，TIMEOUT,TIMED_OUT; trace_id=e6-0993c1b703e54b4cacb26af568876269; TIMEOUT,1,PASS,work/e7-241250076-personal-nBIdmim1/full/gate/timeout/
+personal/gate,八项 passed=true，整体退出 0,8/8 passed=true,0,PASS,work/e7-241250076-personal-nBIdmim1/full/gate/gate-result.json
+personal/personal-test,拒绝非空目录，execute 零调用，旧证据快照一致,1 项容器定向测试通过,0,PASS,work/e7-241250076-personal-nBIdmim1/personal-test.log
