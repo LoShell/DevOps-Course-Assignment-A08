@@ -2,27 +2,35 @@
 
 在 Ubuntu 云服务器原有的个人仓库 `/root/<学号>/buildchecker` 执行。沿用各自的 Git 本地作者和镜像标签。2 GiB 共享服务器上的构建和完整门禁依次执行。
 
-## 1. 组长确认基线
+## 1. 固定实验基线与 PR 合入目标
 
-从已经推送的共同分支选定完整 SHA，确认该提交的工作区干净，在自己的服务器目录执行第 3 节。记录服务单测数量、独立判定结果和八项门禁结果。基线通过后，把 SHA、指南和分工一起发给组员。
+- **实验基线**固定为 `3a0ae35b27e783c480f66412b3e4f53802c6be68`。四人都从这个提交开个人分支，第一轮构建与门禁也在这个提交上运行。组长已验证基线 19 项服务测试通过，完整门禁 8/8，见 [基线证据索引](validation/README.md)。
+- **PR 的 base** 选 `a08/e7-validation`，**compare** 选自己的 `a08/<学号>/e7-validation`。共同分支会随着文档更新和个人 PR 合并向前推进，实验基线 SHA 仍取上面固定的值。
+
+在 GitHub 上看共同分支最新版的指南和分工，在服务器上按固定 SHA 建分支、跑第一轮。
 
 ## 2. 组员建立个人分支
 
-收到组长发布的 SHA 后执行。先确认工作区干净，`origin` 指向 A08 仓库。
+首次创建个人分支时，在自己的服务器仓库根目录执行。先确认 `origin` 指向 A08 仓库，Git 本地作者是本人学号。
 
 ```bash
-git status --short
 git remote -v
-SID=$(git config --local user.name)
-git config --local user.email
-git fetch origin
-read -r -p "组长发布的 E7 基线 SHA: " E7_BASE_SHA
-git merge-base --is-ancestor "$E7_BASE_SHA" origin/a08/e7-validation &&
+(
+  set -e
+  test -z "$(git status --porcelain)" || { git status --short; exit 1; }
+  SID=$(git config --local user.name)
+  [[ "$SID" =~ ^[0-9]{9}$ ]]
+  git config --local user.email
+  git fetch origin
+  E7_BASE_SHA=3a0ae35b27e783c480f66412b3e4f53802c6be68
+  git merge-base --is-ancestor "$E7_BASE_SHA" origin/a08/e7-validation
   git switch -c "a08/$SID/e7-validation" "$E7_BASE_SHA"
-git rev-parse HEAD
+  test "$(git rev-parse HEAD)" = "$E7_BASE_SHA"
+  git rev-parse HEAD
+)
 ```
 
-确认 `SID` 是本人的数字学号，`HEAD` 与发布的 SHA 一致，再做基线验证。
+确认输出为固定 SHA 后，执行第 3 节的基线轮。已创建个人分支的成员可切回自己的分支继续工作，已有个人提交时保留该分支历史。
 
 ## 3. 每轮构建与完整门禁
 
