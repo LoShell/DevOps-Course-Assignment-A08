@@ -1,0 +1,12 @@
+检查项,预期,实际,工具退出码,判定,证据路径或链接
+oracle,6 项独立判定测试通过,baseline 与 personal 均为 6 项通过,0 / 0,PASS,work/e7-241250071-X0ti8vqv/oracle.log；work/e7-241250071-GBno9AYS/oracle.log
+unit-tests,当前服务测试全部通过,baseline 为 19 passed；personal 为 20 passed,0 / 0,PASS,两轮 build-console.log；两轮 full/gate/unit-tests/
+original-1,SUCCEEDED 且精确命中两条 MD/RD,两轮均检出 MD=config.h 与 RD=unused.h,1 / 1,PASS,两轮 full/gate/original-1/evidence/findings.json
+original-2,SUCCEEDED 且精确命中两条 MD/RD,两轮均检出 MD=config.h 与 RD=unused.h,1 / 1,PASS,两轮 full/gate/original-2/evidence/findings.json
+original-3,SUCCEEDED 且精确命中两条 MD/RD,两轮均检出 MD=config.h 与 RD=unused.h,1 / 1,PASS,两轮 full/gate/original-3/evidence/findings.json
+fixed,SUCCEEDED 且 findings 为空并且仅 Makefile 变化,两轮 findings 均为空且场景通过,0 / 0,PASS,两轮 full/gate/fixed/evidence/findings.json
+build-failed,FAILED / CHECK_FAILED 且构建失败,两轮均为 FAILED 场景通过,1 / 1,PASS,两轮 full/gate/build-failed/
+unsupported,FAILED / UNSUPPORTED 且构建成功,两轮均为 FAILED 场景通过,1 / 1,PASS,两轮 full/gate/unsupported/
+timeout,TIMED_OUT / TIMEOUT,两轮均为 TIMED_OUT 场景通过,1 / 1,PASS,两轮 full/gate/timeout/
+gate,八项 passed=true 且整体退出 0,baseline 与 personal 均为 8/8 通过且 gate=0,0 / 0,PASS,两轮 gate-exit.txt；两轮 full/gate/gate-result.json
+personal-test,定向测试通过且包含在新镜像中,个人轮定向测试退出 0且重建后服务测试为20 passed,0,PASS,work/e7-241250071-GBno9AYS/personal-test.log；build-console.log
