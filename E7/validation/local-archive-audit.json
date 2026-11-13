@@ -1,0 +1,77 @@
+{
+  "archives": [
+    {
+      "student": "241250088",
+      "archive": "D:\\MYfile\\3-1\\Devops\\Lab\\241250088\\E7\\A08-e7-241250088-baseline-nr4FTjkl-20261113-213051.tar.gz",
+      "sha256": "45acac249e910bd098ce1325d89c4e43a2c69867b997044d49bcd383b90285e5",
+      "source_commit": "3a0ae35b27e783c480f66412b3e4f53802c6be68",
+      "gate_passed": true,
+      "cases": 8
+    },
+    {
+      "student": "241250088",
+      "archive": "D:\\MYfile\\3-1\\Devops\\Lab\\241250088\\E7\\A08-e7-241250088-integrated-GYJmGTi1-20261113-213051.tar.gz",
+      "sha256": "c38a0a5991886e07eaea730aeb1388a8c152b074de486bbbb37a239446dd4bc5",
+      "source_commit": "8aeb3220c837f0acdc65c7b71477a370c533e12f",
+      "gate_passed": true,
+      "cases": 8
+    },
+    {
+      "student": "241250088",
+      "archive": "D:\\MYfile\\3-1\\Devops\\Lab\\241250088\\E7\\A08-e7-241250088-personal-qfitdKaY-20261113-213051.tar.gz",
+      "sha256": "17a0e4d79547a915a0fe4eac88c84b07523ba8e354869055255f40e08c1e8f63",
+      "source_commit": "4121f5b0f45e009d68aea3a1beba97e7dc014db4",
+      "gate_passed": true,
+      "cases": 8
+    },
+    {
+      "student": "241250097",
+      "archive": "D:\\MYfile\\3-1\\Devops\\Lab\\241250097\\E7\\e7-241250097-3ZXk0iRO.tar.gz",
+      "sha256": "8e5e685ca4849b9b0689a1c6341299437a20ab1a0daa49d20d9d0964eadc1e82",
+      "source_commit": "3a0ae35b27e783c480f66412b3e4f53802c6be68",
+      "gate_passed": true,
+      "cases": 8
+    },
+    {
+      "student": "241250097",
+      "archive": "D:\\MYfile\\3-1\\Devops\\Lab\\241250097\\E7\\e7-241250097-WoT7AmkU.tar.gz",
+      "sha256": "2335909d709ade920332712cff5fbdfb6a3208b02445757d53444e0580565a7c",
+      "source_commit": "c656363e41cf86c2579aa9e2b11b302dbe2e7011",
+      "gate_passed": true,
+      "cases": 8
+    },
+    {
+      "student": "241250071",
+      "archive": "D:\\MYfile\\3-1\\Devops\\Lab\\241250071\\E7\\e7-241250071-GBno9AYS.tar.gz",
+      "sha256": "d7341b9c0e6783f0bfb7c9cd50d927cb7cf4ed325e563001cd0123d83637a2eb",
+      "source_commit": "9f11545d4c8a81b96090c7b27ed3fb41982dca9e",
+      "gate_passed": true,
+      "cases": 8
+    },
+    {
+      "student": "241250071",
+      "archive": "D:\\MYfile\\3-1\\Devops\\Lab\\241250071\\E7\\e7-241250071-X0ti8vqv.tar.gz",
+      "sha256": "c3cd792fd4a9389b1bb2013485ee5fd895760bb4104eda65168e7ebb5ee154cd",
+      "source_commit": "3a0ae35b27e783c480f66412b3e4f53802c6be68",
+      "gate_passed": true,
+      "cases": 8
+    },
+    {
+      "student": "241250076",
+      "archive": "D:\\MYfile\\3-1\\Devops\\Lab\\241250076\\E7\\A08-e7-241250076-baseline-0p7BTMgO-20261113-214323.tar.gz",
+      "sha256": "bb261dea9036e5a9a973c04c66b4eb32347bf703525c8c74fa58cf77cc5cb180",
+      "source_commit": "3a0ae35b27e783c480f66412b3e4f53802c6be68",
+      "gate_passed": true,
+      "cases": 8
+    },
+    {
+      "student": "241250076",
+      "archive": "D:\\MYfile\\3-1\\Devops\\Lab\\241250076\\E7\\A08-e7-241250076-personal-nBIdmim1-20261113-214323.tar.gz",
+      "sha256": "65844576338ff93301694bc5cda25e69a0f928056378a59a1347443907e69d97",
+      "source_commit": "eef6c4a0ec5da3d4b02995ef21eb7b3a283b6479",
+      "gate_passed": true,
+      "cases": 8
+    }
+  ],
+  "verification": "SHA-256 matches sidecar; archived gate reports all passed with 8 cases"
+}
