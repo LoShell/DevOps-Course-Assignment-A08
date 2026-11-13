@@ -1,0 +1,869 @@
+{
+  "date": "2026-11-13",
+  "student_id": "241250076",
+  "archives": [
+    {
+      "name": "A08-241250076-E7-baseline-e7-241250076-baseline-0p7BTMgO.tar.gz",
+      "sha256": "bb261dea9036e5a9a973c04c66b4eb32347bf703525c8c74fa58cf77cc5cb180",
+      "verified": true
+    },
+    {
+      "name": "A08-241250076-E7-personal-e7-241250076-personal-nBIdmim1.tar.gz",
+      "sha256": "65844576338ff93301694bc5cda25e69a0f928056378a59a1347443907e69d97",
+      "verified": true
+    }
+  ],
+  "rounds": [
+    {
+      "round": "baseline",
+      "source_commit": "3a0ae35b27e783c480f66412b3e4f53802c6be68",
+      "image_id": "sha256:d7eda34764d3150d0a8cfc4bb81e3c723f5952c393f7beed9feb99761200acb2",
+      "run_directory": "work/e7-241250076-baseline-0p7BTMgO",
+      "service_tests": 19,
+      "oracle_tests": 6,
+      "gate_cases": 8,
+      "gate_exit_code": 0,
+      "changed_fixed_inputs": [
+        "Makefile"
+      ],
+      "cases": [
+        {
+          "case": "original-1",
+          "status": "SUCCEEDED",
+          "exit_code": 1,
+          "trace_id": "e6-ed2caaa3154d4f8799a30aa82ab8ad18",
+          "input_sha256": {
+            "Makefile": "fd1dcd76a0bd9678351a1503941a5a875351455d4a6879e76af0af0b6c64772f",
+            "config.h": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+            "main.c": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197",
+            "unused.h": "1e4315549ec63325a22265e33a27e3cff8940d3ceec9756d7d193e9e51b966c9"
+          },
+          "checked_anchors": [
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.19",
+                "line": 82,
+                "pid": 19,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.o\", O_RDONLY)    = 7"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 579,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"config.h\", O_RDONLY|O_NOCTTY) = 4"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 67,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.c\", O_RDONLY|O_NOCTTY) = 3"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 601,
+                "declaration": "app: main.o"
+              },
+              "raw_line": "app: main.o"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 579,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"config.h\", O_RDONLY|O_NOCTTY) = 4"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.16",
+                "line": 23,
+                "pid": 16,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.o\", O_RDWR|O_CREAT|O_TRUNC, 0666) = 3"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            }
+          ]
+        },
+        {
+          "case": "original-2",
+          "status": "SUCCEEDED",
+          "exit_code": 1,
+          "trace_id": "e6-95887b0bbc0446eb88eb534816bc7483",
+          "input_sha256": {
+            "Makefile": "fd1dcd76a0bd9678351a1503941a5a875351455d4a6879e76af0af0b6c64772f",
+            "config.h": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+            "main.c": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197",
+            "unused.h": "1e4315549ec63325a22265e33a27e3cff8940d3ceec9756d7d193e9e51b966c9"
+          },
+          "checked_anchors": [
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.18",
+                "line": 82,
+                "pid": 18,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.o\", O_RDONLY)    = 7"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.14",
+                "line": 579,
+                "pid": 14,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"config.h\", O_RDONLY|O_NOCTTY) = 4"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.14",
+                "line": 67,
+                "pid": 14,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.c\", O_RDONLY|O_NOCTTY) = 3"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 601,
+                "declaration": "app: main.o"
+              },
+              "raw_line": "app: main.o"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.14",
+                "line": 579,
+                "pid": 14,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"config.h\", O_RDONLY|O_NOCTTY) = 4"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 23,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.o\", O_RDWR|O_CREAT|O_TRUNC, 0666) = 3"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            }
+          ]
+        },
+        {
+          "case": "original-3",
+          "status": "SUCCEEDED",
+          "exit_code": 1,
+          "trace_id": "e6-02ccaae511e44a62ae73167968bb6b95",
+          "input_sha256": {
+            "Makefile": "fd1dcd76a0bd9678351a1503941a5a875351455d4a6879e76af0af0b6c64772f",
+            "config.h": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+            "main.c": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197",
+            "unused.h": "1e4315549ec63325a22265e33a27e3cff8940d3ceec9756d7d193e9e51b966c9"
+          },
+          "checked_anchors": [
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.18",
+                "line": 82,
+                "pid": 18,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.o\", O_RDONLY)    = 7"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.14",
+                "line": 579,
+                "pid": 14,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"config.h\", O_RDONLY|O_NOCTTY) = 4"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.14",
+                "line": 67,
+                "pid": 14,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.c\", O_RDONLY|O_NOCTTY) = 3"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 601,
+                "declaration": "app: main.o"
+              },
+              "raw_line": "app: main.o"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.14",
+                "line": 579,
+                "pid": 14,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"config.h\", O_RDONLY|O_NOCTTY) = 4"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 23,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.o\", O_RDWR|O_CREAT|O_TRUNC, 0666) = 3"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            }
+          ]
+        },
+        {
+          "case": "fixed",
+          "status": "SUCCEEDED",
+          "exit_code": 0,
+          "trace_id": "e6-b7045503c3d74345a29db880dcb221fd",
+          "input_sha256": {
+            "Makefile": "128069c949b0239e3377f320d51498c2b37a317c602d8755d573a283e1f400ae",
+            "config.h": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+            "main.c": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197",
+            "unused.h": "1e4315549ec63325a22265e33a27e3cff8940d3ceec9756d7d193e9e51b966c9"
+          },
+          "checked_anchors": [
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.17",
+                "line": 82,
+                "pid": 17,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.o\", O_RDONLY)    = 7"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.13",
+                "line": 579,
+                "pid": 13,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"config.h\", O_RDONLY|O_NOCTTY) = 4"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.13",
+                "line": 67,
+                "pid": 13,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.c\", O_RDONLY|O_NOCTTY) = 3"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 601,
+                "declaration": "app: main.o"
+              },
+              "raw_line": "app: main.o"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1045,
+                "declaration": "main.o: main.c config.h"
+              },
+              "raw_line": "main.o: main.c config.h"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1045,
+                "declaration": "main.o: main.c config.h"
+              },
+              "raw_line": "main.o: main.c config.h"
+            }
+          ]
+        },
+        {
+          "case": "build-failed",
+          "status": "FAILED",
+          "exit_code": 1,
+          "trace_id": "e6-081c65479ce54ff6a3e1b9f5bf990da0",
+          "input_sha256": {
+            "Makefile": "fd1dcd76a0bd9678351a1503941a5a875351455d4a6879e76af0af0b6c64772f",
+            "main.c": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197",
+            "unused.h": "1e4315549ec63325a22265e33a27e3cff8940d3ceec9756d7d193e9e51b966c9"
+          },
+          "error": "Traced build failed; partial traces are not a successful dependency check"
+        },
+        {
+          "case": "unsupported",
+          "status": "FAILED",
+          "exit_code": 1,
+          "trace_id": "e6-b694040eab9543cab5fd75caa7630b68",
+          "input_sha256": {
+            "Makefile": "1347a405b557d044a4e1ed4a52a0bab9b6215b98f308ef3b9010bf433887fd62",
+            "config.h": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+            "main.c": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197",
+            "unused.h": "1e4315549ec63325a22265e33a27e3cff8940d3ceec9756d7d193e9e51b966c9"
+          },
+          "error": "Recipe job 14 has multiple final outputs; needs a richer attribution model"
+        },
+        {
+          "case": "timeout",
+          "status": "TIMED_OUT",
+          "exit_code": 1,
+          "trace_id": "e6-7148ca2240594c099f064b2cb6baf92a",
+          "input_sha256": {
+            "Makefile": "e6b109a584b4be79196d407a648e3cf9480a2f17bf2bf006ad46988998538cb2",
+            "config.h": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+            "main.c": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197",
+            "unused.h": "1e4315549ec63325a22265e33a27e3cff8940d3ceec9756d7d193e9e51b966c9"
+          },
+          "error": "Command exceeded 1s; process group was killed"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "round": "personal",
+      "source_commit": "eef6c4a0ec5da3d4b02995ef21eb7b3a283b6479",
+      "image_id": "sha256:bcea899aa791a09e2ae930bdeb97515a2ee912bf2619bcfbea9f5f5e8aba077e",
+      "run_directory": "work/e7-241250076-personal-nBIdmim1",
+      "service_tests": 20,
+      "oracle_tests": 6,
+      "gate_cases": 8,
+      "gate_exit_code": 0,
+      "changed_fixed_inputs": [
+        "Makefile"
+      ],
+      "cases": [
+        {
+          "case": "original-1",
+          "status": "SUCCEEDED",
+          "exit_code": 1,
+          "trace_id": "e6-5b0b40e599784f01b7e896f7a0a02f51",
+          "input_sha256": {
+            "Makefile": "fd1dcd76a0bd9678351a1503941a5a875351455d4a6879e76af0af0b6c64772f",
+            "config.h": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+            "main.c": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197",
+            "unused.h": "1e4315549ec63325a22265e33a27e3cff8940d3ceec9756d7d193e9e51b966c9"
+          },
+          "checked_anchors": [
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.19",
+                "line": 82,
+                "pid": 19,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.o\", O_RDONLY)    = 7"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 579,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"config.h\", O_RDONLY|O_NOCTTY) = 4"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 67,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.c\", O_RDONLY|O_NOCTTY) = 3"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 601,
+                "declaration": "app: main.o"
+              },
+              "raw_line": "app: main.o"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 579,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"config.h\", O_RDONLY|O_NOCTTY) = 4"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.16",
+                "line": 23,
+                "pid": 16,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.o\", O_RDWR|O_CREAT|O_TRUNC, 0666) = 3"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            }
+          ]
+        },
+        {
+          "case": "original-2",
+          "status": "SUCCEEDED",
+          "exit_code": 1,
+          "trace_id": "e6-cd73e1c4fc164905b25d185041c69468",
+          "input_sha256": {
+            "Makefile": "fd1dcd76a0bd9678351a1503941a5a875351455d4a6879e76af0af0b6c64772f",
+            "config.h": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+            "main.c": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197",
+            "unused.h": "1e4315549ec63325a22265e33a27e3cff8940d3ceec9756d7d193e9e51b966c9"
+          },
+          "checked_anchors": [
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.19",
+                "line": 82,
+                "pid": 19,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.o\", O_RDONLY)    = 7"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 579,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"config.h\", O_RDONLY|O_NOCTTY) = 4"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 67,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.c\", O_RDONLY|O_NOCTTY) = 3"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 601,
+                "declaration": "app: main.o"
+              },
+              "raw_line": "app: main.o"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 579,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"config.h\", O_RDONLY|O_NOCTTY) = 4"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.16",
+                "line": 23,
+                "pid": 16,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.o\", O_RDWR|O_CREAT|O_TRUNC, 0666) = 3"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            }
+          ]
+        },
+        {
+          "case": "original-3",
+          "status": "SUCCEEDED",
+          "exit_code": 1,
+          "trace_id": "e6-50d57eabd18143298b57b4592c2c05e5",
+          "input_sha256": {
+            "Makefile": "fd1dcd76a0bd9678351a1503941a5a875351455d4a6879e76af0af0b6c64772f",
+            "config.h": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+            "main.c": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197",
+            "unused.h": "1e4315549ec63325a22265e33a27e3cff8940d3ceec9756d7d193e9e51b966c9"
+          },
+          "checked_anchors": [
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.19",
+                "line": 82,
+                "pid": 19,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.o\", O_RDONLY)    = 7"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 579,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"config.h\", O_RDONLY|O_NOCTTY) = 4"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 67,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.c\", O_RDONLY|O_NOCTTY) = 3"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 601,
+                "declaration": "app: main.o"
+              },
+              "raw_line": "app: main.o"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 579,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"config.h\", O_RDONLY|O_NOCTTY) = 4"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.16",
+                "line": 23,
+                "pid": 16,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.o\", O_RDWR|O_CREAT|O_TRUNC, 0666) = 3"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1053,
+                "declaration": "main.o: main.c unused.h"
+              },
+              "raw_line": "main.o: main.c unused.h"
+            }
+          ]
+        },
+        {
+          "case": "fixed",
+          "status": "SUCCEEDED",
+          "exit_code": 0,
+          "trace_id": "e6-446bc10c84d14d77b6e6a81e7e54fd3b",
+          "input_sha256": {
+            "Makefile": "128069c949b0239e3377f320d51498c2b37a317c602d8755d573a283e1f400ae",
+            "config.h": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+            "main.c": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197",
+            "unused.h": "1e4315549ec63325a22265e33a27e3cff8940d3ceec9756d7d193e9e51b966c9"
+          },
+          "checked_anchors": [
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.19",
+                "line": 82,
+                "pid": 19,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.o\", O_RDONLY)    = 7"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 579,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"config.h\", O_RDONLY|O_NOCTTY) = 4"
+            },
+            {
+              "anchor": {
+                "source": "system_call",
+                "trace_file": "t.15",
+                "line": 67,
+                "pid": 15,
+                "operation": "openat"
+              },
+              "raw_line": "openat(AT_FDCWD, \"main.c\", O_RDONLY|O_NOCTTY) = 3"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 601,
+                "declaration": "app: main.o"
+              },
+              "raw_line": "app: main.o"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1045,
+                "declaration": "main.o: main.c config.h"
+              },
+              "raw_line": "main.o: main.c config.h"
+            },
+            {
+              "anchor": {
+                "source": "make_database",
+                "artifact": "make-db.txt",
+                "line": 1045,
+                "declaration": "main.o: main.c config.h"
+              },
+              "raw_line": "main.o: main.c config.h"
+            }
+          ]
+        },
+        {
+          "case": "build-failed",
+          "status": "FAILED",
+          "exit_code": 1,
+          "trace_id": "e6-926d96f5e09d4d2a9b06d3019fd109aa",
+          "input_sha256": {
+            "Makefile": "fd1dcd76a0bd9678351a1503941a5a875351455d4a6879e76af0af0b6c64772f",
+            "main.c": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197",
+            "unused.h": "1e4315549ec63325a22265e33a27e3cff8940d3ceec9756d7d193e9e51b966c9"
+          },
+          "error": "Traced build failed; partial traces are not a successful dependency check"
+        },
+        {
+          "case": "unsupported",
+          "status": "FAILED",
+          "exit_code": 1,
+          "trace_id": "e6-37212dafa868484cb57d54963dc978c8",
+          "input_sha256": {
+            "Makefile": "1347a405b557d044a4e1ed4a52a0bab9b6215b98f308ef3b9010bf433887fd62",
+            "config.h": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+            "main.c": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197",
+            "unused.h": "1e4315549ec63325a22265e33a27e3cff8940d3ceec9756d7d193e9e51b966c9"
+          },
+          "error": "Recipe job 13 has multiple final outputs; needs a richer attribution model"
+        },
+        {
+          "case": "timeout",
+          "status": "TIMED_OUT",
+          "exit_code": 1,
+          "trace_id": "e6-0993c1b703e54b4cacb26af568876269",
+          "input_sha256": {
+            "Makefile": "e6b109a584b4be79196d407a648e3cf9480a2f17bf2bf006ad46988998538cb2",
+            "config.h": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696",
+            "main.c": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197",
+            "unused.h": "1e4315549ec63325a22265e33a27e3cff8940d3ceec9756d7d193e9e51b966c9"
+          },
+          "error": "Command exceeded 1s; process group was killed"
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "passed": true
+}
