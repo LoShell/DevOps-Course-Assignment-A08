@@ -1,0 +1,12 @@
+﻿检查项,预期,实际,工具退出码,判定,证据路径或链接
+oracle,6 项独立判定测试通过,基线及个人轮均为6项通过,0,PASS,基线：work/e7-241250097-3ZXk0iRO/oracle.log；个人轮：work/e7-241250097-WoT7AmkU/oracle.log
+unit-tests,当前服务测试全部通过,基线19项通过；个人轮20项通过,0,PASS,基线：work/e7-241250097-3ZXk0iRO/full/gate/unit-tests/stdout.log；个人轮：work/e7-241250097-WoT7AmkU/full/gate/unit-tests/stdout.log
+original-1,SUCCEEDED 且精确命中两条 MD/RD,"两轮均为SUCCEEDED；精确检出MD(main.o, config.h)和RD(main.o, unused.h)",1,PASS,基线：work/e7-241250097-3ZXk0iRO/full/gate/original-1/；个人轮：work/e7-241250097-WoT7AmkU/full/gate/original-1/
+original-2,SUCCEEDED 且精确命中两条 MD/RD,"两轮均为SUCCEEDED；精确检出MD(main.o, config.h)和RD(main.o, unused.h)",1,PASS,基线：work/e7-241250097-3ZXk0iRO/full/gate/original-2/；个人轮：work/e7-241250097-WoT7AmkU/full/gate/original-2/
+original-3,SUCCEEDED 且精确命中两条 MD/RD,"两轮均为SUCCEEDED；精确检出MD(main.o, config.h)和RD(main.o, unused.h)",1,PASS,基线：work/e7-241250097-3ZXk0iRO/full/gate/original-3/；个人轮：work/e7-241250097-WoT7AmkU/full/gate/original-3/
+fixed,SUCCEEDED 且 findings 为空并且仅 Makefile 变化,两轮均为SUCCEEDED；findings为空；相比各轮original仅Makefile输入哈希变化,0,PASS,基线：work/e7-241250097-3ZXk0iRO/full/gate/fixed/evidence/findings.json；个人轮：work/e7-241250097-WoT7AmkU/full/gate/fixed/evidence/findings.json
+build-failed,FAILED / CHECK_FAILED 且构建失败,两轮均为FAILED/CHECK_FAILED；构建退出2；编译日志确认缺少config.h,1,PASS,基线：work/e7-241250097-3ZXk0iRO/full/gate/build-failed/；个人轮：work/e7-241250097-WoT7AmkU/full/gate/build-failed/
+unsupported,FAILED / UNSUPPORTED 且构建成功,两轮均为FAILED/UNSUPPORTED；构建退出0；同一配方生成one和two,1,PASS,基线：work/e7-241250097-3ZXk0iRO/full/gate/unsupported/；个人轮：work/e7-241250097-WoT7AmkU/full/gate/unsupported/
+timeout,TIMED_OUT / TIMEOUT,两轮均为TIMED_OUT/TIMEOUT；预算1秒；基线1005ms，个人轮1006ms；日志记录终止进程组,1,PASS,基线：work/e7-241250097-3ZXk0iRO/full/gate/timeout/；个人轮：work/e7-241250097-WoT7AmkU/full/gate/timeout/
+gate,八项 passed=true 且整体退出 0,两轮均为8项passed=true，整体退出0,0,PASS,基线：work/e7-241250097-3ZXk0iRO/gate-exit.txt；个人轮：work/e7-241250097-WoT7AmkU/gate-exit.txt；基线：work/e7-241250097-3ZXk0iRO/full/gate/results.csv；个人轮：work/e7-241250097-WoT7AmkU/full/gate/results.csv；基线：work/e7-241250097-3ZXk0iRO/full/gate/gate-result.json；个人轮：work/e7-241250097-WoT7AmkU/full/gate/gate-result.json
+personal-test,定向测试通过且包含在新镜像中,基线轮按指南不执行；个人轮1项定向测试通过，包含该测试的新镜像服务测试20项通过,未单独保存数字退出码；日志显示通过,PASS,work/e7-241250097-WoT7AmkU/personal-test.log；work/e7-241250097-WoT7AmkU/build-console.log
