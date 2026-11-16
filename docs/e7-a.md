@@ -18,6 +18,6 @@
 
 验证源码 SHA 为 `8aeb3220c837f0acdc65c7b71477a370c533e12f`，运行目录为 `/root/241250088/buildchecker/work/e7-241250088-integrated-GYJmGTi1`。服务测试为 `23 passed in 0.24s`，完整门禁八项通过，整体退出 0。镜像 ID 为 `sha256:697bcaccba2efffe93f627bf15876f4055a3bd8f5b468d4c310ee60c842335d0`。
 
-结果由组长终端回传，原始日志尚待下载核验。独立判定在执行脚本中通过后才进入构建及门禁，原始 oracle.log 随集成证据归档。完整门禁各场景与 trace ID 见 [集成结果](../E7/validation/integrated-results.csv)。
+结果由组长终端回传，集成原始包已下载，归档哈希及门禁报告核验通过，见 [归档核验清单](../E7/validation/local-archive-audit.json)。独立判定在执行脚本中通过后才进入构建及门禁，原始 oracle.log 随集成证据归档。完整门禁各场景与 trace ID 见 [集成结果](../E7/validation/integrated-results.csv)。
 
-阶段成果接下来通过 PR 合入 main。main 正常 CI、分支保护、演示 PR 失败拦截与同一 PR 恢复合并仍待执行，完成后在共享证据索引补录。
+阶段成果已通过 PR #20 合入 main，PR #21 已完成失败拦截和恢复合并。正常、失败及恢复 artifact 已下载核验，恢复版本服务测试 24 项通过，门禁八项通过。详细记录见 [CI 索引](../E7/validation/README.md)。

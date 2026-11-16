@@ -1,0 +1,31 @@
+{
+  "archive": "A08-E7-CI-20261113-230049.tar.gz",
+  "sha256": "123eaf35d5498906cec352e2291609507a4cde09bb2d6dedb259f0bf28b133de",
+  "protection_verified": true,
+  "merge_rejected_exit": 1,
+  "merged_pr": {
+    "mergeCommit": {
+      "oid": "d4fd214ee2dc2dccb0d0dc100645e29208ca9cee"
+    },
+    "mergedAt": "2026-11-13T15:00:47Z",
+    "state": "MERGED",
+    "url": "https://github.com/LoShell/DevOps-Course-Assignment-A08/pull/21"
+  },
+  "runs": {
+    "ci-setup": {
+      "run_id": 43437491315,
+      "passed": true,
+      "test_summary": "23 passed in 0.12s"
+    },
+    "ci-rejection": {
+      "run_id": 43446202321,
+      "passed": false,
+      "test_summary": "1 failed, 23 passed in 0.17s"
+    },
+    "ci-recovery": {
+      "run_id": 43447515564,
+      "passed": true,
+      "test_summary": "24 passed in 0.19s"
+    }
+  }
+}
