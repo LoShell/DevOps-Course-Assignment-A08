@@ -1,4 +1,4 @@
-"""Independent E8 case: helper.c -> bridge.h -> extra.h."""
+"""Independent E8/E9 cases for student 241250088."""
 
 import copy
 import tempfile
@@ -6,9 +6,18 @@ import unittest
 from pathlib import Path
 
 from lab import commit, fixture, scan
+from student_241250088_e9 import run_personal
 
 
 class Student241250088Tests(unittest.TestCase):
+    def test_e9_body_reuse_then_existing_header_invalidation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            gate = run_personal(Path(tmp) / 'e9')
+            self.assertTrue(gate['body_reuses_both'])
+            self.assertEqual(gate['header_only_changed_files'], ['bridge.h'])
+            self.assertTrue(gate['header_refreshes_both'])
+            self.assertTrue(gate['incremental_equals_full'])
+
     def test_helper_indirect_include_invalidates_history(self):
         with tempfile.TemporaryDirectory() as tmp:
             project = Path(tmp) / 'project'
