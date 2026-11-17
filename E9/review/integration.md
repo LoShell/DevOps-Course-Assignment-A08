@@ -16,4 +16,4 @@ scan 对预处理指令、配方、配置和编译器签名相同的项目复用
 
 个人源码71a4eda，服务器定向2项、回归9项通过，OUT work/e9-A-manual.WzDiYf。P1两目标复用且helper.o实际重编译；P2只改bridge.h，两个目标刷新，仅新增helper.o缺extra.h。两步与全量一致，最终BuildChecker动态核对通过。bundle已恢复并确认修改范围；读取extra.h为t.94:102，目标写入为t.95:23。
 
-见 [个人记录](../records/241250088.md) 及 [原包审计](../validation/personal-241250088-local-audit.json)。本地仅核验原包未执行实验；服务器归档唯一目录/独立哈希输出待补。受限教学配置不能代表完整论文覆盖。
+见 [个人记录](../records/241250088.md) 及 [原包审计](../validation/personal-241250088-local-audit.json)。本地仅核验原包未执行实验；服务器归档run-YD11gDYR的三个回传哈希与本地一致。受限教学配置不能代表完整论文覆盖。

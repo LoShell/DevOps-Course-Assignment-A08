@@ -2,13 +2,13 @@
   "date": "2026-11-17",
   "scope": "E9 personal evidence read-only audit; no experiment rerun",
   "local_directory": "D:\\MYfile\\3-1\\Devops\\Lab\\241250088\\E9\\personal",
-  "server_directory": "pending user archive output; expected under /root/devops-submissions/241250088/E9/personal/",
+  "server_directory": "/root/devops-submissions/241250088/E9/personal/run-YD11gDYR",
   "archives": {
     "student-source.tar": "4cbf2c69519c73baa75a4bfd9871aa56a9d6848356f722627c75ae50e993cf09",
     "E9-project.bundle": "c417557da68d62a70e9250eebef20ed821b579634fe6e9de506af22e94a1a17f",
     "E9-personal-evidence.tar.gz": "d03a0cc8a0e953f72ffa5b6fd708850393f8012a924299505d029c04ce92f1a9"
   },
-  "hash_comparison": "local files match downloaded SHA256SUMS.txt; independent server output not yet provided",
+  "hash_comparison": "local file hashes match downloaded manifest and independently user-reported server manifest",
   "source_sha": "71a4eda36e4d2bd80e11e0b2b6a42e6fdca395c4",
   "out": "work/e9-A-manual.WzDiYf",
   "test_out": "work/e9-241250088-tests-fqA6KmvE",
@@ -38,10 +38,10 @@
     "P1_P2_equal_full": true,
     "dynamic_projection_and_raw_trace_match": true,
     "input_hashes_and_restored_sources_match": true,
-    "test_exit_codes_and_step_log_pass": true
+    "test_exit_codes_and_step_log_pass": true,
+    "server_reported_hashes_match_local_files": true
   },
   "pending": [
-    "server archive directory and independent server hash output",
     "PR and CI",
     "group integration"
   ],
