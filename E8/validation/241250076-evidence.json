@@ -1,0 +1,79 @@
+{
+  "student": "241250076",
+  "rounds": [
+    {
+      "stage": "E8",
+      "round": "baseline",
+      "out": "work/e8-A-manual.0kRGs5",
+      "pack": "/root/devops-submissions/241250076/E8/baseline/run-qatlWEVi",
+      "source_sha": "369a8c82b73e53fb220fca28b89f3fc786e386e3",
+      "image_id": "sha256:a0963fd573a5b473cf3f7f670651255b720190a46cdaa3f232f3a734c8f94567",
+      "files": [
+        "E8-baseline-evidence.tar.gz",
+        "SHA256SUMS.txt",
+        "student-source.tar"
+      ],
+      "gate": {
+        "passed": true,
+        "dynamic_checked": true,
+        "unchanged_reuses_both": true,
+        "commits": {
+          "C0": "ec1669dc153a7821ebca607b58605598f933f31d"
+        }
+      },
+      "local_path": "D:\\MyDocument\\Download\\DevOps-Course-Assignment-A08\\work\\E8-E9-backup-241250076\\E8\\baseline\\run-qatlWEVi",
+      "local_sha256_verified": true,
+      "bundle_history_verified": false,
+      "steps_verified": true,
+      "sha256": {
+        "student-source.tar": "8c9c77d7a6010fb2096831c36be834d5180ecd5bfd113414c2bddfff550d9dd6",
+        "E8-baseline-evidence.tar.gz": "dd1ab23c5033379532c2372df63072a12876245e6b96c8cb13e609f2631affd9"
+      }
+    },
+    {
+      "stage": "E8",
+      "round": "personal",
+      "out": "work/e8-A-manual.lH0ymS",
+      "pack": "/root/devops-submissions/241250076/E8/personal/run-YLo2kLFo",
+      "source_sha": "b0c8a2bcd2dd910ae480ffab84607ba00107fd89",
+      "image_id": "sha256:a0963fd573a5b473cf3f7f670651255b720190a46cdaa3f232f3a734c8f94567",
+      "files": [
+        "E8-personal-evidence.tar.gz",
+        "SHA256SUMS.txt",
+        "student-source.tar"
+      ],
+      "gate": {
+        "commits": {
+          "C0": "09168b3075ca9affb4618658633b58e55f6d65dc",
+          "P1": "f60d3855a8e03e02279e711138d23fd74801f893"
+        },
+        "indirect_edges_exact": true,
+        "old_evidence_preserved": true,
+        "incremental_equals_full": true,
+        "unchanged_reuses_both": true,
+        "dynamic_checked": true,
+        "passed": true,
+        "source_sha": "b0c8a2bcd2dd910ae480ffab84607ba00107fd89",
+        "stage": "e8",
+        "student": "241250076"
+      },
+      "local_path": "D:\\MyDocument\\Download\\DevOps-Course-Assignment-A08\\work\\E8-E9-backup-241250076\\E8\\personal\\run-YLo2kLFo",
+      "local_sha256_verified": true,
+      "bundle_history_verified": false,
+      "steps_verified": true,
+      "sha256": {
+        "student-source.tar": "5182b972e03a8e6e1c0741791b03b3b46b81df867f5adb5e8918d530a4c846e9",
+        "E8-personal-evidence.tar.gz": "b9c951766772bc2cdccaad6a4e428b460e5c41bd544885752683c7241cebe41b"
+      }
+    }
+  ],
+  "ci": {
+    "run_id": 44121426264,
+    "server_packs": {
+      "E8": "/root/devops-submissions/241250076/E8/ci/run-44121426264-z9sagg_o",
+      "E9": "/root/devops-submissions/241250076/E9/ci/run-44121426264-018cnxpi"
+    },
+    "sha256": "44624825b927fca29091aa72da7777f312bc3fb3a2922ca44d1e274acc76b6a8",
+    "server_verified": true
+  }
+}
