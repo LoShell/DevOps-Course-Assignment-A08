@@ -1,6 +1,6 @@
 # E8：EChecker 基线与历史图复用
 
-状态：组长服务器参考基线与原包核验通过；个人扩展、其他成员实验与最终验收待完成。轨道 A，第二篇论文 EChecker。
+状态：组长参考基线、个人扩展及两轮原包核验通过；其他成员实验、PR/CI 与最终验收待完成。轨道 A，第二篇论文 EChecker。
 
 本阶段用真实 BuildChecker 对象目标投影建立历史图，证明 main.o 缺失 config.h、冗余 unused.h；输入不变时 main.o/helper.o 图复用，刷新为空，actual/findings 不变。
 

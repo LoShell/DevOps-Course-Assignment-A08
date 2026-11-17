@@ -1,6 +1,6 @@
 # A08 E8：EChecker 基线复现
 
-状态：2026-11-17 组长参考基线通过，原包已下载并核验；个人扩展及集成待完成。共同分支 a08/e8-e9。
+状态：2026-11-17 组长参考基线、个人扩展与两轮原包核验通过；其他成员、PR/CI 与集成待完成。共同分支 a08/e8-e9。
 
 ## 目标与范围
 
@@ -15,4 +15,6 @@ GCC 与真实 BuildChecker 对象投影核对一致，精确检出 MD(main.o, co
 
 ## 贡献与结论
 
-分工见 [E8/CONTRIBUTIONS.md](../E8/CONTRIBUTIONS.md)，实际记录见各成员 records 和 review。当前组长参考基线与证据归档核验通过；未完成项为个人扩展、其他成员实验及最终提交验收。
+组长个人版本 `26f4141` 新增 helper.c → bridge.h → extra.h 用例，定向 1 项与回归 8 项通过，个人 OUT work/e8-A-manual.iand6b 检出两项新增 MD、保守刷新两个目标，与全量及动态投影一致。个人归档已双端哈希及内容核验，见 [个人轮审计](../E8/validation/personal-241250088-local-audit.json)。
+
+分工见 [E8/CONTRIBUTIONS.md](../E8/CONTRIBUTIONS.md)，实际记录见各成员 records 和 review。未完成项为其他成员实验、PR/CI 与最终提交验收；本报告不代表小组整体验收通过。
