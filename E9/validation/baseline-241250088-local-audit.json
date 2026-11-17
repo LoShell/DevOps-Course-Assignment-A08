@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-17",
+  "scope": "E9 C0-C3 reference baseline; no experiments rerun",
+  "local_directory": "D:\\MYfile\\3-1\\Devops\\Lab\\241250088\\E9\\baseline",
+  "server_directory": "/root/devops-submissions/241250088/E9/baseline/run-jGmwm2Py",
+  "archives": {
+    "student-source.tar": "3941a58e96c29ef239f1f164721c7097a7435ff2b961489f9221391004bf602b",
+    "E9-project.bundle": "4808cebc6b6e76fbbbd35355d35fb126d29e275a38ef5048db28b9c0575a3df7",
+    "E9-baseline-evidence.tar.gz": "bd6a3409403307b9141a65b6da3fa3da9b2bad216764043c78fc0219aa8b601e"
+  },
+  "source_sha": "0c1e2c46eb788037f14ef7658926bbe63c8194cb",
+  "out": "work/e9-A-manual.eBhiYp",
+  "image_id": "sha256:6b34d781ec37d2e6484f953587e022d5fef897ec9fd8b2b808898bf65a899d3f",
+  "commits": {
+    "C0": "bcfbd8cbc38d9727a398e48ab1ad7d45b7bd07fa",
+    "C1": "7bc20d24bff4b82e70bf9cbc2b63ea4fb11305a2",
+    "C2": "e2abdec79db7f9a651db71a139f2a119f94d7fb7",
+    "C3": "ad1135665c7ba81cfede3e70cee4797c9fd23709"
+  },
+  "restored_bare_repository": "D:\\MYfile\\3-1\\Devops\\Lab\\241250088\\E9\\baseline\\history-audit.git",
+  "checks": {
+    "hashes_and_manifest_match": true,
+    "source_commit_and_key_files_match": true,
+    "bundle_restores_exact_C0_C3_history": true,
+    "final_tracked_inputs_match_bundle": true,
+    "per_commit_changed_files_match": true,
+    "exact_findings_reuse_refresh_and_deltas": true,
+    "C2_C3_full_comparisons_match": true,
+    "three_build_logs_match": true,
+    "five_step_logs_exit_zero": true
+  },
+  "pending": [
+    "personal extension",
+    "PR and CI",
+    "group integration"
+  ],
+  "passed": true
+}
