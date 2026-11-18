@@ -1,0 +1,90 @@
+{
+  "student": "241250076",
+  "rounds": [
+    {
+      "stage": "E9",
+      "round": "baseline",
+      "out": "work/e9-A-manual.1H0Y4P",
+      "pack": "/root/devops-submissions/241250076/E9/baseline/run-croZxoIb",
+      "source_sha": "369a8c82b73e53fb220fca28b89f3fc786e386e3",
+      "image_id": "sha256:a0963fd573a5b473cf3f7f670651255b720190a46cdaa3f232f3a734c8f94567",
+      "files": [
+        "E9-baseline-evidence.tar.gz",
+        "E9-project.bundle",
+        "SHA256SUMS.txt",
+        "student-source.tar"
+      ],
+      "gate": {
+        "passed": true,
+        "case": "C0-C3-reference-route",
+        "c3_incremental_equals_full": true,
+        "dynamic_checked": false,
+        "commits": {
+          "C0": "57d9e224dff9ea4853f5562fadb1107faecec257",
+          "C1": "34f483fb7e7c00eed284cf2ec3f26f2eafa55161",
+          "C2": "f17c2f23e48b0f6bb58f0684377ce05b304261f7",
+          "C3": "210ee8772963493750477216a1f730f0ef80bdfa"
+        }
+      },
+      "local_path": "D:\\MyDocument\\Download\\DevOps-Course-Assignment-A08\\work\\E8-E9-backup-241250076\\E9\\baseline\\run-croZxoIb",
+      "local_sha256_verified": true,
+      "bundle_history_verified": true,
+      "steps_verified": true,
+      "sha256": {
+        "student-source.tar": "8c9c77d7a6010fb2096831c36be834d5180ecd5bfd113414c2bddfff550d9dd6",
+        "E9-project.bundle": "f20e9fd7bcf408ab30f3ba790147c804b61e0baff01bb53a1995658a5315179e",
+        "E9-baseline-evidence.tar.gz": "d764a7fa11ee56af9fc49ae8ab45901b3e000e3c5001ccfa34db624d283bd65e"
+      }
+    },
+    {
+      "stage": "E9",
+      "round": "personal",
+      "out": "work/e9-A-manual.FkC1SM",
+      "pack": "/root/devops-submissions/241250076/E9/personal/run-50JPgYPw",
+      "source_sha": "b0c8a2bcd2dd910ae480ffab84607ba00107fd89",
+      "image_id": "sha256:a0963fd573a5b473cf3f7f670651255b720190a46cdaa3f232f3a734c8f94567",
+      "files": [
+        "E9-personal-evidence.tar.gz",
+        "E9-project.bundle",
+        "SHA256SUMS.txt",
+        "student-source.tar"
+      ],
+      "gate": {
+        "commits": {
+          "C0": "dff1ee1c5aaf7cb8712fa32bf7850527084bc838",
+          "P1": "8ec2a4acf69e75e3ec11c9842461aa153cfc3eeb",
+          "P2": "7b974d40ad967c90ca4991b237276baaeb72db7c",
+          "P3": "e4e223dafde04296cc48607e784e26f20137f217"
+        },
+        "configuration_refreshes_both": true,
+        "incremental_equals_full": true,
+        "unsupported_incremental_and_full_rejected": true,
+        "old_evidence_preserved": true,
+        "recovery_reuses_both": true,
+        "dynamic_checked": true,
+        "passed": true,
+        "source_sha": "b0c8a2bcd2dd910ae480ffab84607ba00107fd89",
+        "stage": "e9",
+        "student": "241250076"
+      },
+      "local_path": "D:\\MyDocument\\Download\\DevOps-Course-Assignment-A08\\work\\E8-E9-backup-241250076\\E9\\personal\\run-50JPgYPw",
+      "local_sha256_verified": true,
+      "bundle_history_verified": true,
+      "steps_verified": true,
+      "sha256": {
+        "student-source.tar": "5182b972e03a8e6e1c0741791b03b3b46b81df867f5adb5e8918d530a4c846e9",
+        "E9-project.bundle": "0bfc369e952ff37fa4791783b2279e39f418c641418b4218cafdda28f9dcec9d",
+        "E9-personal-evidence.tar.gz": "90bd49778f0dc869f2115b96d9b4efc3abfbf37c7fccd19b908c77c36916c6d2"
+      }
+    }
+  ],
+  "ci": {
+    "run_id": 44121426264,
+    "server_packs": {
+      "E8": "/root/devops-submissions/241250076/E8/ci/run-44121426264-z9sagg_o",
+      "E9": "/root/devops-submissions/241250076/E9/ci/run-44121426264-018cnxpi"
+    },
+    "sha256": "44624825b927fca29091aa72da7777f312bc3fb3a2922ca44d1e274acc76b6a8",
+    "server_verified": true
+  }
+}
