@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-17",
+  "scope": "241250088 E8 personal extension; no server experiments rerun locally",
+  "local_directory": "D:\\MYfile\\3-1\\Devops\\Lab\\241250088\\E8\\personal",
+  "server_directory": "/root/devops-submissions/241250088/E8/personal/run-FERZKgqd",
+  "archives": {
+    "student-source.tar": "69f8889d1b2414454a88fdd40504967f930f451f0a79f82619c215312fa3f5b5",
+    "E8-personal-evidence.tar.gz": "9e1975cf578d74fe230e1439822ea832c73608c601f9f94c07e12dffc2017f98"
+  },
+  "source_sha": "26f414168eacf7149be943238a8d1ac6ba85175b",
+  "source_files_compared_to_git": [
+    "run_lab.py",
+    "labs/e8e10/lab.py",
+    "labs/e8e10/test_student_241250088.py",
+    "labs/e8e10/test_profile.py"
+  ],
+  "out": "work/e8-A-manual.iand6b",
+  "test_out": "work/e8-241250088-tests-4LZmmGNy",
+  "image_id": "sha256:6b34d781ec37d2e6484f953587e022d5fef897ec9fd8b2b808898bf65a899d3f",
+  "baseline_commit": "55921c786b988c8825525d09d954c6cbe0a8b752",
+  "changed_commit": "37a90a2c39f5daa6dcb0ece2ee5cf6b133faa33e",
+  "trace_id": "e6-32360f863ec541128fcb89abe4d0c2f0",
+  "tests": {
+    "personal-test.log": {
+      "tests": 1,
+      "passed": true
+    },
+    "regression.log": {
+      "tests": 8,
+      "passed": true
+    }
+  },
+  "checks": {
+    "archive_hashes_match_server_and_manifest": true,
+    "source_and_test_versions_match": true,
+    "source_status_clean": true,
+    "exact_graph_findings_and_delta": true,
+    "incremental_equals_full": true,
+    "two_targets_refreshed": true,
+    "dynamic_projection_matches": true,
+    "eight_input_hashes_match_both_copies": true,
+    "raw_trace_and_make_database_checked": true,
+    "step_exit_zero": true
+  },
+  "raw_trace_lines": {
+    "t.48:101": "openat(AT_FDCWD, \"bridge.h\", O_RDONLY|O_NOCTTY) = 4",
+    "t.48:102": "openat(AT_FDCWD, \"extra.h\", O_RDONLY|O_NOCTTY) = 4",
+    "t.49:23": "openat(AT_FDCWD, \"helper.o\", O_RDWR|O_CREAT|O_TRUNC, 0666) = 3"
+  },
+  "pending": [
+    "PR and CI verification",
+    "other members and group integration",
+    "E9 experiment"
+  ],
+  "passed": true
+}

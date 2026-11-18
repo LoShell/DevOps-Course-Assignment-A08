@@ -1,0 +1,13 @@
+stage,source_sha,out,check,actual,status,evidence
+E8,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e8-A-manual.zTJjf8,local_hashes_match_server_and_manifest,true,PASS,integrated-local-audit.json
+E8,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e8-A-manual.zTJjf8,source_tar_commit_matches_run,true,PASS,integrated-local-audit.json
+E8,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e8-A-manual.zTJjf8,all_four_members_test_methods_executed,true,PASS,integrated-local-audit.json
+E8,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e8-A-manual.zTJjf8,regression_exit_zero,true,PASS,integrated-local-audit.json
+E8,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e8-A-manual.zTJjf8,source_status_clean,true,PASS,integrated-local-audit.json
+E8,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e8-A-manual.zTJjf8,exact_baseline_graphs_findings,true,PASS,integrated-local-audit.json
+E8,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e8-A-manual.zTJjf8,dynamic_object_projection_matches,true,PASS,integrated-local-audit.json
+E8,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e8-A-manual.zTJjf8,input_hashes_match_both_copies,true,PASS,integrated-local-audit.json
+E8,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e8-A-manual.zTJjf8,actual_reads_and_declared_database_lines_verified,true,PASS,integrated-local-audit.json
+E8,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e8-A-manual.zTJjf8,unchanged_reuses_two_refresh_zero,true,PASS,integrated-local-audit.json
+E8,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e8-A-manual.zTJjf8,three_collections_equal_full,true,PASS,integrated-local-audit.json
+E8,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e8-A-manual.zTJjf8,step_exit_zero,true,PASS,integrated-local-audit.json

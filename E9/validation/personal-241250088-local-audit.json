@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-17",
+  "scope": "E9 personal evidence read-only audit; no experiment rerun",
+  "local_directory": "D:\\MYfile\\3-1\\Devops\\Lab\\241250088\\E9\\personal",
+  "server_directory": "/root/devops-submissions/241250088/E9/personal/run-YD11gDYR",
+  "archives": {
+    "student-source.tar": "4cbf2c69519c73baa75a4bfd9871aa56a9d6848356f722627c75ae50e993cf09",
+    "E9-project.bundle": "c417557da68d62a70e9250eebef20ed821b579634fe6e9de506af22e94a1a17f",
+    "E9-personal-evidence.tar.gz": "d03a0cc8a0e953f72ffa5b6fd708850393f8012a924299505d029c04ce92f1a9"
+  },
+  "hash_comparison": "local file hashes match downloaded manifest and independently user-reported server manifest",
+  "source_sha": "71a4eda36e4d2bd80e11e0b2b6a42e6fdca395c4",
+  "out": "work/e9-A-manual.WzDiYf",
+  "test_out": "work/e9-241250088-tests-fqA6KmvE",
+  "image_id": "sha256:6b34d781ec37d2e6484f953587e022d5fef897ec9fd8b2b808898bf65a899d3f",
+  "commits": {
+    "P0": "5a61bfae703af57e7b76bbcc475b7ca8cd90c7a5",
+    "P1": "44560177b77576e72737252863c52b58dbecabe9",
+    "P2": "a8a1778c79096f46d0e67f36c9fcb666815fcb72"
+  },
+  "bundle_history": [
+    "9c9bca8af5887450d3a9ff09fe51001ad3c9fe00",
+    "5a61bfae703af57e7b76bbcc475b7ca8cd90c7a5",
+    "44560177b77576e72737252863c52b58dbecabe9",
+    "a8a1778c79096f46d0e67f36c9fcb666815fcb72"
+  ],
+  "trace_id": "e6-56ced758fd864ac3a09102e948b4237d",
+  "tests": {
+    "personal-test": 2,
+    "regression": 9
+  },
+  "checks": {
+    "local_manifest_hashes_match": true,
+    "source_files_match_recorded_commit": true,
+    "bundle_restores_history_and_exact_file_changes": true,
+    "P1_reuses_graph_despite_helper_rebuild": true,
+    "P2_only_header_changes_and_exact_new_MD": true,
+    "P1_P2_equal_full": true,
+    "dynamic_projection_and_raw_trace_match": true,
+    "input_hashes_and_restored_sources_match": true,
+    "test_exit_codes_and_step_log_pass": true,
+    "server_reported_hashes_match_local_files": true
+  },
+  "pending": [
+    "PR and CI",
+    "group integration"
+  ],
+  "passed": true
+}

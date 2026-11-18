@@ -1,0 +1,2 @@
+# Keep server helper scripts sourceable when checked out on Windows or Linux.
+course-support/e8e9/*.sh text eol=lf
