@@ -1,6 +1,6 @@
 # 决策记录
 
-负责人：范从钰 241250071。状态：已验证，PR/CI 待后续提交。
+负责人：范从钰 241250071。状态：已验证；PR [#26](https://github.com/LoShell/DevOps-Course-Assignment-A08/pull/26) 已创建，提交 `7a864f40f57fee2628ed5c706502b81694e4b6a2` 的 PR/push CI 均成功；最终合入待组长审核。
 
 ## 背景与约束
 

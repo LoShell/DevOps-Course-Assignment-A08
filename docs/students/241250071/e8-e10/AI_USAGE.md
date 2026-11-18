@@ -34,4 +34,4 @@
 - E8/E9 的基线轮和个人轮均已在服务器归档，并在本地与 `SHA256SUMS.txt` 核对一致；
 - E8/E9 个人轮的 `personal-gate.json` 均为 `passed=true`。
 
-PR、CI 运行链接、artifact 与最终合入结论将在推送文档并获得实际结果后补充。
+个人 PR 为 [#26](https://github.com/LoShell/DevOps-Course-Assignment-A08/pull/26)。提交 `7a864f40f57fee2628ed5c706502b81694e4b6a2` 的 PR/push CI 均成功；本次运行未发布可下载 artifact，最终合入结论待组长审核。
