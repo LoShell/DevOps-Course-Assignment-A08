@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-17",
+  "scope": "E8 reference baseline only; no personal extension or final acceptance",
+  "local_directory": "D:\\MYfile\\3-1\\Devops\\Lab\\241250088\\E8",
+  "server_directory": "/root/E8-241250088-baseline-MJZnwXqO",
+  "archives": {
+    "student-source.tar": "8c9c77d7a6010fb2096831c36be834d5180ecd5bfd113414c2bddfff550d9dd6",
+    "E8-baseline-evidence.tar.gz": "49949ec19d2dd06038268dd64d04b4eb872792f907de6b2fbaf31d61b6c358b7"
+  },
+  "source_sha": "369a8c82b73e53fb220fca28b89f3fc786e386e3",
+  "source_tar_commit_verified": true,
+  "source_files_compared_to_git": [
+    "run_lab.py",
+    "labs/e8e10/lab.py",
+    "labs/e8e10/test_profile.py",
+    "labs/e8e10/environment/services/buildchecker/buildchecker/fullcheck.py",
+    "course-support/e8e9/classroom_helpers.sh"
+  ],
+  "sample_commit": "74cf4e9f6aad6bf7a73c7d1b610b6f1ee10aed66",
+  "image_id": "sha256:6b34d781ec37d2e6484f953587e022d5fef897ec9fd8b2b808898bf65a899d3f",
+  "image_platform": "linux/amd64",
+  "server_system": "Linux ecs-f6ef 5.15.0-186-generic #196-Ubuntu SMP Sat Jun 20 16:09:34 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux",
+  "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+  "trace_id": "e6-64946179f055446a96c4c085c73de539",
+  "checks": {
+    "local_hashes_match_server_and_manifest": true,
+    "source_status_clean": true,
+    "input_hashes_match_both_project_copies": true,
+    "exact_baseline_graph_and_findings": true,
+    "dynamic_object_projection_matches_baseline": true,
+    "unchanged_three_collections_equal": true,
+    "reuse_two_refresh_zero": true,
+    "five_step_logs_exit_zero": true,
+    "read_write_and_declaration_evidence_checked": true,
+    "utf8_conclusion_present": true,
+    "environment_build_log_present": true
+  },
+  "step_logs": [
+    "steps/20261117-161709-1.log",
+    "steps/20261117-161849-2.log",
+    "steps/20261117-161858-3.log",
+    "steps/20261117-161935-4.log",
+    "steps/20261117-162028-5.log"
+  ],
+  "evidence_lines": {
+    "config_read": "buildchecker/trace/t.15:579",
+    "target_write": "buildchecker/trace/t.16:23",
+    "declaration": "buildchecker/make-db.txt:1044"
+  },
+  "pending": [
+    "personal extension and server revalidation",
+    "PR and CI verification",
+    "other members and integrated acceptance"
+  ],
+  "passed": true
+}
