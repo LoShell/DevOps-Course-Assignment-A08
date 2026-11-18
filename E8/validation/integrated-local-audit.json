@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-18",
+  "scope": "E8 group integration archive read-only audit; no experiments rerun",
+  "source_sha": "04f386971d8f924cbdd85401c1f3583935c9b1c4",
+  "server_directory": "/root/devops-submissions/241250088/E8/integrated/run-AfCQY0fm",
+  "local_directory": "D:\\MYfile\\3-1\\Devops\\Lab\\241250088\\E8\\integrated",
+  "archives": {
+    "student-source.tar": "6a224603a8ab44c5bb9ba106190e7d21d76b162b9d1112ca911390fe88e2f583",
+    "E8-integrated-evidence.tar.gz": "69ab35bf2a213426d342fe297912af8974792811c6887708bf36ee30a35881a1"
+  },
+  "out": "work/e8-A-manual.zTJjf8",
+  "test_out": "work/e89-241250088-integrated-dmvueNDG",
+  "image_id": "sha256:6b34d781ec37d2e6484f953587e022d5fef897ec9fd8b2b808898bf65a899d3f",
+  "sample_commit": "63bb4cdf1ceac6f98ae9e52f9f515a26ff67ab2c",
+  "trace_id": "e6-d5a01fb3af92401885fbd2d3af29b154",
+  "test_count": 16,
+  "test_seconds": 3.582,
+  "methods_by_module": {
+    "test_profile": [
+      "test_independent_known_edges",
+      "test_unchanged_reuses_both_targets",
+      "test_include_added_invalidates_cache",
+      "test_patch_preserves_redundant_dependency",
+      "test_old_report_rejected",
+      "test_unsafe_dependency_rejected",
+      "test_unsupported_configuration_rejected"
+    ],
+    "test_student_241250071": [
+      "test_indirect_include_invalidates_cached_dependencies",
+      "test_indirect_header_change_invalidates_cache_across_commits"
+    ],
+    "test_student_241250076": [
+      "test_helper_transitive_include_refreshes_and_preserves_baseline",
+      "test_flags_refresh_rejection_preserves_evidence_and_recovery_reuses",
+      "test_rejected_flags_stop_before_compiler_or_history_access"
+    ],
+    "test_student_241250088": [
+      "test_e9_body_reuse_then_existing_header_invalidation",
+      "test_helper_indirect_include_invalidates_history"
+    ],
+    "test_student_241250097": [
+      "test_e8_helper_indirect_shared_header",
+      "test_e9_separate_declaration_repairs_preserve_redundant"
+    ]
+  },
+  "checks": {
+    "local_hashes_match_server_and_manifest": true,
+    "source_tar_commit_matches_run": true,
+    "all_four_members_test_methods_executed": true,
+    "regression_exit_zero": true,
+    "source_status_clean": true,
+    "exact_baseline_graphs_findings": true,
+    "dynamic_object_projection_matches": true,
+    "input_hashes_match_both_copies": true,
+    "actual_reads_and_declared_database_lines_verified": true,
+    "unchanged_reuses_two_refresh_zero": true,
+    "three_collections_equal_full": true,
+    "step_exit_zero": true
+  },
+  "actual_trace_lines_checked": [
+    "t.35:87",
+    "t.35:84",
+    "t.31:67",
+    "t.28:579",
+    "t.28:67"
+  ],
+  "passed": true,
+  "pending": [
+    "E9 group integrated evidence",
+    "final CI and delivery"
+  ]
+}

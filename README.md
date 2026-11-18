@@ -11,8 +11,8 @@
 | E5 | [复现说明](E5/README.md)、[人工分析报告](docs/e5-a.md) | 个人报告及专项 PR 已合并；跨成员原包核验通过，归档及交付收尾进行中 |
 | E6 | [共同报告](docs/e6-a.md)、[阶段导航](E6/README.md) | 四人PR已合并；集成19项测试、原包核验与跨成员基线对照通过，准备打包提交 |
 | E7 | [阶段导航](E7/README.md)、[共同报告](docs/e7-a.md) | 阶段收尾 PR 已合入 main，保留验证与 CI 证据 |
-| E8 | [阶段导航](E8/README.md)、[共同报告](docs/e8-a.md) | EChecker 基线与图复用框架已建立，服务器实验待执行 |
-| E9 | [阶段导航](E9/README.md)、[共同报告](docs/e9-a.md) | 逐提交更新框架已建立，服务器实验待执行 |
+| E8 | [阶段导航](E8/README.md)、[共同报告](docs/e8-a.md) | 四人PR合并；16项集成回归、动态基线与复用通过，原包已核验；最终CI与交付待收尾 |
+| E9 | [阶段导航](E9/README.md)、[共同报告](docs/e9-a.md) | C0—C3全量对照、最终动态重检和bundle核验通过；最终CI与交付待收尾 |
 
 E5/E6 共同整合分支为 `a08/e5-e6`，协作见 [WORKFLOW](E5/WORKFLOW.md)。
 E8/E9 共同整合分支为 `a08/e8-e9`，个人分支为 `a08/<学号>/e8-e9`，见 [本轮流程](E8/WORKFLOW.md) 和 [四人分工](E8/CONTRIBUTIONS.md)。

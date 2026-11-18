@@ -1,0 +1,12 @@
+stage,source_sha,out,check,actual,status,evidence
+E9,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e9-A-manual.i2Us3t,hashes_match_server_and_manifest,true,PASS,integrated-local-audit.json
+E9,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e9-A-manual.i2Us3t,source_commit_and_test_files_match_git,true,PASS,integrated-local-audit.json
+E9,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e9-A-manual.i2Us3t,bundle_restores_four_commits,true,PASS,integrated-local-audit.json
+E9,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e9-A-manual.i2Us3t,adjacent_changes_and_final_sources_match,true,PASS,integrated-local-audit.json
+E9,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e9-A-manual.i2Us3t,exact_graphs_and_findings_deltas,true,PASS,integrated-local-audit.json
+E9,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e9-A-manual.i2Us3t,C1_C2_C3_equal_full,true,PASS,integrated-local-audit.json
+E9,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e9-A-manual.i2Us3t,final_dynamic_actual_and_declared_projections_equal,true,PASS,integrated-local-audit.json
+E9,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e9-A-manual.i2Us3t,raw_trace_and_declaration_lines_checked,true,PASS,integrated-local-audit.json
+E9,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e9-A-manual.i2Us3t,input_hashes_match_both_copies,true,PASS,integrated-local-audit.json
+E9,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e9-A-manual.i2Us3t,regression_exit_zero,true,PASS,integrated-local-audit.json
+E9,04f386971d8f924cbdd85401c1f3583935c9b1c4,work/e9-A-manual.i2Us3t,five_steps_exit_zero,true,PASS,integrated-local-audit.json

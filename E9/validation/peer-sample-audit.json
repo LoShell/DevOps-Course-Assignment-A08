@@ -1,0 +1,342 @@
+{
+  "date": "2026-11-18",
+  "samples": [
+    {
+      "date": "2026-11-18",
+      "student": "241250071",
+      "stage": "E9",
+      "round": "personal",
+      "scope": "Leader read-only sample audit; no submitted code, compiler, build or experiments executed.",
+      "server_directory": "/root/devops-submissions/241250071/E9/personal/run-oFXwaYtw",
+      "local_directory": "D:\\MYfile\\3-1\\Devops\\Lab\\241250071\\E9\\personal",
+      "archives": {
+        "student-source.tar": "1b95db7b2d0e89c84132dc020b4eae56aca5ae55f52edf713f5874e144b47d87",
+        "E9-project.bundle": "e86b9866ef1352abc397b73845f50e0cb70e483f4f118933fa59938d43940313",
+        "E9-personal-evidence.tar.gz": "a2e0afb7f5e9641062942a4a6d2205b22e9dd545c643b10922765420a23d2b5e"
+      },
+      "hash_basis": "Actual local files match downloaded manifest and PR-reported archive hashes; no live server access.",
+      "source_sha": "e80d991142c5af8d33408b9e77177a670481b349",
+      "remote_git_blobs_verified": {
+        "labs/e8e10/test_student_241250071.py": "b6e54bd08f36336fc6764048f235179a466d8b4c",
+        "labs/e8e10/lab.py": "3f3975050b283e9f16653d92ad4315e1f00df30e"
+      },
+      "out": "work/e9-A-manual.knagqu",
+      "image_id": "sha256:ac9488455abe7567438f7ccfc4b826aef5021efece7be18cc8fc8022768969c7",
+      "tests": {
+        "personal-test": {
+          "tests": 2,
+          "exit_code": 0
+        },
+        "regression": {
+          "tests": 9,
+          "exit_code": 0
+        }
+      },
+      "commits": {
+        "P0": "2cfb7064bb773b36809d5d5b05e44eae893f8004",
+        "P1": "400311eaed71a58f537bc3ba7994bc38c2f02fac",
+        "P2": "f1bb02b552f3fdc79d29f48e8f1ae632a8be6bc6"
+      },
+      "bundle_restored_directory": "D:\\MYfile\\3-1\\Devops\\Lab\\241250071\\E9\\personal\\history-audit.git",
+      "bundle_fsck_passed": true,
+      "final_tracked_inputs_match_bundle": true,
+      "exact_graphs_findings_deltas_verified": true,
+      "full_comparisons_verified": [
+        "P1",
+        "P2"
+      ],
+      "dynamic_checks": [
+        {
+          "directory": "baseline-buildchecker",
+          "trace_id": "e6-986f34a0d718465b867bad73ce63a689",
+          "read_trace_lines_checked": [
+            "t.47:87",
+            "t.47:84",
+            "t.43:67",
+            "t.40:579",
+            "t.40:67"
+          ],
+          "findings": [
+            [
+              "MISSING",
+              "main.o",
+              "config.h"
+            ],
+            [
+              "REDUNDANT",
+              "main.o",
+              "unused.h"
+            ]
+          ]
+        },
+        {
+          "directory": "P1-buildchecker",
+          "trace_id": "e6-57d35f7994ef44a2aa997610bc6f61dd",
+          "read_trace_lines_checked": [
+            "t.88:87",
+            "t.88:84",
+            "t.84:67",
+            "t.81:579",
+            "t.81:580",
+            "t.81:67"
+          ],
+          "findings": [
+            [
+              "MISSING",
+              "main.o",
+              "config.h"
+            ],
+            [
+              "MISSING",
+              "main.o",
+              "extra.h"
+            ],
+            [
+              "REDUNDANT",
+              "main.o",
+              "unused.h"
+            ]
+          ]
+        },
+        {
+          "directory": "P2-buildchecker",
+          "trace_id": "e6-ba96b3b0790640589277d26a9ef2fe9c",
+          "read_trace_lines_checked": [
+            "t.129:87",
+            "t.129:84",
+            "t.125:67",
+            "t.122:579",
+            "t.122:580",
+            "t.122:67"
+          ],
+          "findings": [
+            [
+              "MISSING",
+              "main.o",
+              "config.h"
+            ],
+            [
+              "MISSING",
+              "main.o",
+              "extra.h"
+            ],
+            [
+              "REDUNDANT",
+              "main.o",
+              "unused.h"
+            ]
+          ]
+        }
+      ],
+      "preserved_evidence_files_hashed": 0,
+      "steps_verified": [
+        "work/e9-A-manual.knagqu/steps/20261118-152544-1.log"
+      ],
+      "passed": true,
+      "limitations": [
+        "Only E9 personal package sampled; E8 and E9 baseline packages not independently checked here.",
+        "PR/CI state checked separately; group integration remains pending."
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "student": "241250076",
+      "stage": "E9",
+      "round": "personal",
+      "scope": "Leader read-only sample audit; no submitted code, compiler, build or experiments executed.",
+      "server_directory": "/root/devops-submissions/241250076/E9/personal/run-50JPgYPw",
+      "local_directory": "D:\\MYfile\\3-1\\Devops\\Lab\\241250076\\E9\\personal",
+      "archives": {
+        "student-source.tar": "5182b972e03a8e6e1c0741791b03b3b46b81df867f5adb5e8918d530a4c846e9",
+        "E9-project.bundle": "0bfc369e952ff37fa4791783b2279e39f418c641418b4218cafdda28f9dcec9d",
+        "E9-personal-evidence.tar.gz": "90bd49778f0dc869f2115b96d9b4efc3abfbf37c7fccd19b908c77c36916c6d2"
+      },
+      "hash_basis": "Actual local files match downloaded manifest and PR-reported archive hashes; no live server access.",
+      "source_sha": "b0c8a2bcd2dd910ae480ffab84607ba00107fd89",
+      "remote_git_blobs_verified": {
+        "labs/e8e10/student_241250076.py": "9ac36fdd2adc4112d49f4d63714fb4ab85af8bdc",
+        "labs/e8e10/test_student_241250076.py": "f4d5465065429173e9a66c2d1cde06848e2cbc0c",
+        "labs/e8e10/lab.py": "3f3975050b283e9f16653d92ad4315e1f00df30e"
+      },
+      "out": "work/e9-A-manual.FkC1SM",
+      "image_id": "sha256:a0963fd573a5b473cf3f7f670651255b720190a46cdaa3f232f3a734c8f94567",
+      "tests": {
+        "personal-test": {
+          "tests": 3,
+          "exit_code": 0
+        },
+        "regression": {
+          "tests": 10,
+          "exit_code": 0
+        }
+      },
+      "commits": {
+        "C0": "dff1ee1c5aaf7cb8712fa32bf7850527084bc838",
+        "P1": "8ec2a4acf69e75e3ec11c9842461aa153cfc3eeb",
+        "P2": "7b974d40ad967c90ca4991b237276baaeb72db7c",
+        "P3": "e4e223dafde04296cc48607e784e26f20137f217"
+      },
+      "bundle_restored_directory": "D:\\MYfile\\3-1\\Devops\\Lab\\241250076\\E9\\personal\\history-audit.git",
+      "bundle_fsck_passed": true,
+      "final_tracked_inputs_match_bundle": true,
+      "exact_graphs_findings_deltas_verified": true,
+      "full_comparisons_verified": [
+        "P1",
+        "P3"
+      ],
+      "dynamic_checks": [
+        {
+          "directory": "buildchecker",
+          "trace_id": "e6-914f49f3330446eea57d2cc2b1a89b17",
+          "read_trace_lines_checked": [
+            "t.51:87",
+            "t.51:84",
+            "t.47:67",
+            "t.44:579",
+            "t.44:67"
+          ],
+          "findings": [
+            [
+              "MISSING",
+              "main.o",
+              "config.h"
+            ],
+            [
+              "REDUNDANT",
+              "main.o",
+              "unused.h"
+            ]
+          ]
+        },
+        {
+          "directory": "P1-buildchecker",
+          "trace_id": "e6-14568d52471d4f36a794d2af5d8ab3a5",
+          "read_trace_lines_checked": [
+            "t.102:87",
+            "t.102:84",
+            "t.98:67",
+            "t.95:598",
+            "t.95:67"
+          ],
+          "findings": [
+            [
+              "MISSING",
+              "main.o",
+              "config.h"
+            ],
+            [
+              "REDUNDANT",
+              "main.o",
+              "unused.h"
+            ]
+          ]
+        }
+      ],
+      "preserved_evidence_files_hashed": 63,
+      "steps_verified": [
+        "work/e9-A-manual.FkC1SM/steps/20261118-000940-1.log"
+      ],
+      "passed": true,
+      "limitations": [
+        "Only E9 personal package sampled; E8 and E9 baseline packages not independently checked here.",
+        "PR/CI state checked separately; group integration remains pending."
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "student": "241250097",
+      "stage": "E9",
+      "round": "personal",
+      "scope": "Leader read-only sample audit; no submitted code, compiler, build or experiments executed.",
+      "server_directory": "/root/devops-submissions/241250097/E9/personal/run-9fAmRHCz",
+      "local_directory": "D:\\MYfile\\3-1\\Devops\\Lab\\241250097\\E9\\personal",
+      "archives": {
+        "student-source.tar": "820ecbb950e5321d92e6498e93c52f316409358c0e10feffa3fcd13edfa1a413",
+        "E9-project.bundle": "3b4697fe878af744da93f533b746bc7f075dbb4478e233ab606026b6a98ba749",
+        "E9-personal-evidence.tar.gz": "d2d843a832f325f21ee83a07786506db6570485c680bb9dc51a4aa10ff9a10b0"
+      },
+      "hash_basis": "Actual local files match downloaded manifest and PR-reported archive hashes; no live server access.",
+      "source_sha": "8c4b9e2bdc21574cf1fa42df3834aad971056c08",
+      "remote_git_blobs_verified": {
+        "labs/e8e10/test_student_241250097.py": "dd29dd3dcf4b0da4dab92962028088bdf5d641ac",
+        "labs/e8e10/lab.py": "3f3975050b283e9f16653d92ad4315e1f00df30e"
+      },
+      "out": "work/e9-A-manual.JTpb4b",
+      "image_id": "sha256:3c49701f8a141d6bed02226f5a507cea5068d2b36c2bb4d9b5b3391a79791559",
+      "tests": {
+        "personal-test": {
+          "tests": 2,
+          "exit_code": 0
+        },
+        "regression": {
+          "tests": 9,
+          "exit_code": 0
+        }
+      },
+      "commits": {
+        "P0": "dc988ec4ce3b66ef6e5a7494ad730df453c23e2a",
+        "P1": "0b781a2a6685a1876ff5f8a226c53eca059ddaf4",
+        "P2": "882481ede90b1ad2153132b57f2045927dd6f228",
+        "P3": "e7744952c0d4395be6a085fd23fb2b970bc9b047"
+      },
+      "bundle_restored_directory": "D:\\MYfile\\3-1\\Devops\\Lab\\241250097\\E9\\personal\\history-audit.git",
+      "bundle_fsck_passed": true,
+      "final_tracked_inputs_match_bundle": true,
+      "exact_graphs_findings_deltas_verified": true,
+      "full_comparisons_verified": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "dynamic_checks": [
+        {
+          "directory": "P1-buildchecker",
+          "trace_id": "e6-db5b3c0c6b2f43e88586b1beef881989",
+          "read_trace_lines_checked": [
+            "t.61:87",
+            "t.61:84",
+            "t.57:67",
+            "t.54:579",
+            "t.54:67"
+          ],
+          "findings": [
+            [
+              "REDUNDANT",
+              "main.o",
+              "unused.h"
+            ]
+          ]
+        },
+        {
+          "directory": "P3-buildchecker",
+          "trace_id": "e6-fdafa4fbc5b345829d75f5a699650f61",
+          "read_trace_lines_checked": [
+            "t.124:87",
+            "t.124:84",
+            "t.120:67",
+            "t.117:577",
+            "t.117:101",
+            "t.117:67"
+          ],
+          "findings": [
+            [
+              "REDUNDANT",
+              "main.o",
+              "unused.h"
+            ]
+          ]
+        }
+      ],
+      "preserved_evidence_files_hashed": 0,
+      "steps_verified": [
+        "work/e9-A-manual.JTpb4b/steps/20261118-005419-1.log"
+      ],
+      "passed": true,
+      "limitations": [
+        "Only E9 personal package sampled; E8 and E9 baseline packages not independently checked here.",
+        "PR/CI state checked separately; group integration remains pending."
+      ]
+    }
+  ],
+  "passed": true
+}

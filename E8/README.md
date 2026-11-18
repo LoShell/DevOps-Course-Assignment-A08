@@ -1,6 +1,6 @@
 # E8：EChecker 基线与历史图复用
 
-状态：组长参考基线、个人扩展及两轮原包核验通过；其他成员实验、PR/CI 与最终验收待完成。轨道 A，第二篇论文 EChecker。
+状态：四人个人PR已合并，服务器集成16项与E8动态核对/复用验证通过，原包已核验；整合PR、最终CI归档与平台交付待完成。轨道A，第二篇论文EChecker。见 [集成证据](validation/INTEGRATED.md)。
 
 本阶段用真实 BuildChecker 对象目标投影建立历史图，证明 main.o 缺失 config.h、冗余 unused.h；输入不变时 main.o/helper.o 图复用，刷新为空，actual/findings 不变。
 
