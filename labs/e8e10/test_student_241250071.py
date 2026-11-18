@@ -70,5 +70,54 @@ class TestStudent241250071(unittest.TestCase):
         self.assertEqual(incremental["findings"], full["findings"])
 
 
+    def test_indirect_header_change_invalidates_cache_across_commits(self):
+        baseline = scan(self.project)
+        c0 = baseline["commit"]
+
+        (self.project / "config.h").write_text(
+            '#include "extra.h"\n#define VALUE 1\n',
+            encoding="utf-8",
+        )
+        c1 = commit(self.project, "C1 add indirect include")
+
+        first = scan(self.project, baseline)
+        first_full = scan(self.project)
+
+        self.assertNotEqual(c0, c1)
+        self.assertEqual(
+            first["actual"]["main.o"],
+            ["config.h", "extra.h", "main.c"],
+        )
+        self.assertEqual(
+            first["added"],
+            [["MISSING", "main.o", "extra.h"]],
+        )
+        self.assertEqual(set(first["refreshed"]), {"main.o", "helper.o"})
+        self.assertEqual(first["reused"], [])
+        self.assertTrue(all(
+            first[key] == first_full[key]
+            for key in ["actual", "declared", "findings"]
+        ))
+
+        (self.project / "extra.h").write_text(
+            "#define EXTRA 1\n",
+            encoding="utf-8",
+        )
+        c2 = commit(self.project, "C2 change indirect header")
+
+        second = scan(self.project, first)
+        second_full = scan(self.project)
+
+        self.assertNotEqual(c1, c2)
+        self.assertEqual(second["actual"], first["actual"])
+        self.assertEqual(second["findings"], first["findings"])
+        self.assertEqual(second["added"], [])
+        self.assertEqual(second["resolved"], [])
+        self.assertEqual(set(second["refreshed"]), {"main.o", "helper.o"})
+        self.assertEqual(second["reused"], [])
+        self.assertTrue(all(
+            second[key] == second_full[key]
+            for key in ["actual", "declared", "findings"]
+        ))
 if __name__ == "__main__":
     unittest.main()
